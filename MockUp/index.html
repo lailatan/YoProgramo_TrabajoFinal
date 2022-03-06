@@ -1,12 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html class="no-js">
+
+<head lang="es">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio Personal">
+    <meta name="author" content="Natalia Lopardo">
+
+    <title>Natalia Lopardo | Desarrolladora Java FullStack</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+ 
 </head>
-<body>
-    <h1>Natalia Lopardo</h1>
+
+<body >
+    <nav class="menu">
+        <div >
+            <p><img src="imagenes/APLogo.png" alt="Argentina Programa"></p>
+        </div>
+        <div class="contenedor contenedor-menu">
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#formacion">Formación</a>
+            <a href="#conocimientos">Tecnologías</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="foto">
+            <p><img src="imagenes/foto.jpg" alt="Natalia Lopardo" class="foto"></p>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="contenedor contenedor-header" >
+            <div class="foto">
+                <p><img src="imagenes/foto.jpg" alt="Natalia Lopardo" class="foto"></p>
+            </div>    
+            <div class="datos_personales">
+                <p class="nombre">Natalia Lopardo</p>
+                <h2 class="profesion">Desarrolladora Java FullStack</h2>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <section class="sobre-mi">
+            <div class="contenedor contenedor-sobre-mi">
+                <h2 class="titulo" id="sobre-mi">Sobre Mi</h2>
+                <div class="texto">Desarrolladora BackEnd. Me apasiona encontrarsoluciones Informáticas a problemas/situacionescotidianas.</div>
+            </div>
+        </section>
+
+        <section class="formacion">
+            <div class="contenedor contenedor-formacion">
+                <h2 class="titulo" id="formacion">Formación</h2>
+                <div class="item">
+                    <div>
+                        <p><img src="imagenes/ada.jpeg" alt="Ada ITW"></p>
+                        <h4>Ada ITW</h4>
+                        <h5>2020/2021 - Java BackEnd Developer (400 horas) </h5>
+                        <h5>Java / Spring Boot/ Hibernate </h5>
+                        <h5>MySQL </h5>
+                    </div>
+               </div>
+                <div class="item">
+                    <p><img src="imagenes/cuvl.jpeg" alt="CU Vicente López"></p>
+                    <h4>Centro Universitario Vicente López / EducacionIT</h4>
+                    <h5>2021 - Javascript Desarrollador Avanzado (30hs)</h5>
+                    <h5>2020 - Programación Phyton (42hs)</h5>
+                    <h5>2020 - Desarrollo Aplicaciones Móviles (48hs)</h5>
+                </div>
+                <div class="item">
+                    <p><img src="imagenes/fablab.jpeg" alt="Vicente López"></p>
+                    <h4>FabLab Vicente López</h4>
+                    <h5>2020 - POO en Phyton</h5>
+                    <h5>2020 - SQL y MySQL</h5>
+                    <h5>2020 - Introducción Phyton</h5>                
+                </div>
+                <div class="item">
+                    <p><img src="imagenes/mcp.jpeg" alt="MCP Microsoft"></p>
+                    <h4>Microsoft</h4>
+                    <h5>MCP – Microsoft Certified Professional</h4>
+                    <h5>1998 - Microsoft - Examen Drake Sylvan Prometric.</h5>
+                    <h5>“Developing Applications with Microsoft Visual Basic 5.0"</h5>
+                </div>
+                <div class="item">
+                    <p><img src="imagenes/uba.jpeg" alt="UBA"></p>
+                    <h4>Universidad de Buenos Aires</h4>
+                    <h5>Facultad de Ingeniería</h5>
+                    <h5> Licenciatura en Análisis de Sistemas</h5>
+                    <h5>Cursado hasta 3er. año.</h5>
+               </div>    
+            </div>
+        </section>
+
+
+        <div class="conocimientos">
+            <h2 class="titulo" id="conocimientos">Tecnologías</h2>
+            <div class="contenedor">
+                <div class="contenedor-conocimientos">
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio red">+</div>
+                        <div class="img">
+                            <img src="imagenes/java.png" alt="Java">
+                        </div>
+                        <div class="detalles">
+                            <h3>JAVA</h3>
+                            <p>
+                                Java es un lenguaje de programación orientado a objetos que se incorporó al 
+                                ámbito de la informática en los años noventa. La idea de Java es que pueda 
+                                realizarse programas con la posibilidad de ejecutarse en cualquier contexto, 
+                                en cualquier ambiente, siendo así su portabilidad uno de sus principales logros.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio black">+</div>
+                        <div class="img">
+                            <img src="imagenes/python.png" alt="Python">
+                        </div>
+                        <div class="detalles">
+                            <h3>PYTHON</h3>
+                            <p>
+                                Python es un lenguaje de programación interpretado cuya filosofía hace hincapié 
+                                en la legibilidad de su código. Es lenguaje de programación multiparadigma, 
+                                ya que soporta parcialmente la orientación a objetos, programación imperativa y, 
+                                en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y 
+                                multiplataforma.    
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio red">+</div>
+                        <div class="img">
+                            <img src="imagenes/vb.png" alt="Visual Basic">
+                        </div>
+                        <div class="detalles">
+                            <h3>VISUAL BASIC</h3>
+                            <p>
+                                Visual Basic (VB) es un lenguaje de programación dirigido por eventos, 
+                                desarrollado por Alan Cooper para Microsoft. Este lenguaje de programación es 
+                                un dialecto de BASIC, con importantes agregados. Su primera versión fue presentada 
+                                en 1991, con la intención de simplificar la programación utilizando un 
+                                ambiente de desarrollo.                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio black">+</div>
+                        <div class="img">
+                            <img src="imagenes/html.png" alt="HTML">
+                        </div>
+                        <div class="detalles">
+                            <h3>HTML</h3>
+                            <p> El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar 
+                                una página web y sus contenidos. 
+                                HTML5 es la quinta revisión del estándar HTML y permite soportar lo último en multimedia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio red">+</div>
+                        <div class="img">
+                            <img src="imagenes/css.png" alt="CSS">
+                        </div>
+                        <div class="detalles">
+                            <h3>CSS</h3>
+                            <p>CSS (siglas en inglés de Cascading Style Sheets), en español «Hojas de estilo en cascada», 
+                                es un lenguaje de diseño gráfico para definir y crear la presentación de un documento 
+                                estructurado escrito en un lenguaje de marcado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio black">+</div>
+                        <div class="img">
+                            <img src="imagenes/js.png" alt="JavaScript">
+                        </div>
+                        <div class="detalles">
+                            <h3>JAVASCRIPT</h3>
+                            <p>JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, 
+                                dialecto del estándar ECMAScript. Se define como orientado a objetos, 
+                                basado en prototipos, imperativo, débilmente tipado y dinámico.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio red">+</div>
+                        <div class="img">
+                            <img src="imagenes/json_api_sql.png" alt="SQL JSON API REST">
+                        </div>
+                        <div class="detalles">
+                            <h3>SQL - JSON - API REST</h3>
+                            <p> SQL (Structured Query Language) es un lenguaje de dominio específico, 
+                                diseñado para administrar información de bases de datos relacionales.
+                                API REST define un conjunto de funciones para realizar 
+                                solicitudes y recibir respuestas a través del protocolo HTTP.
+                                JSON (JS Object Notation) es un formato de texto sencillo para el intercambio de datos. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio black">+</div>
+                        <div class="img">
+                            <img src="imagenes/android_intellij_vsc.png" alt="">
+                        </div>
+                        <div class="detalles">
+                            <h3>Android Studio - IntelliJ Idea - Visual Studio Code</h3>
+                            <p>Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. 
+                               IntelliJ IDEA es un entorno de desarrollo integrado (IDE) para el desarrollo de programas informáticos. 
+                               Visual Studio Code es un editor de código fuente para Windows, Linux, macOS y Web.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <input type="checkbox" name="">
+                        <div class="cambio red">+</div>
+                        <div class="img">
+                            <img src="imagenes/git_github.png" alt="GIT GITHUB">
+                        </div>
+                        <div class="detalles">
+                            <h3>GIT GITHUB</h3>
+                            <p>GIT es un software de control de versiones, pensando en la eficiencia, la confiabilidad 
+                                y compatibilidad del mantenimiento de versiones de aplicaciones cuando 
+                                tienen un gran número de archivos de código fuente.
+                                GitHub es una plataforma de desarrollo colaborativo de software 
+                                para alojar proyectos utilizando el sistema de Git. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="experiencia">
+            <div class="contenedor contenedor-experiencia">
+                <h2 class="titulo" id="experiencia">Experiencia</h2>
+                <div class="item">
+                    <div>
+                        <p><img src="imagenes/ing.jpg" alt="ING INsurance"></p>
+                        <h4>ING Insurance</h4>
+                        <h4>04/2001 a 11/2003</h4>
+                        <h4 >Analista Programadora</h4>
+                        <p>Análisis, diseño y desarrollo de nuevas aplicaciones y mantenimiento de las existentes: 
+                            interfases con CobolAS400, 
+                            SQLCobol, Visual Basic y bases de datos Oracle.Interfases y desarrollo de impresiones 
+                            mediante JetFormControl de cartas a clientes, reportes e informes.
+                        </p>
+                    </div>
+               </div>
+                <div class="item">
+                    <div>
+                        <p><img src="imagenes/empresa.png" alt="División CRM"></p>
+                        <h4>División CRM</h4>
+                        <h4>9/1999 a 03/2001</h4>
+                        <h4 >Consultora/Analista Programadora Vantive</h4>
+                        <p> Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 
+                            (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package 
+                            enPL/SQL y Base de Datos Oracle).
+                            Capacitaciones en Vantive a programadores. 
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <p><img src="imagenes/met.jpg" alt="Metropolitan Life"></p>
+                        <h4>Metropolitan Life</h4>
+                        <h4>9/1998 a 9/1999</h4>
+                        <h4 >Analista de Nuevas Tecnologías</h4>
+                        <p>Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, 
+                            interfaces con AS400. 
+                            Análisis y dirección del proyecto de compatibilidad con el Año 2000. 
+                            Soporte a los usuarios. Generación de listados y reportes de datos.
+                        </p>                    
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <p><img src="imagenes/empresa.png" alt="Inner Consulting"></p>
+                        <h4>Inner Consulting S.A.</h4>
+                        <h4>3/1997 a 8/1998</h4>
+                        <h4 >Analista Programadora</h4>
+                        <p>Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y 
+                            herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL).
+                            Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A.
+                        </p>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor" id="contacto">
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/natalialopardo" target="_blank" class="social linkedin"
+                    title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/lailatan/" target="_blank" class="social github" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <p class="autor">2022 - Natalia Lopardo - natalialopardo19@gmail.com</p>
+        <span><i class="boton-arriba fa fa-chevron-up" id="boton-arriba" aria-hidden="true"></i></span>
+
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/t.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
 </body>
+
 </html>
