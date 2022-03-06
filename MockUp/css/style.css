@@ -178,7 +178,21 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 10rem;
   margin-right: 10rem;
 }
+.main .sobre-mi .contenedor-sobre-mi {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-rows: 100px 100px;
+  padding: 3rem 1rem;
+}
 
+.main .sobre-mi .contenedor-sobre-mi .item{
+  padding: 1rem 1rem;
+  background: #ffffff;
+  color: #000000;
+  border: 0.125rem solid #969a97;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
 .main .formacion {
   padding: 3rem 0;
   background: rgba(0, 0, 0, 0.5);
@@ -193,7 +207,6 @@ h1, h2, h3, h4, h5, h6, p {
   grid-gap: 2rem;
   grid-template-rows: 100px 100px 100px 100px 100px ;
   padding: 3rem 1rem;
-
 }
 .main .formacion .contenedor-formacion .item{
   padding: 1rem 1rem;
@@ -213,6 +226,7 @@ h1, h2, h3, h4, h5, h6, p {
   background: rgba(0, 0, 0, 0.5);
   color: #000000;
   padding: 3rem 0;
+  padding-top: 6rem;
   margin-left: 10rem;
   margin-bottom: 10rem;
   margin-right: 10rem;
