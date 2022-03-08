@@ -64,13 +64,6 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 1;
 }
 
-.main .proyectos .contenedor-proyectos .proyecto .foto a img {
-  filter: grayscale(0);
-  transition: all 0.5s ease-in-out;
-}
-.main .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
-  filter: grayscale(100);
-}
 
 .menu {
   margin-top: 2rem;
@@ -181,7 +174,7 @@ h1, h2, h3, h4, h5, h6, p {
 .main .sobre-mi .contenedor-sobre-mi {
   display: grid;
   grid-gap: 2rem;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 150px 150px;
   padding: 3rem 1rem;
 }
 
@@ -349,6 +342,64 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .main .experiencia .contenedor-experiencia .item img{
   height: 50px;
+}
+.main .proyectos {
+  padding: 6rem 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #000000;
+  margin-left: 10rem;
+  margin-bottom: 10rem;
+  margin-right: 10rem;
+}
+
+.main .proyectos .contenedor-proyectos {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+.main .proyectos .contenedor-proyectos .proyecto {
+  margin: auto;
+  width: 250px;
+  height: 350px;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info {
+  padding: 1rem 0.5rem;
+  height: 10.625rem;
+  background: #ffffff;
+  color: #000000;
+  border: 0.125rem solid #969a97;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info h4 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info h5 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info p {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info p .tecnologia {
+  color: #cc4545;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info .titulo {
+  column-count: 2;
+}
+.main .proyectos .contenedor-proyectos .proyecto .info .icono {
+  height: 3rem;
+}
+.main .proyectos .contenedor-proyectos .proyecto .foto a img {
+  filter: grayscale(0);
+  transition: all 0.5s ease-in-out;
+}
+.main .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
+  filter: grayscale(100);
 }
 
 /** Media Queries **/
