@@ -16,13 +16,15 @@ $('document').ready(function(){
       });
 
     $('#boton-login').click(function(){
-      var all = document.getElementsByClassName("boton-edicion");
+      var all = document.getElementsByClassName("boton-edicion");  
+      var valor= (all.item(0).style.display=="inline-block"?"none":"inline-block");
+      
       for (var i=0, max=all.length; i < max; i++) {
-        all.item(i).style.display="inline-block";  
+        all.item(i).style.display=valor;  
       }
       var all_reverse = document.getElementsByClassName("boton-edicion-reverse");
       for (var i=0, max=all_reverse.length; i < max; i++) {
-        all_reverse.item(i).style.display="inline-block";  
+        all_reverse.item(i).style.display=valor;  
       }
   });
 
