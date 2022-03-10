@@ -41,7 +41,10 @@
             </div>    
             <div class="datos_personales">
                 <p class="nombre">Natalia Lopardo</p>
-                <h2 class="profesion">Desarrolladora Java FullStack</h2>
+                <div class="contenedor-edicion"">
+                    <h2 class="profesion">Desarrolladora Java FullStack</h2>
+                    <i class="boton-edicion-reverse fa fa-pencil-alt"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -49,36 +52,50 @@
 
     <main class="main">
         <section class="sobre-mi">
-            <div class="contenedor contenedor-sobre-mi">
+            <div class="contenedor-fila-doble">
                 <h2 class="titulo" id="sobre-mi">Sobre Mi</h2>
+            </div>
+            <div class="contenedor contenedor-sobre-mi">
                 <div class="item">
                     <div>
                         <h3>Soy Desarrolladora FullStack, BackEnd y Mobile. 
                             Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad
                             con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.</h3>
                     </div>
-               </div>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                </div>
             </div>
         </section>
 
         <section class="formacion">
-            <div class="contenedor contenedor-formacion">
+            <div class="contenedor-fila-doble">
                 <h2 class="titulo" id="formacion">Formación</h2>
+                <i class="boton-edicion fa fa-plus"></i>    
+            </div>
+            <div class="contenedor contenedor-formacion">
                 <div class="item">
-                    <div>
-                        <p><img src="imagenes/formacion/ada.jpeg" alt="Ada ITW"></p>
-                        <h4>Ada ITW</h4>
-                        <h5>2020/2021 - Java BackEnd Developer (400 horas) </h5>
-                        <h5>Java / Spring Boot/ Hibernate </h5>
-                        <h5>MySQL </h5>
-                    </div>
-               </div>
+                    <p><img src="imagenes/formacion/ada.jpeg" alt="Ada ITW"></p>
+                    <h4>Ada ITW</h4>
+                    <h5>2020/2021 - Java BackEnd Developer (400 horas) </h5>
+                    <h5>Java / Spring Boot/ Hibernate </h5>
+                    <h5>MySQL </h5>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
                 <div class="item">
                     <p><img src="imagenes/formacion/cuvl.jpeg" alt="CU Vicente López"></p>
                     <h4>Centro Universitario Vicente López / EducacionIT</h4>
                     <h5>2021 - Javascript Desarrollador Avanzado (30hs)</h5>
                     <h5>2020 - Programación Phyton (42hs)</h5>
                     <h5>2020 - Desarrollo Aplicaciones Móviles (48hs)</h5>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
                 </div>
                 <div class="item">
                     <p><img src="imagenes/formacion/fablab.jpeg" alt="Vicente López"></p>
@@ -87,12 +104,20 @@
                     <h5>2020 - SQL y MySQL</h5>
                     <h5>2020 - Introducción Phyton</h5>                
                 </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
                 <div class="item">
                     <p><img src="imagenes/formacion/mcp.jpeg" alt="MCP Microsoft"></p>
                     <h4>Microsoft</h4>
                     <h5>MCP – Microsoft Certified Professional</h4>
                     <h5>1998 - Microsoft - Examen Drake Sylvan Prometric.</h5>
                     <h5>“Developing Applications with Microsoft Visual Basic 5.0"</h5>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
                 </div>
                 <div class="item">
                     <p><img src="imagenes/formacion/uba.jpeg" alt="UBA"></p>
@@ -101,17 +126,24 @@
                     <h5> Licenciatura en Análisis de Sistemas</h5>
                     <h5>Cursado hasta 3er. año.</h5>
                </div>    
+               <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
             </div>
         </section>
 
 
         <div class="conocimientos">
-            <h2 class="titulo" id="conocimientos">Tecnologías</h2>
+            <div class="contenedor-fila-doble">
+                <h2 class="titulo" id="conocimientos">Tecnologías</h2>
+                <i class="boton-edicion fa fa-plus"></i>    
+            </div>
             <div class="contenedor">
                 <div class="contenedor-conocimientos">
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio red">+</div>
+                        <div class="cambio red">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/java.png" alt="Java">
                         </div>
@@ -128,7 +160,7 @@
 
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio black">+</div>
+                        <div class="cambio black">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/python.png" alt="Python">
                         </div>
@@ -146,7 +178,7 @@
 
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio red">+</div>
+                        <div class="cambio red">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/vb.png" alt="Visual Basic">
                         </div>
@@ -161,10 +193,22 @@
                             </p>
                         </div>
                     </div>
-
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                        
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio black">+</div>
+                        <div class="cambio black">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/html.png" alt="HTML">
                         </div>
@@ -179,7 +223,7 @@
 
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio red">+</div>
+                        <div class="cambio red">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/css.png" alt="CSS">
                         </div>
@@ -191,10 +235,10 @@
                             </p>
                         </div>
                     </div>
-
+            
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio black">+</div>
+                        <div class="cambio black">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/js.png" alt="JavaScript">
                         </div>
@@ -206,9 +250,22 @@
                             </p>
                         </div>
                     </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+    
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio red">+</div>
+                        <div class="cambio red">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/json_api_sql.png" alt="SQL JSON API REST">
                         </div>
@@ -224,7 +281,7 @@
                     </div>
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio black">+</div>
+                        <div class="cambio black">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/android_intellij_vsc.png" alt="">
                         </div>
@@ -238,7 +295,7 @@
                     </div>
                     <div class="tarjeta">
                         <input type="checkbox" name="">
-                        <div class="cambio red">+</div>
+                        <div class="cambio red">?</div>
                         <div class="img">
                             <img src="imagenes/tecnologias/git_github.png" alt="GIT GITHUB">
                         </div>
@@ -252,13 +309,28 @@
                             </p>
                         </div>
                     </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>
+                    <div class="contenedor-edicion">
+                        <i class="boton-edicion fa fa-pencil-alt"></i>
+                        <i class="boton-edicion fa fa-trash-alt"></i>
+                    </div>    
                 </div>
             </div>
         </div>
 
         <section class="experiencia">
-            <div class="contenedor contenedor-experiencia">
+            <div class="contenedor-fila-doble">
                 <h2 class="titulo" id="experiencia">Experiencia</h2>
+                <i class="boton-edicion fa fa-plus"></i>    
+            </div>
+            <div class="contenedor contenedor-experiencia">
                 <div class="item">
                     <div>
                         <p><img src="imagenes/experiencia/ing.jpg" alt="ING INsurance"></p>
@@ -272,6 +344,10 @@
                         </p>
                     </div>
                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
                 <div class="item">
                     <div>
                         <p><img src="imagenes/experiencia/empresa.png" alt="División CRM"></p>
@@ -284,6 +360,10 @@
                             Capacitaciones en Vantive a programadores. 
                         </p>
                     </div>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
                 </div>
                 <div class="item">
                     <div>
@@ -298,6 +378,10 @@
                         </p>                    
                     </div>
                 </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
                 <div class="item">
                     <div>
                         <p><img src="imagenes/experiencia/empresa.png" alt="Inner Consulting"></p>
@@ -310,10 +394,18 @@
                         </p>
                     </div>
                 </div>    
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
             </div>
         </section>
+
         <section class="proyectos">
-            <h2 class="titulo" id="proyectos">Proyectos recientes</h2>
+            <div class="contenedor-fila-doble">
+                <h2 class="titulo" id="proyectos">Proyectos recientes</h2>
+                <i class="boton-edicion fa fa-plus"></i>    
+            </div>
             <div class="contenedor contenedor-proyectos">
                 <div class="proyecto">
                     <div class="foto">
@@ -366,6 +458,23 @@
                         <p><span class="tecnologia">Android Studio - Java</span></p>
                     </div>
                 </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
+                <div class="contenedor-edicion">
+                    <i class="boton-edicion fa fa-pencil-alt"></i>
+                    <i class="boton-edicion fa fa-trash-alt"></i>
+                </div>
+
         </section>
     </main>
 
@@ -376,12 +485,20 @@
                     title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/lailatan/" target="_blank" class="social github" title="GitHub"><i
                         class="fab fa-github"></i></a>
+                <i class="boton-edicion-reverse fas fa-pencil-alt""></i>
+
             </div>
         </div>
-
-        <p class="autor">2022 - Natalia Lopardo - natalialopardo19@gmail.com</p>
+   
+        <div class="sector-autor">
+            <div class="contenedor-edicion" style="align: center;">
+                <p class="autor">2022 - Natalia Lopardo - natalialopardo19@gmail.com</p>    
+                <i class='boton-edicion-reverse fas fa-pencil-alt' style="font-size: 1.1rem;"></i>
+            </div>
+        </div>
+        
         <span><i class="boton-arriba fa fa-chevron-up" id="boton-arriba" aria-hidden="true"></i></span>
-
+        <span><i class="boton-login fa fa-user-edit" id="boton-login" aria-hidden="true"></i></span>
 
     </footer>
 
