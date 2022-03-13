@@ -22,9 +22,9 @@ $('document').ready(function(){
       for (var i=0, max=all.length; i < max; i++) {
         all.item(i).style.display=valor;  
       }
-      var all_reverse = document.getElementsByClassName("boton-edicion-reverse");
-      for (var i=0, max=all_reverse.length; i < max; i++) {
-        all_reverse.item(i).style.display=valor;  
+      var all_fill = document.getElementsByClassName("boton-edicion-fill");
+      for (var i=0, max=all_fill.length; i < max; i++) {
+        all_fill.item(i).style.display=valor;  
       }
   });
 
