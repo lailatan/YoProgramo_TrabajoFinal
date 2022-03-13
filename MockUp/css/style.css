@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6, p {
 .main .formacion .contenedor-formacion{
   display: grid;
   justify-content: center;
-  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: repeat(auto-fit, minmax(250px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 0.5rem;
 }
@@ -463,7 +463,7 @@ h1, h2, h3, h4, h5, h6, p {
 .main .experiencia .contenedor-experiencia{
   display: grid;
   justify-content: center;
-  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: repeat(auto-fit, minmax(250px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 0.5rem;
 }
