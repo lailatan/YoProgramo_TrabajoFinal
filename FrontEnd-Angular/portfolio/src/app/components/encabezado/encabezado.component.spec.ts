@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmcabezadoComponent } from './emcabezado.component';
+import { EncabezadoComponent } from './encabezado.component';
 
-describe('EmcabezadoComponent', () => {
-  let component: EmcabezadoComponent;
-  let fixture: ComponentFixture<EmcabezadoComponent>;
+describe('EncabezadoComponent', () => {
+  let component: EncabezadoComponent;
+  let fixture: ComponentFixture<EncabezadoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmcabezadoComponent ]
+      declarations: [ EncabezadoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmcabezadoComponent);
+    fixture = TestBed.createComponent(EncabezadoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
