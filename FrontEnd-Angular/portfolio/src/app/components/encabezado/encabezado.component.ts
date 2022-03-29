@@ -13,7 +13,8 @@ export class EncabezadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosGenerales().subscribe(data => {
-      console.log(data);
+      console.log(data.foto);
+      console.log(data.redes_sociales);
       this.misDatos = data;
     });
   }

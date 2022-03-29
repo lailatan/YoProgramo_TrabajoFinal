@@ -1,13 +1,14 @@
 /** Solo en pantalla Computadoras **/
 @media only screen and (min-width: 48rem) {
-    .item  a img {
+    .item a img {
       filter: grayscale(0);
       transition: all 0.5s ease-in-out;
     }
-    .item  a img:hover {
+    .item a img:hover {
       filter: grayscale(100);
     }
   }
+
   .item{
     padding: 1rem 0.5rem;
     background: #ffffff;
@@ -19,3 +20,4 @@
   .item img{
     height: 50px;
   }
+  

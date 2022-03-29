@@ -1,0 +1,17 @@
+<div class="proyecto">
+    <div class="foto">
+        <a [href]="miProyecto.link" target="_blank">
+            <img [src]="miProyecto.imagen" alt=""></a>
+    </div>
+    <div class="info">
+        <img class="icono" [src]="miProyecto.icono" alt="">
+        <h4>{{miProyecto.nombre}}</h4>
+        <h5>Tecnologías utilizadas:</h5>
+        <p><span class="tecnologia">{{miProyecto.tecnologias}}</span></p>
+        <div class="contenedor-edicion-bloque">
+            <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"></i></span>
+        </div>
+    </div>
+</div>
+

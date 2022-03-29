@@ -1,0 +1,57 @@
+{
+    "formacion": [{
+		"imagen": "assets/imagenes/formacion/ada.jpeg",
+		"escuela": "Ada ITW",
+		"fecha": "2020/2021",
+		"titulo": "Java BackEnd Developer (400 horas)",
+		"descricion": "Java / Spring Boot/ Hibernate. <br> MySQL"
+	}, {
+		"imagen": "assets/imagenes/formacion/cuvl.jpeg",
+		"escuela": "Centro Universitario Vicente López / EducacionIT",
+		"fecha": "2021",
+		"titulo": "Javascript Desarrollador Avanzado (30hs)",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/cuvl.jpeg",
+		"escuela": "Centro Universitario Vicente López / EducacionIT",
+		"fecha": "2020",
+		"titulo": "Programación Phyton (42hs)",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/cuvl.jpeg",
+		"escuela": "Centro Universitario Vicente López / EducacionIT",
+		"fecha": "2020",
+		"titulo": "Desarrollo Aplicaciones Móviles (48hs)",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/fablab.jpeg",
+		"escuela": "FabLab Vicente López",
+		"fecha": "2020",
+		"titulo": "POO en Phyton",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/fablab.jpeg",
+		"escuela": "FabLab Vicente López",
+		"fecha": "2020",
+		"titulo": "SQL y MySQL",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/fablab.jpeg",
+		"escuela": "FabLab Vicente López",
+		"fecha": "2020",
+		"titulo": "Introducción Phyton",
+		"descricion": ""
+	}, {
+		"imagen": "assets/imagenes/formacion/mcp.jpeg",
+		"escuela": "Microsoft",
+		"fecha": "1998",
+		"titulo": "MCP - Microsoft Certified Professional",
+		"descricion": "Microsoft - Examen Drake Sylvan Prometric. <br> Developing Applications with Microsoft Visual Basic 5.0"
+	}, {
+		"imagen": "assets/imagenes/formacion/uba.jpeg",
+		"escuela": "Universidad de Buenos Aires",
+		"fecha": "1995",
+		"titulo": "Licenciatura en Análisis de Sistemas",
+		"descricion": "Facultad de Ingeniería. <br> Cursado hasta 3er. año."
+	}]
+}

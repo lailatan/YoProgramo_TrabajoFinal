@@ -1,0 +1,46 @@
+/** Solo en pantalla Computadoras **/
+@media only screen and (min-width: 48rem) {
+    .proyecto .foto a img {
+      filter: grayscale(0);
+      transition: all 0.5s ease-in-out;
+    }
+    .proyecto .foto a img:hover {
+      filter: grayscale(100);
+    }
+  }
+
+.proyecto {
+margin: auto;
+width: 250px;
+height: 370px;
+}
+.proyecto .info {
+padding: 1rem 0.5rem;
+height: 11.625rem;
+background: #ffffff;
+color: #000000;
+border: 0.125rem solid #969a97;
+}
+.proyecto .info h4 {
+text-align: center;
+font-size: 1.3rem;
+}
+.proyecto .info h5 {
+text-align: center;
+font-size: 1.1rem;
+font-weight: normal;
+}
+.proyecto .info p {
+text-align: center;
+font-size: 0.9rem;
+font-weight: bold;
+}
+.proyecto .info p .tecnologia {
+color: #cc4545;
+}
+.proyecto .info .titulo {
+column-count: 2;
+}
+.info .icono {
+height: 3rem;
+}

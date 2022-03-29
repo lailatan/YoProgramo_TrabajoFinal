@@ -2,84 +2,11 @@
 <section class="formacion">
     <h2 class="titulo" id="formacion">Formación</h2>
     <div class="contenedor contenedor-formacion">
-        <div class="item">
-            <div >
-                <a><img src="assets/imagenes/formacion/ada.jpeg" alt="Ada ITW"></a>
-                <h4>Ada ITW</h4>
-            </div>
-            <div>
-                <h5>2020/2021 - Java BackEnd Developer (400 horas) </h5>
-                <h5>Java / Spring Boot/ Hibernate </h5>
-                <h5>MySQL </h5>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div >
-                <a><img src="assets/imagenes/formacion/cuvl.jpeg" alt="CU Vicente López"></a>
-                <h4>Centro Universitario Vicente López / EducacionIT</h4>
-            </div>
-            <div>
-                <h5>2021 - Javascript Desarrollador Avanzado (30hs)</h5>
-                <h5>2020 - Programación Phyton (42hs)</h5>
-                <h5>2020 - Desarrollo Aplicaciones Móviles (48hs)</h5>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/formacion/fablab.jpeg" alt="Vicente López"></a>
-                <h4>FabLab Vicente López</h4>
-            </div>
-            <div>
-                <h5>2020 - POO en Phyton</h5>
-                <h5>2020 - SQL y MySQL</h5>
-                <h5>2020 - Introducción Phyton</h5>                
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/formacion/mcp.jpeg" alt="MCP Microsoft"></a>
-                <h4>Microsoft</h4>
-            </div>
-            <div>
-                <h5>MCP - Microsoft Certified Professional</h5>
-                <h5>1998 - Microsoft - Examen Drake Sylvan Prometric.</h5>
-                <h5>“Developing Applications with Microsoft Visual Basic 5.0"</h5>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/formacion/uba.jpeg" alt="UBA"></a>
-                <h4>Universidad de Buenos Aires</h4>
-            </div>
-            <div>
-                <h5>Facultad de Ingeniería</h5>
-                <h5> Licenciatura en Análisis de Sistemas</h5>
-                <h5>Cursado hasta 3er. año.</h5>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>  
-        </div>  
-        <div class="contenedor-edicion-titulo">
-            <span><i class="boton-edicion-fill fa fa-plus"></i></span>    
-        </div>    
+        <app-formacion-item
+            *ngFor="let unaFormacion of formacionList"
+            [miFormacion]= "unaFormacion"
+        >
+        </app-formacion-item>
     </div>
 </section>
 

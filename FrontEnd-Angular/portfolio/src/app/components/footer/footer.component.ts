@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  misDatos: any;
 
-  constructor() { }
+  constructor( private datosPortfolio:PortfolioService ) { }
 
   ngOnInit(): void {
+    this.datosPortfolio.obtenerDatosGenerales().subscribe(data => {
+       this.misDatos = data;
+    });
   }
 
 }

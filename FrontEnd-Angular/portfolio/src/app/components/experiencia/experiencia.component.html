@@ -2,23 +2,10 @@
 <section class="experiencia">
     <h2 class="titulo" id="experiencia">Experiencia</h2>
     <div class="contenedor contenedor-experiencia">
-        <div *ngFor="let unaExperiencia of experienciaList" class="item" >
-            <div>
-                <a><img [src]="unaExperiencia.imagen" [alt]="unaExperiencia.empresa"></a>
-                <h4>{{unaExperiencia.empresa}}</h4>
-                <h4>{{unaExperiencia.fecha}}</h4>
-            </div>
-            <div>
-                <h4 >{{unaExperiencia.cargo}}</h4>
-                <p>{{unaExperiencia.detalle}}</p>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-       </div>
-        <div class="contenedor-edicion-titulo">
-            <span><i class="boton-edicion-fill fa fa-plus"></i></span>    
-        </div>    
+        <app-experiencia-item
+            *ngFor="let unaExperiencia of experienciaList"
+            [miExperiencia]="unaExperiencia"
+        >
+        </app-experiencia-item>
     </div>
 </section>

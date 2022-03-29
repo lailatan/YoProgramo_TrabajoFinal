@@ -1,1 +1,18 @@
-<p>experiencia-item works!</p>
+<div class="item" >
+    <div>
+        <a><img [src]="miExperiencia.imagen" [alt]="miExperiencia.empresa"></a>
+        <h4>{{miExperiencia.empresa}}</h4>
+        <h4>{{miExperiencia.fecha}}</h4>
+    </div>
+    <div>
+        <h4 >{{miExperiencia.cargo}}</h4>
+        <p>{{miExperiencia.detalle}}</p>
+        <div class="contenedor-edicion-bloque">
+            <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"></i></span>
+        </div>
+    </div>
+</div>
+<div class="contenedor-edicion-titulo">
+    <span><i class="boton-edicion-fill fa fa-plus"></i></span>    
+</div>    

@@ -20,4 +20,16 @@ export class PortfolioService {
   obtenerDatosExperiencia(): Observable<any>{
     return this.http.get('./assets/data/data-experiencia.json');
   }
+
+  obtenerDatosProyectos(): Observable<any>{
+    return this.http.get('./assets/data/data-proyectos.json');
+  }
+
+  obtenerDatosTecnologias(): Observable<any>{
+    return this.http.get('./assets/data/data-tecnologias.json');
+  }
+
+  obtenerDatosFormacion(): Observable<any>{
+    return this.http.get('./assets/data/data-formacion.json');
+  }
 }

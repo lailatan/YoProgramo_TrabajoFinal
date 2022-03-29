@@ -14,6 +14,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 import{HttpClientModule} from '@angular/common/http';
 import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
+import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
+import { TecnologiasItemComponent } from './components/tecnologias-item/tecnologias-item.component';
+import { FormacionItemComponent } from './components/formacion-item/formacion-item.component';
+import { RedessocialesItemComponent } from './components/redessociales-item/redessociales-item.component';
 
 const appRoutes: Routes = [
   {path:'',component: EncabezadoComponent},
@@ -37,7 +41,11 @@ const appRoutes: Routes = [
     ProyectosComponent,
     FooterComponent,
     EncabezadoComponent,
-    ExperienciaItemComponent
+    ExperienciaItemComponent,
+    ProyectosItemComponent,
+    TecnologiasItemComponent,
+    FormacionItemComponent,
+    RedessocialesItemComponent
   ],
   imports: [
     BrowserModule,
