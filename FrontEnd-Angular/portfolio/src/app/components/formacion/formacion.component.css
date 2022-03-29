@@ -1,0 +1,38 @@
+/** Solo en pantalla Computadoras **/
+@media only screen and (min-width: 48rem) {
+    .formacion .contenedor-formacion .item a img {
+      filter: grayscale(0);
+      transition: all 0.5s ease-in-out;
+    }
+    .formacion .contenedor-formacion .item a img:hover {
+      filter: grayscale(100);
+    }
+  }
+
+  /* FORMACION */
+  .formacion {
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #000000;
+    margin-bottom: 3rem;
+  }
+  
+  .formacion .contenedor-formacion{
+    display: grid;
+    justify-content: center;
+    grid-auto-rows: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 0.5rem;
+  }
+  .formacion .contenedor-formacion .item{
+    padding: 1rem 0.5rem;
+    background: #ffffff;
+    color: #000000;
+    border: 0.125rem solid #969a97;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .formacion .contenedor-formacion .item img{
+    height: 50px;
+  }
+  

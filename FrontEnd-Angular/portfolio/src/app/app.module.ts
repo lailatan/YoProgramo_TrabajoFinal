@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule,Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,18 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 import{HttpClientModule} from '@angular/common/http';
+import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
+
+const appRoutes: Routes = [
+  {path:'',component: EncabezadoComponent},
+  {path:'encabezado',component: EncabezadoComponent},
+  {path:'sobre-mi',component: SobreMiComponent},
+  {path:'proyectos',component: ProyectosComponent},
+  {path:'tecnologias',component: TecnologiasComponent},
+  {path:'formacion',component: FormacionComponent},
+  {path:'experiencia',component: ExperienciaComponent},
+  {path:'experiencias',component: ExperienciaComponent}
+]
 
 @NgModule({
   declarations: [
@@ -23,12 +36,14 @@ import{HttpClientModule} from '@angular/common/http';
     TecnologiasComponent,
     ProyectosComponent,
     FooterComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    ExperienciaItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes,{enableTracing: true})
   ],
   providers: [],
   bootstrap: [AppComponent]

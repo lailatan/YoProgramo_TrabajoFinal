@@ -1,0 +1,60 @@
+/** Solo en pantalla Computadoras **/
+@media only screen and (min-width: 48rem) {
+    .proyectos .contenedor-proyectos .proyecto .foto a img {
+      filter: grayscale(0);
+      transition: all 0.5s ease-in-out;
+    }
+    .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
+      filter: grayscale(100);
+    }
+  }
+
+  /** PROYECTOS**/
+  .proyectos {
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #000000;
+    margin-bottom: 3rem;
+  }
+  .proyectos .contenedor-proyectos {
+    display: grid;
+    justify-content: left;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+  }
+  .proyectos .contenedor-proyectos .proyecto {
+    margin: auto;
+    width: 250px;
+    height: 370px;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info {
+    padding: 1rem 0.5rem;
+    height: 11.625rem;
+    background: #ffffff;
+    color: #000000;
+    border: 0.125rem solid #969a97;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info h4 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info h5 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info p {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info p .tecnologia {
+    color: #cc4545;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info .titulo {
+    column-count: 2;
+  }
+  .proyectos .contenedor-proyectos .proyecto .info .icono {
+    height: 3rem;
+  }

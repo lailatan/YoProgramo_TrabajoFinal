@@ -5,7 +5,7 @@
 	"mail": "natalialopardo19@gmail.com",
 	"anio": "2022",
 	"profesion": "Desarrolladora Java FullStack",
-	"sobre-mi": "Soy Desarrolladora FullStack, BackEnd y Mobile. Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.",
+	"sobre_mi": "Soy Desarrolladora FullStack, BackEnd y Mobile. Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.",
 	"formacion": [{
 		"imagen": "imagenes/formacion/ada.jpeg",
 		"escuela": "Ada ITW",

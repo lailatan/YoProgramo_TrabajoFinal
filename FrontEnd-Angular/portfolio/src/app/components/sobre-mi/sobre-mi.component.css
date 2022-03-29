@@ -1,0 +1,21 @@
+  /** SOBRE MI **/
+  
+  .sobre-mi {
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #000000;
+    margin-bottom: 3rem;
+  }
+  
+  .sobre-mi .contenedor-sobre-mi .item {
+    padding: 1.5rem 0;
+    background: #ffffff;
+    color: #000000;
+    width: 70%; 
+    margin: 0 auto;
+  }
+  
+  .sobre-mi .contenedor-sobre-mi .item h3 {
+    width: 90%;
+    margin: 0 auto;
+  }
