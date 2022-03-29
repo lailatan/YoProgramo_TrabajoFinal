@@ -11,6 +11,7 @@ import { TecnologiasComponent } from './components/tecnologias/tecnologias.compo
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
+import{HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EncabezadoComponent } from './components/encabezado/encabezado.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

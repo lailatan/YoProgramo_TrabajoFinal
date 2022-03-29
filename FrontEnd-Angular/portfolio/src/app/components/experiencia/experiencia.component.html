@@ -2,84 +2,23 @@
 <section class="experiencia">
     <h2 class="titulo" id="experiencia">Experiencia</h2>
     <div class="contenedor contenedor-experiencia">
-        <div class="item">
+        <div *ngFor="let unaExperiencia of experienciaList" class="item" >
             <div>
-                <a><img src="assets/imagenes/experiencia/ing.jpg" alt="ING INsurance"></a>
-                <h4>ING Insurance</h4>
-                <h4>04/2001 a 11/2003</h4>
+                <a><img [src]="unaExperiencia.imagen" [alt]="unaExperiencia.empresa"></a>
+                <h4>{{unaExperiencia.empresa}}</h4>
+                <h4>{{unaExperiencia.fecha}}</h4>
             </div>
             <div>
-                <h4 >Analista Programadora</h4>
-                <p>Análisis, diseño y desarrollo de nuevas aplicaciones y mantenimiento de las existentes: 
-                    interfases con CobolAS400, 
-                    SQLCobol, Visual Basic y bases de datos Oracle.Interfases y desarrollo de impresiones 
-                    mediante JetFormControl de cartas a clientes, reportes e informes.
-                </p>
+                <h4 >{{unaExperiencia.cargo}}</h4>
+                <p>{{unaExperiencia.detalle}}</p>
                 <div class="contenedor-edicion-bloque">
                     <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
                     <span><i class="boton-edicion fa fa-trash-alt"></i></span>
                 </div>
             </div>
        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/experiencia/empresa.png" alt="División CRM"></a>
-                <h4>División CRM</h4>
-                <h4>9/1999 a 03/2001</h4>
-            </div>
-            <div>
-                <h4 >Consultora/Analista Programadora Vantive</h4>
-                <p> Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 
-                    (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package 
-                    enPL/SQL y Base de Datos Oracle).
-                    Capacitaciones en Vantive a programadores. 
-                </p>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/experiencia/met.jpg" alt="Metropolitan Life"></a>
-                <h4>Metropolitan Life</h4>
-                <h4>9/1998 a 9/1999</h4>
-            </div>
-            <div>
-                <h4 >Analista de Nuevas Tecnologías</h4>
-                <p>Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, 
-                    interfaces con AS400. 
-                    Análisis y dirección del proyecto de compatibilidad con el Año 2000. 
-                    Soporte a los usuarios. Generación de listados y reportes de datos.
-                </p>                    
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-                </div>
-        </div>
-        <div class="item">
-            <div>
-                <a><img src="assets/imagenes/experiencia/empresa.png" alt="Inner Consulting"></a>
-                <h4>Inner Consulting S.A.</h4>
-                <h4>3/1997 a 8/1998</h4>
-            </div>
-            <div>
-                <h4 >Analista Programadora</h4>
-                <p>Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y 
-                    herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL).
-                    Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A.
-                </p>
-                <div class="contenedor-edicion-bloque">
-                    <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-                    <span><i class="boton-edicion fa fa-trash-alt"></i></span>
-                </div>
-                </div>
-        </div>    
         <div class="contenedor-edicion-titulo">
             <span><i class="boton-edicion-fill fa fa-plus"></i></span>    
         </div>    
     </div>
 </section>
-
