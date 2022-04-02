@@ -8,9 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FormacionItemComponent implements OnInit {
   @Input() miFormacion: any;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
+  }
+
+  prepararDatos(datos:string) {
+    console.log(datos);
+    datos = datos.split("\n").join("<br />");
+    return datos;
   }
 
 }

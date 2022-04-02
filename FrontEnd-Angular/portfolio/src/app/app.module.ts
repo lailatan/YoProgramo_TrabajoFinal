@@ -17,7 +17,7 @@ import { ExperienciaItemComponent } from './components/experiencia-item/experien
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { TecnologiasItemComponent } from './components/tecnologias-item/tecnologias-item.component';
 import { FormacionItemComponent } from './components/formacion-item/formacion-item.component';
-import { RedessocialesItemComponent } from './components/redessociales-item/redessociales-item.component';
+
 
 const appRoutes: Routes = [
   {path:'',component: EncabezadoComponent},
@@ -44,8 +44,7 @@ const appRoutes: Routes = [
     ExperienciaItemComponent,
     ProyectosItemComponent,
     TecnologiasItemComponent,
-    FormacionItemComponent,
-    RedessocialesItemComponent
+    FormacionItemComponent
   ],
   imports: [
     BrowserModule,

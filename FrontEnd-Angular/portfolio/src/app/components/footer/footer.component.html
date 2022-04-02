@@ -2,18 +2,17 @@
 <footer class="footer">
     <div class="contenedor" id="contacto">
         <div class="redes-sociales">
-            <app-redessociales-item
-                *ngFor="let unaRedSocial of misDatos.redes_sociales"
-                [miRedSocial]="unaRedSocial"
-            >
-            </app-redessociales-item>
+            <a [href]="misDatos.linkedin" target="_blank" class="social linkedin"
+            title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a [href]="misDatos.github" target="_blank" class="social github"
+            title="GitHub"><i class="fab fa-github"></i></a>
             <i class="boton-edicion fas fa-pencil-alt"></i>
         </div>
     </div>
   
     <div class="sector-autor">
         <div class="contenedor-edicion-linea">
-            <p class="autor">{{misDatos.anio}} - {{misDatos.nombre}} - {{misDatos.mail}}</p>    
+            <p class="autor">{{misDatos.anio}} - {{misDatos.ubicacion}} - {{misDatos.nombre}} - {{misDatos.mail}}</p>    
             <i class='boton-edicion fas fa-pencil-alt' style="font-size: 1.1rem;"></i>
         </div>
     </div>

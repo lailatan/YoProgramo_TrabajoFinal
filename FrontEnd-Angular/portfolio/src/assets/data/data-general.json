@@ -6,13 +6,6 @@
 	"anio": "2022",
 	"profesion": "Desarrolladora Java FullStack",
 	"sobre_mi": "Soy Desarrolladora FullStack, BackEnd y Mobile. Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.",
-	"redes_sociales": [{
-		"imagen": "fa fa-linkedin-in",
-		"nombre": "Linkedin",
-		"link": "https://www.linkedin.com/in/natalialopardo"
-	}, {
-		"imagen": "fa fa-linkedin-in",
-		"nombre": "github",
-		"link": "https://github.com/lailatan/"
-	}]
+	"linkedin": "https://www.linkedin.com/in/natalialopardo",
+	"github": "https://github.com/lailatan/"
 }
