@@ -5,10 +5,10 @@
             <p><img [src]="misDatos.foto" [alt]="misDatos.nombre" class="foto"></p>
         </div> 
         <div class="datos_personales">
-            <span class="nombre">{{misDatos.nombre}}</span>
+            <h1 class="nombre">{{misDatos.nombre}}</h1>
             <div class="contenedor-edicion-linea">
                 <h2 class="profesion">{{misDatos.profesion}}</h2>
-                <i class="boton-edicion fa fa-pencil-alt"></i>
+                <i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i>
             </div> 
         </div>
     </div>

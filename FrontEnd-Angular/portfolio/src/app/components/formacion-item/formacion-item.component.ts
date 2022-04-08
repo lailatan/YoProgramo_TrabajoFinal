@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-formacion-item',
@@ -7,11 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FormacionItemComponent implements OnInit {
   @Input() miFormacion: any;
+  modoEdicion: boolean = false;
+  Subscription?: Subscription;
 
-  constructor() {
+  constructor( private uiService: UiService) {
+    this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
    }
 
   ngOnInit(): void {
+    this.modoEdicion = this.uiService.esModoEdicion();
   }
 
   prepararDatos(datos:string) {

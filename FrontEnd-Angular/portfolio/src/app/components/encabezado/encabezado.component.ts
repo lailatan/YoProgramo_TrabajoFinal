@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../services/portfolio.service';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-encabezado',
@@ -8,8 +10,12 @@ import { PortfolioService } from '../../services/portfolio.service';
 })
 export class EncabezadoComponent implements OnInit {
   misDatos: any;
-
-  constructor( private datosPortfolio:PortfolioService ) { }
+  modoEdicion: boolean = false;
+  Subscription?: Subscription;
+  
+  constructor( private uiService: UiService,private datosPortfolio:PortfolioService ) { 
+    this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
+  }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosGenerales().subscribe(data => {

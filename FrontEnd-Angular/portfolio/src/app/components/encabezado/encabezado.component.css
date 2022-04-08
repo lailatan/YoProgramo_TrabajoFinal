@@ -1,96 +1,45 @@
-/** Solo en pantalla Computadoras **/
-@media only screen and (min-width: 48rem) {
-    .header {
-      height: 100vh;
-    }
-    .header .contenedor-header {
-      height: 100%;
-      color: #000000;
-      display: grid;
-      flex-direction: column;
-      grid-template-columns:repeat(auto-fit, minmax(1.5625rem, 1fr));
-      justify-content: center;
-      align-items: center;
-    }  
-    .header .foto img {
-      width: 40rem;
-      border-radius: 50%;
-    }
-    .header .contenedor-header .nombre {
-      font-size: 4rem;
-      letter-spacing: 0.4rem;
-    }
-    .header .contenedor-header h2 {
-      min-width: 35.375rem;
-      max-width: 35.375rem;
-      font-size: 2.5rem;
-      letter-spacing: 0.5rem;
-    }
+.contenedor-header{
+  padding: 2rem 0;
 }
-/** HEADER **/
-.header {
-    height: 30rem;
-    width: 100%;
-    align-items: center;
-    }
-    .header .contenedor-header {
-    padding-left: 4rem;
-    height: 100%;
-    color: #000000;
-    display: grid;
-    flex-direction: row;
-    grid-template-rows:repeat(auto-fit, minmax(1.5625rem, 1fr));
-    grid-row-gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .header .foto {
-    margin-left:1rem;
-    margin-bottom: 2rem;
-    width: 60%;
-    height: 60%;
-    justify-content: center;
-    }
-    .header .foto img {
-    width: 30rem;
-    border-radius: 50%;
-    }
-    .header .contenedor-header .datos_personales{
-    align-items: center;
-    justify-content: center;
-    }
-    .header .contenedor-header .nombre {
-    padding-left: 3rem;
-    font-size: 1.8rem;
+
+.header .foto {
+  margin-left:1rem;
+  justify-content: center;
+  }
+  .header .foto img {
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  }
+  .header .datos_personales{
+    text-align: center;
+  }
+
+  .header .contenedor-header .nombre {
+    font-size: 3rem;
     letter-spacing: 0.2rem;
     font-family: "Indie Flower", sans-serif;
     font-weight: bold;
-    }
-    .header .contenedor-header h2 {
-    padding-left: 3rem;
-    width: 14.75rem;
-    text-align: center;
+  }
+
+  .header .contenedor-header h2 {
     font-family: "Indie Flower", sans-serif;
     letter-spacing: 0.1rem;
-    font-size: 1.1rem;
-    }
-  /** Media Queries **/
-  @media only screen and (min-width: 48rem) { 
-    .header {
-      height: 100vh;
-    }
-    .header .contenedor-header {
-      height: 100%;
-    }
-    .header .contenedor-header .nombre {
-      font-size: 4rem;
-      letter-spacing: 0.4rem;
-    }
-    .header .contenedor-header h2 {
-      min-width: 35.375rem;
-      max-width: 35.375rem;
-      font-size: 2.5rem;
-      letter-spacing: 0.5rem;
-    }
+    font-size: 2rem;
   }
+/** Solo en pantalla Computadoras **/
+@media only screen and (min-width: 48rem) {
+  .contenedor-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header .contenedor-header .nombre {
+    font-size: 4rem;
+  }
+
+  .header .contenedor-header h2 {
+    font-size: 2rem;
+  }
+}

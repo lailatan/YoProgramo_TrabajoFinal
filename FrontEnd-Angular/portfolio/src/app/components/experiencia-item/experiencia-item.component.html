@@ -1,18 +1,16 @@
 <div class="item" >
     <div>
         <a><img [src]="miExperiencia.imagen" [alt]="miExperiencia.empresa"></a>
-        <h4>{{miExperiencia.empresa}}</h4>
-        <h4>{{miExperiencia.fecha}}</h4>
+        <h5>{{miExperiencia.empresa}}</h5>
+        <h5>{{miExperiencia.fecha}}</h5>
     </div>
     <div>
-        <h4 >{{miExperiencia.cargo}}</h4>
-        <p>{{miExperiencia.detalle}}</p>
+        <h5 >{{miExperiencia.cargo}}</h5>
+        <h6>{{miExperiencia.detalle}}</h6>
         <div class="contenedor-edicion-bloque">
-            <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-            <span><i class="boton-edicion fa fa-trash-alt"></i></span>
+            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion"></i></span>
         </div>
     </div>
 </div>
-<div class="contenedor-edicion-titulo">
-    <span><i class="boton-edicion-fill fa fa-plus"></i></span>    
-</div>    
+

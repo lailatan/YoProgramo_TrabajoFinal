@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-formacion',
@@ -8,15 +10,20 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class FormacionComponent implements OnInit {
   formacionList: any;
+  modoEdicion: boolean = false;
+  Subscription?: Subscription;
 
-  constructor(
+  constructor(private uiService: UiService,
     private datosPortfolio:PortfolioService
-  ) { }
+  ) { 
+    this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
+  }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosFormacion().subscribe(data => {
       this.formacionList = data.formacion;
     });
+    this.modoEdicion = this.uiService.esModoEdicion();
   }
 
 }

@@ -23,10 +23,9 @@ html {
     border-radius: 5px;
   }
   
-  body {
+  * {
     font-family: "Oswald", sans-serif;
     background-attachment: fixed;
-    color: #ffffff;
   }
   
   .contenedor {
@@ -50,7 +49,6 @@ html {
     font-size: 3rem;
     font-weight: 500;
   }
-  
   .boton-arriba {
     padding: 1rem;
     background: rgba(232, 0, 0, 0.7);
@@ -63,7 +61,6 @@ html {
     right: 1.25rem;
     z-index: 1;
   }
-  
   .boton-login {
     padding: 1rem;
     background: rgba(232, 0, 0, 0.7);
@@ -78,15 +75,13 @@ html {
   }
   .boton-edicion {
     padding: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.4em;
     color: rgba(232, 0, 0, 0.7);
     cursor: pointer;
     z-index: 1;
-    display:none;
     align-self: center;
   }
-  
-  .boton-edicion-fill {
+    .boton-edicion-fill {
     padding: 1rem;
     font-size: 1.4rem;
     color: rgba(232, 0, 0, 0.7);
@@ -94,7 +89,6 @@ html {
     background: #ffffff;
     cursor: pointer;
     z-index: 1;
-    display:none;
   }
   
   .contenedor-edicion-bloque {
@@ -105,7 +99,9 @@ html {
   .contenedor-edicion-bloque-derecha {
     display: flex;
     flex-direction: row;
+    padding-top: 1.5rem;
   }
+
   .contenedor-edicion-linea{
     display: flex;
     flex-direction: row;

@@ -1,16 +1,16 @@
 <div class="item">
-    <div >
+    <div class="escuela">
         <a><img [src]="miFormacion.imagen" [alt]="miFormacion.escuela"></a>
-        <h4>{{miFormacion.escuela}}</h4>
+        <h5>{{miFormacion.escuela}}</h5>
     </div>
-    <div >
+    <div clas="detalle">
         <div *ngFor="let curso of miFormacion.cursos">
-            <h5>{{curso.fecha}} - {{curso.titulo}} </h5>
-            <h5  [innerHTML]="prepararDatos(curso.descripcion)"></h5>
+            <h6>{{curso.fecha}} - {{curso.titulo}} </h6>
+            <h6  [innerHTML]="prepararDatos(curso.descripcion)"></h6>
         </div>
         <div class="contenedor-edicion-bloque">
-            <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-            <span><i class="boton-edicion fa fa-trash-alt"></i></span>
+            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion"></i></span>
         </div>
     </div>
 </div>

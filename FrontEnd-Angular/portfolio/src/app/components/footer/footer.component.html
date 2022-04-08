@@ -6,20 +6,33 @@
             title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
             <a [href]="misDatos.github" target="_blank" class="social github"
             title="GitHub"><i class="fab fa-github"></i></a>
-            <i class="boton-edicion fas fa-pencil-alt"></i>
+            <i  class='boton-edicion fas fa-pencil-alt' 
+                *ngIf="modoEdicion" 
+            ></i>
         </div>
     </div>
-  
+  <!--style= "display: {{modoEdicion ? 'inline-block' : 'none'}}"  (click)="toggleLogIn()" -->
     <div class="sector-autor">
         <div class="contenedor-edicion-linea">
             <p class="autor">{{misDatos.anio}} - {{misDatos.ubicacion}} - {{misDatos.nombre}} - {{misDatos.mail}}</p>    
-            <i class='boton-edicion fas fa-pencil-alt' style="font-size: 1.1rem;"></i>
+            <i  class='boton-edicion fas fa-pencil-alt' 
+                style="font-size: 1.1rem;"
+                *ngIf="modoEdicion" 
+            ></i>
         </div>
     </div>
     
-    <!--
-    <span><i class="boton-arriba fa fa-chevron-up" id="boton-arriba" aria-hidden="true"></i></span>
-    -->
-    <span><i class="boton-login fa fa-user-edit" id="boton-login" aria-hidden="true"></i></span>
-  </footer>
+    <span>
+        <i class="boton-login fa fa-user-edit" 
+            id="boton-login" aria-hidden="true" 
+            (click)="toggleLogIn()"
+            *ngIf="!modoEdicion"
+        ></i></span>
+    <span>
+        <i class="boton-login fas fa-sign-out-alt" 
+            aria-hidden="true" 
+            (click)="toggleLogOut()"
+            *ngIf="modoEdicion"
+        ></i></span>
+</footer>
   

@@ -4,8 +4,8 @@
     <div class="img">
         <img [src]="miTecnologia.imagen" [alt]="miTecnologia.nombre">
         <div class="contenedor-edicion-bloque-derecha">
-            <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
-            <span><i class="boton-edicion fa fa-trash-alt"></i></span>
+            <span><i class="boton-edicion fa fa-pencil-alt" *ngIf="modoEdicion"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt" *ngIf="modoEdicion"></i></span>
         </div>    
     </div>
     <div class="detalles">

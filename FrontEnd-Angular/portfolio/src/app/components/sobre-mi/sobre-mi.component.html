@@ -3,9 +3,9 @@
     <h2 class="titulo" id="sobre-mi">Sobre Mi</h2>
     <div class="contenedor contenedor-sobre-mi">
         <div class="item">
-            <h3>{{misDatos.sobre_mi}}</h3>
+            <h5>{{misDatos.sobre_mi}}</h5>
              <div class="contenedor-edicion-bloque">
-                <span><i class="boton-edicion fa fa-pencil-alt"></i></span>
+                <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
             </div>
         </div>
     </div>
