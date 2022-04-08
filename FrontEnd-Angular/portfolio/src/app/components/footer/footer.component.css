@@ -60,10 +60,10 @@
     top: 90%;
   }
   .footer .contenedor .redes-sociales .linkedin::before {
-    background: #cc4545;
+    background: #9f0e0e;
   }
   .footer .contenedor .redes-sociales .github::before {
-    background: #cc4545;
+    background: #9f0e0e;
   }
   .footer .contenedor .redes-sociales .social:hover::before {
     animation: aaa 0.7s 1;
