@@ -1,8 +1,9 @@
 <div class="modal-header">
 	<h1 class="modal-title">Inicio Sesión</h1>
-	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(false)">
-        <span aria-hidden="true">&times;</span>
-      </button>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
 </div>
 <div class="modal-body">
 	<div class="container">
@@ -12,7 +13,6 @@
 		name="email"
 		placeholder="Email"
 		required="required"
-		
 		/>
 		<input
 		type="password"

@@ -1,0 +1,62 @@
+<div class="modal-header">
+	<h1 class="modal-title">Datos Encabezado</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
+</div>
+<div class="modal-body">
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+			<div>
+				<input
+				class="form-control"
+				[ngClass]="{ 'is-invalid': submitted && f['foto'].errors }"
+				type="text"
+				[(ngModel)]="foto"
+				name="foto"
+				formControlName="foto"
+				placeholder="Foto"
+				required="required"
+				autofocus
+				/>
+				<div *ngIf="submitted && f['foto'].errors" class="error">
+				  <div *ngIf="f['foto'].errors['required']">* Debe ingresar una Foto </div>
+			   </div>
+			</div>
+			<div>
+				<input
+				class="form-control"
+				[ngClass]="{ 'is-invalid': submitted && f['nombre'].errors }"
+				type="text"
+				[(ngModel)]="nombre"
+				name="nombre"
+				formControlName="nombre"
+				placeholder="Nombre"
+				required="required"
+				/>
+				<div *ngIf="submitted && f['nombre'].errors" class="error">
+				  <div *ngIf="f['nombre'].errors['required']">* Debe ingresar un Nombre </div>
+			   </div>
+			</div>
+			<div >
+				<input
+				formControlName="profesion" 
+				class="form-control" 
+				[ngClass]="{ 'is-invalid': submitted && f['profesion'].errors }"
+				type="text"
+				[(ngModel)]="profesion"
+				name="profesion"
+				placeholder="Profesión"
+				required="required"
+				/>
+				<div *ngIf="submitted && f['profesion'].errors" class="error">
+					<div *ngIf="f['profesion'].errors['required']">* Debe ingresar una Profesión</div>
+				</div>
+			</div>
+			<button type="submit">Guardar</button>
+		</div>	
+	</form>
+  </div>
+<div class="modal-footer">
+</div>

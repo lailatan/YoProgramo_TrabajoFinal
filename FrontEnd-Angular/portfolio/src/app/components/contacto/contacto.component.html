@@ -1,0 +1,64 @@
+<!--CONTACTO-->        
+<section class="contacto">
+    <h2 class="titulo" id="contacto">Contacto</h2>
+    <div class="contenedor contenedor-contacto">
+        <div class="mensaje-enviado">
+            <h3 *ngIf="enviado">Su mensaje ha sido enviado.</h3>
+        </div>
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" *ngIf="!enviado">
+            <div class="container">
+                <div>
+                    <input
+                        class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['mail'].errors }"
+                        type="mail"
+                        [(ngModel)]="mail"
+                        name="mail"
+                        formControlName="mail"
+                        placeholder="Email"
+                        required="required"
+                        autofocus
+                    />
+                    <div *ngIf="submitted && f['mail'].errors" class="error">
+                        <div *ngIf="f['mail'].errors['required']">* Debe ingresar un Email</div>
+                        <div *ngIf="f['mail'].errors['email']">* Debe ingresar un Email válido</div>
+                    </div>
+                </div>
+                <div>
+                    <input
+                        class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['titulo'].errors }"
+                        type="text"
+                        [(ngModel)]="titulo"
+                        name="titulo"
+                        formControlName="titulo"
+                        placeholder="Título"
+                        required="required"
+                    />
+                    <div *ngIf="submitted && f['titulo'].errors" class="error">
+                        <div *ngIf="f['titulo'].errors['required']">* Debe ingresar un Título </div>
+                    </div>
+                </div>
+                <div>
+                    <textarea 
+                        class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['mensaje'].errors }"
+                        [(ngModel)]="mensaje"
+                        name="mensaje"
+                        formControlName="mensaje"
+                        placeholder="Mensaje... "
+                        rows="10"
+                        required="required"
+                    ></textarea>
+                    <div *ngIf="submitted && f['mensaje'].errors" class="error">
+                        <div *ngIf="f['mensaje'].errors['required']">* Debe ingresar un Mensaje </div>
+                    </div>
+                </div>
+                <button type="submit">Enviar</button>
+            </div>	
+        </form>
+    </div>
+</section>
+
+
+

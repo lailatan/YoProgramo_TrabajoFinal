@@ -5,7 +5,7 @@
         <div class="item">
             <h5>{{misDatos.sobre_mi}}</h5>
              <div class="contenedor-edicion-bloque">
-                <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
+                <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i></span>
             </div>
         </div>
     </div>

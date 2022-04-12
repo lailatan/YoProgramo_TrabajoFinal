@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<h1 class="modal-title">Datos Sobre Mi</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
+</div>
+<div class="modal-body">
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+			<div>
+				<textarea 
+				class="form-control"
+				[ngClass]="{ 'is-invalid': submitted && f['sobre_mi'].errors }"
+				[(ngModel)]="sobre_mi"
+				name="sobre_mi"
+				formControlName="sobre_mi"
+				placeholder="Sobre Mi... "
+				required="required"
+				rows="10"
+				autofocus
+				></textarea>
+				<div *ngIf="submitted && f['sobre_mi'].errors" class="error">
+				  <div *ngIf="f['sobre_mi'].errors['required']">* Debe ingresar un Detalle Sobre Mi </div>
+			   </div>
+			</div>
+			<button type="submit">Guardar</button>
+		</div>	
+	</form>
+  </div>
+<div class="modal-footer">
+</div>
+

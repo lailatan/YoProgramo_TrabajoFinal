@@ -3,14 +3,14 @@
         <a><img [src]="miFormacion.imagen" [alt]="miFormacion.escuela"></a>
         <h5>{{miFormacion.escuela}}</h5>
     </div>
-    <div clas="detalle">
-        <div *ngFor="let curso of miFormacion.cursos">
-            <h6>{{curso.fecha}} - {{curso.titulo}} </h6>
+    <div class="detalle">
+        <div *ngFor="let curso of miFormacion.cursos" >
+            <h6>{{curso.anio}} - {{curso.titulo}} </h6>
             <h6  [innerHTML]="prepararDatos(curso.descripcion)"></h6>
         </div>
         <div class="contenedor-edicion-bloque">
-            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
-            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion"></i></span>
+            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion" (click)="eliminarDatos()"></i></span>
         </div>
     </div>
 </div>

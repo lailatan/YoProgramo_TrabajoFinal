@@ -5,11 +5,13 @@
         <app-proyectos-item
             *ngFor="let unProyecto of proyectosList"
             [miProyecto]="unProyecto"
+            (onDeleteProyecto)="eliminarProyecto(unProyecto)"
+            (onUpdateProyecto)="cambiarProyecto(unProyecto)"
         >
         </app-proyectos-item>
     </div>             
     <div class="contenedor-edicion-titulo">
-        <span><i class="boton-edicion-fill fa fa-plus"  *ngIf="modoEdicion"></i></span>    
+        <span><i class="boton-edicion-fill fa fa-plus"  *ngIf="modoEdicion"  (click)="agregarDatos()"></i></span>    
     </div>    
 </section>
 

@@ -1,0 +1,100 @@
+<div class="modal-header">
+	<h1 class="modal-title">Datos Pie de Página</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
+</div>
+<div class="modal-body">
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+			<div>
+				<input
+					formControlName="linkedin" 
+					class="form-control"
+					[ngClass]="{ 'is-invalid': submitted && f['linkedin'].errors }"
+					type="text"
+					[(ngModel)]="linkedin"
+					name="linkedin"
+					placeholder="LinkedIn"
+					required="required"
+					autofocus	
+				/>
+				<div *ngIf="submitted && f['linkedin'].errors" class="error">
+				  <div *ngIf="f['linkedin'].errors['required']">* Debe ingresar una direccion de LinkedIn </div>
+			   </div>
+			</div>
+			<div >
+				<input
+					formControlName="github" 
+					class="form-control" 
+					[ngClass]="{ 'is-invalid': submitted && f['github'].errors }"
+					type="text"
+					[(ngModel)]="github"
+					name="github"
+					placeholder="GitHub"
+					required="required"
+				/>
+				<div *ngIf="submitted && f['github'].errors" class="error">
+					<div *ngIf="f['github'].errors['required']">* Debe ingresar una direccion de GitHub</div>
+				</div>			
+			</div>
+			<div >
+				<input
+					formControlName="anio" 
+					class="form-control" 
+					[ngClass]="{ 'is-invalid': submitted && f['anio'].errors }"
+					type="number"
+					[(ngModel)]="anio"
+					name="anio"
+					placeholder="Año"
+					min="1900"
+					max="3000"
+					step="1"
+					required="required"
+					maxlength="4"
+					minlength="4"
+				/>
+				<div *ngIf="submitted && f['anio'].errors" class="error">
+					<div *ngIf="f['anio'].errors['required']">* Debe ingresar un Año</div>
+					<div *ngIf="f['anio'].errors['max'] || f['anio'].errors['min']">* Debe ingresar un Año válido</div>
+					<div *ngIf="f['anio'].errors['maxlength'] || f['anio'].errors['minlength']">* Debe ingresar un Año válido</div>
+				</div>			
+			</div>
+			<div>
+				<input
+					formControlName="ubicacion" 
+					class="form-control" 
+					[ngClass]="{ 'is-invalid': submitted && f['ubicacion'].errors }"
+					type="text"
+					[(ngModel)]="ubicacion"
+					name="ubicacion"
+					placeholder="Ubicacion"
+					required="required"
+				/>
+				<div *ngIf="submitted && f['ubicacion'].errors" class="error">
+					<div *ngIf="f['ubicacion'].errors['required']">* Debe ingresar una Ubicación</div>
+				</div>			
+			</div>
+			<div>
+				<input
+					formControlName="mail" 
+					class="form-control" 
+					[ngClass]="{ 'is-invalid': submitted && f['mail'].errors }"
+					type="text"
+					[(ngModel)]="mail"
+					name="mail"
+					placeholder="Email"
+					required="required"
+				/>
+				<div *ngIf="submitted && f['mail'].errors" class="error">
+					<div *ngIf="f['mail'].errors['required']">* Debe ingresar un Mail</div>
+					<div *ngIf="f['mail'].errors['email']">* Debe ingresar un Mail válido</div>
+				</div>			
+			</div>	
+			<button type="submit">Guardar</button>
+		</div>	
+	</form>
+  </div>
+<div class="modal-footer">
+</div>

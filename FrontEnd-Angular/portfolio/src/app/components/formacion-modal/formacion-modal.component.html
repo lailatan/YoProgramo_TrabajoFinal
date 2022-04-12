@@ -1,0 +1,64 @@
+<div class="modal-header">
+	<h1 class="modal-title">Datos Formación</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
+</div>
+<div class="modal-body">
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+			<div>
+				<input
+				class="form-control"
+				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
+				type="text"
+				[(ngModel)]="imagen"
+				name="imagen"
+				formControlName="imagen"
+				placeholder="Imagen"
+				required="required"
+				autofocus
+				/>
+				<div *ngIf="submitted && f['imagen'].errors" class="error">
+				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>
+			   </div>
+			</div>
+			<div>
+				<input
+				class="form-control"
+				[ngClass]="{ 'is-invalid': submitted && f['escuela'].errors }"
+				type="text"
+				[(ngModel)]="escuela"
+				name="escuela"
+				formControlName="escuela"
+				placeholder="Establecimiento Educativo"
+				required="required"
+				/>
+				<div *ngIf="submitted && f['escuela'].errors" class="error">
+				  <div *ngIf="f['escuela'].errors['required']">* Debe ingresar un Establecimiento Educativo </div>
+			   </div>
+			</div>
+			<div class="detalle">
+				<div class="detalle-titulo">
+					<h3>Cursos</h3>
+					<span><i class="boton-edicion fa fa-plus"   (click)="agregarCurso()"></i></span>	
+				</div>
+				<div *ngFor="let curso of cursos" class="detalle-curso">
+					<h6>{{curso.anio}} - {{curso.titulo}} </h6>
+					<h6  [innerHTML]="prepararDatos(curso.descripcion)"></h6>
+					<div class="contenedor-edicion-bloque">
+						<span><i class="boton-edicion fa fa-pencil-alt"   (click)="editarCurso(curso)"></i></span>
+						<span><i class="boton-edicion fa fa-trash-alt"   (click)="eliminarCurso(curso)"></i></span>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="submitted && faltanCursos()" class="error" >
+				<div *ngIf="faltanCursos()"><p>* Debe ingresar al menos un Curso</p></div>
+		   </div>
+	<button type="submit">Guardar</button>
+		</div>	
+	</form>
+  </div>
+<div class="modal-footer">
+</div>

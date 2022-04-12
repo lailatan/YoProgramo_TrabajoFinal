@@ -1,155 +1,195 @@
 {
-	"foto": "assets/imagenes/foto.jpg",
-	"nombre": "Natalia Lopardo",
-	"ubicacion": "Argentina",
-	"mail": "natalialopardo19@gmail.com",
-	"anio": "2022",
-	"profesion": "Desarrolladora Java FullStack",
-	"sobre_mi": "Soy Desarrolladora FullStack, BackEnd y Mobile. Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.",
-	"formacion": [{
-		"imagen": "assets/imagenes/formacion/ada.jpeg",
-		"escuela": "Ada ITW",
-		"cursos":[{	
-			"fecha": "2020/2021",
-			"titulo": "Java BackEnd Developer (400 horas)",
-			"descripcion": "Java / Spring Boot/ Hibernate. \nMySQL"
-		}]
-	}, {
-		"imagen": "assets/imagenes/formacion/cuvl.jpeg",
-		"escuela": "Centro Universitario Vicente López / EducacionIT",
-		"cursos":[{	
-			"fecha": "2021",
-			"titulo": "Javascript Desarrollador Avanzado (30hs)",
-			"descripcion": ""
-		},{
-			"fecha": "2020",
-			"titulo": "Programación Phyton (42hs)",
-			"descripcion": ""
-		},{
-			"fecha": "2020",
-			"titulo": "Desarrollo Aplicaciones Móviles (48hs)",
-			"descripcion": ""
-		}]
-	}, {
-		"imagen": "assets/imagenes/formacion/fablab.jpeg",
-		"escuela": "FabLab Vicente López",
-		"cursos":[{	
-			"fecha": "2020",
-			"titulo": "POO en Phyton",
-			"descripcion": ""
+	"personas":[{ 
+		"id": "1",
+		"datos_personales": {	
+			"foto": "assets/imagenes/foto.jpg",
+			"nombre": "Natalia Lopardo",
+			"ubicacion": "Argentina",
+			"mail": "natalialopardo19@gmail.com",
+			"anio": "2022",
+			"profesion": "Desarrolladora Java FullStack",
+			"sobre_mi": "Soy Desarrolladora FullStack, BackEnd y Mobile. Me apasiona encontrar soluciones Informáticas a problemas/situaciones cotidianas, moldeando la realidad con 01100011 01100101 01110010 01101111 01110011 y 01110101 01101110 01101111 01110011.",
+			"linkedin": "https://www.linkedin.com/in/natalialopardo",
+			"github": "https://github.com/lailatan/"
+		},
+		"experiencias": [{
+			"id": "1",
+			"imagen": "assets/imagenes/experiencia/ing.jpg",
+			"empresa": "ING Insurance",
+			"fecha_desde": "04/2001",
+			"fecha_hasta": "11/2003",
+			"cargo": "Analista Programadora",
+			"detalle": "Análisis, diseño y desarrollo de nuevas aplicaciones y mantenimiento de las existentes: interfases con CobolAS400, SQLCobol, Visual Basic y bases de datos Oracle.Interfases y desarrollo de impresiones mediante JetFormControl de cartas a clientes, reportes e informes."
+			}, {
+			"id": "2",
+			"imagen": "assets/imagenes/experiencia/empresa.png",
+			"empresa": "División CRM",
+			"fecha_desde": "09/1999",
+			"fecha_hasta": "03/2001",
+			"cargo": "Consultora/Analista Programadora Vantive",
+			"detalle": "Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package enPL/SQL y Base de Datos Oracle). Capacitaciones en Vantive a programadores."
+			}, {
+			"id": "3",
+			"imagen": "assets/imagenes/experiencia/met.jpg",
+			"empresa": "Metropolitan Life",
+			"fecha_desde": "09/1998",
+			"fecha_hasta": "09/1999",
+			"cargo": "Analista de Nuevas Tecnologías",
+			"detalle": "Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, interfaces con AS400. Análisis y dirección del proyecto de compatibilidad con el Año 2000. Soporte a los usuarios. Generación de listados y reportes de datos."
+			}, {
+			"id": "4",
+			"imagen": "assets/imagenes/experiencia/empresa.png",
+			"empresa": "Inner Consulting S.A.",
+			"fecha_desde": "03/1997",
+			"fecha_hasta": "08/1998",
+			"cargo": "Analista Programadora",
+			"detalle": "Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL). Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A."
+			}],
+		"formaciones": [{
+			"id": "1",
+			"imagen": "assets/imagenes/formacion/ada.jpeg",
+			"escuela": "Ada ITW",
+			"cursos":[{
+				"id": "1",	
+				"anio": "2021",
+				"titulo": "Java BackEnd Developer (400 horas)",
+				"descripcion": "Java / Spring Boot/ Hibernate. \nMySQL"
+				}]
+			}, {
+			"id": "2",
+			"imagen": "assets/imagenes/formacion/cuvl.jpeg",
+			"escuela": "Centro Universitario Vicente López / EducacionIT",
+			"cursos":[{	
+				"id": "1",
+				"anio": "2021",
+				"titulo": "Javascript Desarrollador Avanzado (30hs)",
+				"descripcion": ""
+				},{
+				"id": "2",
+				"anio": "2020",
+				"titulo": "Programación Phyton (42hs)",
+				"descripcion": ""
+				},{
+				"id": "3",
+				"anio": "2020",
+				"titulo": "Desarrollo Aplicaciones Móviles (48hs)",
+				"descripcion": ""
+				}]
+			}, {
+			"id": "3",
+			"imagen": "assets/imagenes/formacion/fablab.jpeg",
+			"escuela": "FabLab Vicente López",
+			"cursos":[{	
+				"id": "1",
+				"anio": "2020",
+				"titulo": "POO en Phyton",
+				"descripcion": ""
+				}, {
+				"id": "2",
+				"anio": "2020",
+				"titulo": "SQL y MySQL",
+				"descripcion": ""
+				}, {
+				"id": "3",
+				"anio": "2020",
+				"titulo": "Introducción Phyton",
+				"descripcion": ""
+				}]
+			}, {
+			"id": "4",
+			"imagen": "assets/imagenes/formacion/mcp.jpeg",
+			"escuela": "Microsoft",
+			"cursos":[{	
+				"id": "1",
+				"anio": "1998",
+				"titulo": "MCP - Microsoft Certified Professional",
+				"descripcion": "Microsoft - Examen Drake Sylvan Prometric. \nDeveloping Applications with Microsoft Visual Basic 5.0"
+				}]
+			}, {
+			"id": "5",
+			"imagen": "assets/imagenes/formacion/uba.jpeg",
+			"escuela": "Universidad de Buenos Aires",
+			"cursos":[{
+				"id": "1",	
+				"anio": "1995",
+				"titulo": "Licenciatura en Análisis de Sistemas",
+				"descripcion": "Facultad de Ingeniería. \nCursado hasta 3er. año."
+				}]
+			}],
+		"proyectos": [{
+			"id": "1",
+			"imagen": "assets/imagenes/proyectos/ia_pantallas.png",
+			"link": "https://github.com/lailatan/Android_Calc_Insulina_Activa",
+			"icono": "assets/imagenes/proyectos/ia.jpg",
+			"nombre": "Insulina Activa",
+			"tecnologias": "Android Studio - Java"
 		}, {
-			"fecha": "2020",
-			"titulo": "SQL y MySQL",
-			"descripcion": ""
+			"id": "2",
+			"imagen": "assets/imagenes/proyectos/ch_pantallas.jpg",
+			"link": "https://github.com/lailatan/Android_ConteodeCarbohidratos_V2",
+			"icono": "assets/imagenes/proyectos/ch.jpg",
+			"nombre": "Conteo Carbohidratos",
+			"tecnologias": "Android Studio - Java"
 		}, {
-			"fecha": "2020",
-			"titulo": "Introducción Phyton",
-			"descripcion": ""
+			"id": "3",
+			"imagen": "assets/imagenes/proyectos/tarot_pantallas.jpg",
+			"link": "https://github.com/lailatan/Android_FecNacTarot",
+			"icono": "assets/imagenes/proyectos/tarot.jpg",
+			"nombre": "Tarot",
+			"tecnologias": "Android Studio - Java"
+		}, {
+			"id": "4",
+			"imagen": "assets/imagenes/proyectos/medidas_pantallas.png",
+			"link": "https://github.com/lailatan/Android_ConvertidorMedidasNatalia",
+			"icono": "assets/imagenes/proyectos/medidas.jpg",
+			"nombre": "Conversor Medidas",
+			"tecnologias": "Android Studio - Java"
+		}],
+		"tecnologias": [{
+			"id": "1",
+			"imagen": "assets/imagenes/tecnologias/java.png",
+			"nombre": "JAVA",
+			"detalle": "Java es un lenguaje de programación orientado a objetos que se incorporó al ámbito de la informática en los años noventa. La idea de Java es que pueda realizarse programas con la posibilidad de ejecutarse en cualquier contexto, en cualquier ambiente, siendo así su portabilidad uno de sus principales logros."
+		}, {
+			"id": "2",
+			"imagen": "assets/imagenes/tecnologias/python.png",
+			"nombre": "PYTHON",
+			"detalle": "Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Es lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma."
+		}, {
+			"id": "3",
+			"imagen": "assets/imagenes/tecnologias/vb.png",
+			"nombre": "VISUAL BASIC",
+			"detalle": "Visual Basic (VB) es un lenguaje de programación dirigido por eventos, desarrollado por Alan Cooper para Microsoft. Este lenguaje de programación es un dialecto de BASIC, con importantes agregados. Su primera versión fue presentada en 1991, con la intención de simplificar la programación utilizando un ambiente de desarrollo."
+		}, {
+			"id": "4",
+			"imagen": "assets/imagenes/tecnologias/html.png",
+			"nombre": "HTML",
+			"detalle": "El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página web y sus contenidos. HTML5 es la quinta revisión del estándar HTML y permite soportar lo último en multimedia."
+		}, {
+			"id": "5",
+			"imagen": "assets/imagenes/tecnologias/css.png",
+			"nombre": "CSS",
+			"detalle": "CSS (siglas en inglés de Cascading Style Sheets), en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
+		}, {
+			"id": "6",
+			"imagen": "assets/imagenes/tecnologias/js.png",
+			"nombre": "JAVASCRIPT",
+			"detalle": "JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico."
+		}, {
+			"id": "7",
+			"imagen": "assets/imagenes/tecnologias/json_api_sql.png",
+			"nombre": "SQL - JSON - API REST",
+			"detalle": " SQL (Structured Query Language) es un lenguaje de dominio específico, diseñado para administrar información de bases de datos relacionales API REST define un conjunto de funciones para realizar solicitudes y recibir respuestas a través del protocolo HTTP.JSON (JS Object Notation) es un formato de texto sencillo para el intercambio de datos."
+		}, {
+			"id": "8",
+			"imagen": "assets/imagenes/tecnologias/android_intellij_vsc.png",
+			"nombre": "Android Studio - IntelliJ Idea - Visual Studio Code",
+			"detalle": "Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. IntelliJ IDEA es un entorno de desarrollo integrado (IDE) para el desarrollo de programas informáticos. Visual Studio Code es un editor de código fuente para Windows, Linux, macOS y Web."
+		}, {
+			"id": "9",
+			"imagen": "assets/imagenes/tecnologias/git_github.png",
+			"nombre": "GIT - GITHUB",
+			"detalle": "GIT es un software de control de versiones, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando tienen un gran número de archivos de código fuente.GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de Git."
 		}]
-	}, {
-		"imagen": "assets/imagenes/formacion/mcp.jpeg",
-		"escuela": "Microsoft",
-		"cursos":[{	
-			"fecha": "1998",
-			"titulo": "MCP - Microsoft Certified Professional",
-			"descripcion": "Microsoft - Examen Drake Sylvan Prometric. \nDeveloping Applications with Microsoft Visual Basic 5.0"
-		}]
-	}, {
-		"imagen": "assets/imagenes/formacion/uba.jpeg",
-		"escuela": "Universidad de Buenos Aires",
-		"cursos":[{	
-			"fecha": "1995",
-			"titulo": "Licenciatura en Análisis de Sistemas",
-			"descripcion": "Facultad de Ingeniería. \nCursado hasta 3er. año."
-		}]
-	}],
-	"tecnologias": [{
-		"imagen": "assets/imagenes/tecnologias/java.png",
-		"nombre": "JAVA",
-		"detalle": "Java es un lenguaje de programación orientado a objetos que se incorporó al ámbito de la informática en los años noventa. La idea de Java es que pueda realizarse programas con la posibilidad de ejecutarse en cualquier contexto, en cualquier ambiente, siendo así su portabilidad uno de sus principales logros."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/python.png",
-		"nombre": "PYTHON",
-		"detalle": "Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Es lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/vb.png",
-		"nombre": "VISUAL BASIC",
-		"detalle": "Visual Basic (VB) es un lenguaje de programación dirigido por eventos, desarrollado por Alan Cooper para Microsoft. Este lenguaje de programación es un dialecto de BASIC, con importantes agregados. Su primera versión fue presentada en 1991, con la intención de simplificar la programación utilizando un ambiente de desarrollo."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/html.png",
-		"nombre": "HTML",
-		"detalle": "El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página web y sus contenidos. HTML5 es la quinta revisión del estándar HTML y permite soportar lo último en multimedia."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/css.png",
-		"nombre": "CSS",
-		"detalle": "CSS (siglas en inglés de Cascading Style Sheets), en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/js.png",
-		"nombre": "JAVASCRIPT",
-		"detalle": "JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/json_api_sql.png",
-		"nombre": "SQL - JSON - API REST",
-		"detalle": " SQL (Structured Query Language) es un lenguaje de dominio específico, diseñado para administrar información de bases de datos relacionales API REST define un conjunto de funciones para realizar solicitudes y recibir respuestas a través del protocolo HTTP.JSON (JS Object Notation) es un formato de texto sencillo para el intercambio de datos."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/android_intellij_vsc.png",
-		"nombre": "Android Studio - IntelliJ Idea - Visual Studio Code",
-		"detalle": "Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. IntelliJ IDEA es un entorno de desarrollo integrado (IDE) para el desarrollo de programas informáticos. Visual Studio Code es un editor de código fuente para Windows, Linux, macOS y Web."
-	}, {
-		"imagen": "assets/imagenes/tecnologias/git_github.png",
-		"nombre": "GIT - GITHUB",
-		"detalle": "GIT es un software de control de versiones, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando tienen un gran número de archivos de código fuente.GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de Git."
-	}],
-	"experiencia": [{
-		"imagen": "assets/imagenes/experiencia/ing.jpg",
-		"empresa": "ING Insurance",
-		"fecha": "04/2001 a 11/2003",
-		"cargo": "Analista Programadora",
-		"detalle": "Análisis, diseño y desarrollo de nuevas aplicaciones y mantenimiento de las existentes: interfases con CobolAS400, SQLCobol, Visual Basic y bases de datos Oracle.Interfases y desarrollo de impresiones mediante JetFormControl de cartas a clientes, reportes e informes."
-	}, {
-		"imagen": "assets/imagenes/experiencia/empresa.png",
-		"empresa": "División CRM",
-		"fecha": "09/1999 a 03/2001",
-		"cargo": "Consultora/Analista Programadora Vantive",
-		"detalle": "Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package enPL/SQL y Base de Datos Oracle). Capacitaciones en Vantive a programadores."
-	}, {
-		"imagen": "assets/imagenes/experiencia/met.jpg",
-		"empresa": "Metropolitan Life",
-		"fecha": "09/1998 a 09/1999",
-		"cargo": "Analista de Nuevas Tecnologías",
-		"detalle": "Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, interfaces con AS400. Análisis y dirección del proyecto de compatibilidad con el Año 2000. Soporte a los usuarios. Generación de listados y reportes de datos."
-	}, {
-		"imagen": "assets/imagenes/experiencia/empresa.png",
-		"empresa": "Inner Consulting S.A.",
-		"fecha": "03/1997 a 08/1998",
-		"cargo": "Analista Programadora",
-		"detalle": "Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL). Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A."
-	}],
-	"proyectos": [{
-		"imagen": "assets/imagenes/proyectos/ia_pantallas.png",
-		"link": "https://github.com/lailatan/Android_Calc_Insulina_Activa",
-		"icono": "assets/imagenes/proyectos/ia.jpg",
-		"nombre": "Insulina Activa",
-		"tecnologias": "Android Studio - Java"
-	}, {
-		"imagen": "assets/imagenes/proyectos/ch_pantallas.jpg",
-		"link": "https://github.com/lailatan/Android_ConteodeCarbohidratos_V2",
-		"icono": "assets/imagenes/proyectos/ch.jpg",
-		"nombre": "Conteo Carbohidratos",
-		"tecnologias": "Android Studio - Java"
-	}, {
-		"imagen": "assets/imagenes/proyectos/tarot_pantallas.jpg",
-		"link": "https://github.com/lailatan/Android_FecNacTarot",
-		"icono": "assets/imagenes/proyectos/tarot.jpg",
-		"nombre": "Tarot",
-		"tecnologias": "Android Studio - Java"
-	}, {
-		"imagen": "assets/imagenes/proyectos/medidas_pantallas.png",
-		"link": "https://github.com/lailatan/Android_ConvertidorMedidasNatalia",
-		"icono": "assets/imagenes/proyectos/medidas.jpg",
-		"nombre": "Conversor Medidas",
-		"tecnologias": "Android Studio - Java"
-	}],
-	"linkedin": "https://www.linkedin.com/in/natalialopardo",
-	"github": "https://github.com/lailatan/"
+	}]
 }

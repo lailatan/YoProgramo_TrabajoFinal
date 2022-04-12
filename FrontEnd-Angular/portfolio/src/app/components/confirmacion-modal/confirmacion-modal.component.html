@@ -1,0 +1,18 @@
+<div class="modal-header">
+	<h1 class="modal-title">Confirmación</h1>
+</div>
+<div class="modal-body">
+	<form >
+		<div class="container">
+			<div class="pregunta">
+				<h4>{{texto}}</h4>
+			</div>
+            <div class="botones">
+                <button type="button" (click)="activeModal.close(false)">Cancelar</button>
+                <button type="button" (click)="activeModal.close(true)">Aceptar</button>
+            </div>	
+        </div>
+    </form>
+  </div>
+<div class="modal-footer">
+</div>

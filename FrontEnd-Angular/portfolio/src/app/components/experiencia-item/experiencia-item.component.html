@@ -2,14 +2,14 @@
     <div>
         <a><img [src]="miExperiencia.imagen" [alt]="miExperiencia.empresa"></a>
         <h5>{{miExperiencia.empresa}}</h5>
-        <h5>{{miExperiencia.fecha}}</h5>
+        <h5>{{miExperiencia.fecha_desde}} a {{miExperiencia.fecha_hasta}}</h5>
     </div>
     <div>
         <h5 >{{miExperiencia.cargo}}</h5>
         <h6>{{miExperiencia.detalle}}</h6>
         <div class="contenedor-edicion-bloque">
-            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i></span>
-            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion"></i></span>
+            <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i></span>
+            <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion" (click)="eliminarDatos()"></i></span>
         </div>
     </div>
 </div>

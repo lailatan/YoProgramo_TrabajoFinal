@@ -20,6 +20,16 @@ import { ProyectosItemComponent } from './components/proyectos-item/proyectos-it
 import { TecnologiasItemComponent } from './components/tecnologias-item/tecnologias-item.component';
 import { FormacionItemComponent } from './components/formacion-item/formacion-item.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { EncabezadoModalComponent } from './components/encabezado-modal/encabezado-modal.component';
+import { FooterModalComponent } from './components/footer-modal/footer-modal.component';
+import { SobreMiModalComponent } from './components/sobre-mi-modal/sobre-mi-modal.component';
+import { FormacionModalComponent } from './components/formacion-modal/formacion-modal.component';
+import { TecnologiaModalComponent } from './components/tecnologia-modal/tecnologia-modal.component';
+import { ConfirmacionModalComponent } from './components/confirmacion-modal/confirmacion-modal.component';
+import { ExperienciaModalComponent } from './components/experiencia-modal/experiencia-modal.component';
+import { ProyectoModalComponent } from './components/proyecto-modal/proyecto-modal.component';
+import { CursoModalComponent } from './components/curso-modal/curso-modal.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -33,6 +43,7 @@ const appRoutes: Routes = [
   {path:'formacion',component: FormacionComponent},
   {path:'experiencia',component: ExperienciaComponent},
   {path:'experiencias',component: ExperienciaComponent},
+  {path:'contacto',component: ContactoComponent},
   {path:'edit',component: EncabezadoComponent},
   {path:'login',component: LoginModalComponent}
 ]
@@ -52,7 +63,17 @@ const appRoutes: Routes = [
     ProyectosItemComponent,
     TecnologiasItemComponent,
     FormacionItemComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    EncabezadoModalComponent,
+    FooterModalComponent,
+    SobreMiModalComponent,
+    FormacionModalComponent,
+    TecnologiaModalComponent,
+    ConfirmacionModalComponent,
+    ExperienciaModalComponent,
+    ProyectoModalComponent,
+    CursoModalComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

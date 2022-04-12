@@ -8,16 +8,18 @@
             title="GitHub"><i class="fab fa-github"></i></a>
             <i  class='boton-edicion fas fa-pencil-alt' 
                 *ngIf="modoEdicion" 
+                (click)="editarDatos()"
             ></i>
         </div>
     </div>
   <!--style= "display: {{modoEdicion ? 'inline-block' : 'none'}}"  (click)="toggleLogIn()" -->
     <div class="sector-autor">
         <div class="contenedor-edicion-linea">
-            <p class="autor">{{misDatos.anio}} - {{misDatos.ubicacion}} - {{misDatos.nombre}} - {{misDatos.mail}}</p>    
+            <p class="autor">{{misDatos.anio}} - {{misDatos.ubicacion}} - {{misDatos.mail}}</p>    
             <i  class='boton-edicion fas fa-pencil-alt' 
                 style="font-size: 1.1rem;"
                 *ngIf="modoEdicion" 
+                (click)="editarDatos()"
             ></i>
         </div>
     </div>

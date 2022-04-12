@@ -1,0 +1,58 @@
+<div class="modal-header">
+	<h1 class="modal-title">Datos Curso</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.dismiss(false)"
+	></i>
+</div>
+<div class="modal-body">
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+            <div>
+                <input
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['anio'].errors }"
+                    type="number" pattern="\d{4}" min="1900" max="3000"
+                    [(ngModel)]="anio"
+                    name="anio"
+                    formControlName="anio"
+                    placeholder="Año"
+                    required="required"
+                    autofocus
+                />
+                <div *ngIf="submitted && f['anio'].errors" class="error">
+                    <div *ngIf="f['anio'].errors['required']">* Debe ingresar un Año</div>
+                    <div *ngIf="f['anio'].errors['min'] || f['anio'].errors['max']">* Debe ingresar un Año válido</div>
+                </div>
+            </div>
+			<div>
+				<input
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['titulo'].errors }"
+                    type="text"
+                    [(ngModel)]="titulo"
+                    name="titulo"
+                    formControlName="titulo"
+                    placeholder="Título"
+                    required="required"
+				/>
+				<div *ngIf="submitted && f['titulo'].errors" class="error">
+				  <div *ngIf="f['titulo'].errors['required']">* Debe ingresar un Título </div>
+			   </div>
+            </div>
+			<div>
+                <textarea 
+                    class="form-control"
+                    [(ngModel)]="descripcion"
+                    name="descripcion"
+                    formControlName="descripcion"
+                    placeholder="Descripción... "
+                    rows="10"
+                ></textarea>
+            </div>
+			<button type="submit">Guardar</button>
+		</div>	
+	</form>
+  </div>
+<div class="modal-footer">
+</div>

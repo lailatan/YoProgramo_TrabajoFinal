@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Persona } from 'src/app/objetos/persona';
+import {PersonaService } from '../../services/persona.service';
+import {FooterModalComponent} from '../footer-modal/footer-modal.component';
 
 @Component({
   selector: 'app-footer',
@@ -12,21 +14,28 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class FooterComponent implements OnInit {
-  misDatos: any;
+  misDatos: Persona;
   modoEdicion: boolean = false;
   Subscription?: Subscription;
 
-  constructor( 
-    private modalService: NgbModal,
-    private uiService: UiService, 
-    private datosPortfolio:PortfolioService 
-    ) {
+  constructor( private modalService: NgbModal, private uiService: UiService, private personaService:PersonaService ) {
       this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value); }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatosGenerales().subscribe(data => {
+    this.personaService.getPersona().subscribe(data => {
        this.misDatos = data;
     });
+  }
+
+  editarDatos(){
+    const modalRef = this.modalService.open(FooterModalComponent);
+    modalRef.componentInstance.persona = this.misDatos;
+    modalRef.result.then((result) => {
+      if (result) {
+        this.misDatos=result;
+        this.personaService.updatePersona(this.misDatos).subscribe();
+      }
+      });
   }
 
   toggleLogIn() {
@@ -44,7 +53,8 @@ export class FooterComponent implements OnInit {
       //   }
       //});       
     }
-    toggleLogOut(){
-      this.uiService.cambiarModoEdicion();
-    }
+
+  toggleLogOut(){
+    this.uiService.cambiarModoEdicion();
+  }
 }

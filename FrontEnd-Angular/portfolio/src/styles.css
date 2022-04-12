@@ -73,6 +73,9 @@ html {
     left: 1.25rem;
     z-index: 1;
   }
+  .boton-login:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
   .boton-edicion {
     padding: 1rem;
     font-size: 1.4em;
@@ -80,6 +83,9 @@ html {
     cursor: pointer;
     z-index: 1;
     align-self: center;
+  }
+  .boton-edicion:hover {
+    color: black;
   }
     .boton-edicion-fill {
     padding: 1rem;
@@ -90,7 +96,9 @@ html {
     cursor: pointer;
     z-index: 1;
   }
-  
+  .boton-edicion-fill:hover {
+    color: black;
+  }  
   .contenedor-edicion-bloque {
     display: flex;
     flex-direction: row-reverse;

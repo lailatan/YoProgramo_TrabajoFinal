@@ -1,35 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient,HttpHeaders} from '@angular/common/http'
+import {Observable,of} from 'rxjs';
+import { Portfolio } from '../objetos/portfolio';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
+  private apiUrl = 'http://localhost:5001/portfolio'
 
   constructor(private http: HttpClient) { }
 
-  obtenerDatos(): Observable<any>{
-    return this.http.get('./assets/data/data.json');
-  }
-
-  obtenerDatosGenerales(): Observable<any>{
-    return this.http.get('./assets/data/data-general.json');
-  }
-
-  obtenerDatosExperiencia(): Observable<any>{
-    return this.http.get('./assets/data/data-experiencia.json');
-  }
-
-  obtenerDatosProyectos(): Observable<any>{
-    return this.http.get('./assets/data/data-proyectos.json');
-  }
-
-  obtenerDatosTecnologias(): Observable<any>{
-    return this.http.get('./assets/data/data-tecnologias.json');
-  }
-
-  obtenerDatosFormacion(): Observable<any>{
-    return this.http.get('./assets/data/data-formacion.json');
+  getPortfolio(): Observable<Portfolio> {
+    return this.http.get<Portfolio>(this.apiUrl)
   }
 }

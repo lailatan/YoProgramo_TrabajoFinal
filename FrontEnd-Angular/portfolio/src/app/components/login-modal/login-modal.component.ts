@@ -1,5 +1,5 @@
 import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
-import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { UiService } from '../../services/ui.service';
 
 @Component({

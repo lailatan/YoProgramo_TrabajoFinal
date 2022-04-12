@@ -8,7 +8,7 @@
             <h1 class="nombre">{{misDatos.nombre}}</h1>
             <div class="contenedor-edicion-linea">
                 <h2 class="profesion">{{misDatos.profesion}}</h2>
-                <i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion"></i>
+                <i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i>
             </div> 
         </div>
     </div>

@@ -7,12 +7,14 @@
                 <app-tecnologias-item
                     *ngFor="let unaTecnologia of tecnologiasList"
                     [miTecnologia]="unaTecnologia"
+                    (onDeleteTecnologia)="eliminarTecnologia(unaTecnologia)"
+                    (onUpdateTecnologia)="cambiarTecnologia(unaTecnologia)"
                 >
                 </app-tecnologias-item>
             </div>
         </div>
         <div class="contenedor-edicion-titulo">
-            <span><i class="boton-edicion-fill fa fa-plus" *ngIf="modoEdicion"></i></span>    
+            <span><i class="boton-edicion-fill fa fa-plus" *ngIf="modoEdicion" (click)="agregarDatos()"></i></span>    
         </div>    
     </div>
 </section>

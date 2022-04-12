@@ -27,7 +27,12 @@ h1 {
     padding: 1rem;
     border: none;
     border: 0 none;
-
+  }
+  .error {
+    color:#9f0e0e;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size:0.8rem;
   }
   .container button {
     text-transform: uppercase;
