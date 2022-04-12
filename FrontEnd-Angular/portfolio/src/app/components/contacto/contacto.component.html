@@ -12,7 +12,6 @@
                         class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f['mail'].errors }"
                         type="mail"
-                        [(ngModel)]="mail"
                         name="mail"
                         formControlName="mail"
                         placeholder="Email"
@@ -29,7 +28,6 @@
                         class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f['titulo'].errors }"
                         type="text"
-                        [(ngModel)]="titulo"
                         name="titulo"
                         formControlName="titulo"
                         placeholder="Título"
@@ -43,7 +41,6 @@
                     <textarea 
                         class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f['mensaje'].errors }"
-                        [(ngModel)]="mensaje"
                         name="mensaje"
                         formControlName="mensaje"
                         placeholder="Mensaje... "

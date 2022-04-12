@@ -38,3 +38,6 @@ h1 {
     cursor: pointer;
     margin-top: 1rem;
   }
+  .container button:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }

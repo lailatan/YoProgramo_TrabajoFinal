@@ -2,7 +2,7 @@
 	<h1 class="modal-title">Datos Proyecto</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
@@ -13,7 +13,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
 				type="text"
-				[(ngModel)]="imagen"
 				name="imagen"
 				formControlName="imagen"
 				placeholder="Imagen"
@@ -29,7 +28,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['link'].errors }"
 				type="text"
-				[(ngModel)]="link"
 				name="link"
 				formControlName="link"
 				placeholder="Link"
@@ -44,7 +42,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['icono'].errors }"
 				type="text"
-				[(ngModel)]="icono"
 				name="icono"
 				formControlName="icono"
 				placeholder="Ícono"
@@ -59,7 +56,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['nombre'].errors }"
 				type="text"
-				[(ngModel)]="nombre"
 				name="nombre"
 				formControlName="nombre"
 				placeholder="Nombre"
@@ -73,7 +69,6 @@
             class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f['tecnologias'].errors }"
             type="text"
-            [(ngModel)]="tecnologias"
             name="tecnologias"
             formControlName="tecnologias"
             placeholder="Tecnologías Usadas"

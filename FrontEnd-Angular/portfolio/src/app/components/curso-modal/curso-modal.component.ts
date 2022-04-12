@@ -10,9 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CursoModalComponent implements OnInit {
   @Input()  curso: Curso;
-  anio: number;
-  titulo: string;
-  descripcion: string ="";
+
 
   //Form Validables 
   dataForm: FormGroup;
@@ -31,9 +29,9 @@ export class CursoModalComponent implements OnInit {
       descripcion: ['',]
       });
     if (this.curso!==undefined){
-      this.anio = this.curso.anio;
-      this.titulo = this.curso.titulo;
-      this.descripcion = this.curso.descripcion;    
+      this.f['anio'].setValue(this.curso.anio); 
+      this.f['titulo'].setValue(this.curso.titulo); 
+      this.f['descripcion'].setValue(this.curso.descripcion);   
     }  
   }
 
@@ -50,15 +48,15 @@ export class CursoModalComponent implements OnInit {
       if (this.curso===undefined){
         const newCurso =
         { id: 0,
-          anio: this.anio,
-          titulo: this.titulo,
-          descripcion: this.descripcion
+          anio: this.f['anio'].value,
+          titulo: this.f['titulo'].value,
+          descripcion: this.f['descripcion'].value
         };
         this.curso = newCurso;
       } else {
-        this.curso.anio = this.anio;
-        this.curso.titulo = this.titulo;
-        this.curso.descripcion = this.descripcion;   
+        this.curso.anio =this.f['anio'].value;
+        this.curso.titulo = this.f['titulo'].value;
+        this.curso.descripcion = this.f['descripcion'].value;
         }
       this.activeModal.close(this.curso);
     }

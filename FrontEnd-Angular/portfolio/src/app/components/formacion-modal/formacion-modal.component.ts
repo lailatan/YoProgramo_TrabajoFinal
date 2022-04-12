@@ -13,8 +13,6 @@ import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-m
 })
 export class FormacionModalComponent implements OnInit {
   @Input()  formacion: Formacion;
-  imagen: string;
-  escuela: string;
   cursos: Curso[]=[];
   //Form Validables 
   dataForm: FormGroup;
@@ -31,8 +29,8 @@ export class FormacionModalComponent implements OnInit {
       escuela: ['', [Validators.required]],
       });
     if (this.formacion!==undefined){
-      this.imagen = this.formacion.imagen;
-      this.escuela = this.formacion.escuela;
+      this.f['imagen'].setValue(this.formacion.imagen);
+      this.f['escuela'].setValue(this.formacion.escuela);
       this.cursos = this.formacion.cursos;    
     }  
   }
@@ -49,20 +47,19 @@ export class FormacionModalComponent implements OnInit {
       //alert("Debe ingresar al menos 1 curso");
       return;
    }
-
     //True if all the fields are filled
     if(this.submitted)
     {
       if (this.formacion===undefined){
         const newFormacion = 
-        { imagen: this.imagen,
-          escuela: this.escuela,
+        { imagen: this.f['imagen'].value,
+          escuela: this.f['escuela'].value,
           cursos: this.cursos
         };
         this.formacion = newFormacion;
       } else {
-        this.formacion.imagen = this.imagen;
-        this.formacion.escuela = this.escuela;
+        this.formacion.imagen = this.f['imagen'].value;
+        this.formacion.escuela = this.f['escuela'].value;
         this.formacion.cursos = this.cursos;   
         }
       this.activeModal.close(this.formacion);

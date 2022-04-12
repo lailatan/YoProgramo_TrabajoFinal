@@ -9,12 +9,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ExperienciaModalComponent implements OnInit {
   @Input()  experiencia: Experiencia;
-  imagen: string ="";
-  empresa: string ="";
-  fecha_desde: string ="";
-  fecha_hasta: string ="";
-  cargo: string ="";
-  detalle: string ="";
   id: number = 0;
   //Form Validables 
   dataForm: FormGroup;
@@ -35,12 +29,12 @@ export class ExperienciaModalComponent implements OnInit {
       detalle: ['', [Validators.required]],
       });
     if (this.experiencia!==undefined){
-      this.imagen = this.experiencia.imagen;
-      this.empresa = this.experiencia.empresa;
-      this.fecha_desde = this.experiencia.fecha_desde;    
-      this.fecha_hasta = this.experiencia.fecha_hasta;    
-      this.cargo = this.experiencia.cargo;    
-      this.detalle = this.experiencia.detalle;    
+      this.f['imagen'].setValue(this.experiencia.imagen); 
+      this.f['empresa'].setValue(this.experiencia.empresa); 
+      this.f['fecha_desde'].setValue(this.experiencia.fecha_desde); 
+      this.f['fecha_hasta'].setValue(this.experiencia.fecha_hasta); 
+      this.f['cargo'].setValue(this.experiencia.cargo); 
+      this.f['detalle'].setValue(this.experiencia.detalle); 
     }  
   }
 
@@ -56,21 +50,21 @@ export class ExperienciaModalComponent implements OnInit {
     {
       if (this.experiencia===undefined){
         const newExperiencia = 
-        { imagen: this.imagen,
-          empresa: this.empresa,
-          fecha_desde: this.fecha_desde,
-          fecha_hasta: this.fecha_hasta,
-          cargo: this.cargo,
-          detalle: this.detalle
+        { imagen: this.f['imagen'].value,
+          empresa: this.f['empresa'].value,
+          fecha_desde: this.f['fecha_desde'].value,
+          fecha_hasta: this.f['fecha_hasta'].value,
+          cargo: this.f['cargo'].value,
+          detalle:this.f['detalle'].value
         };
         this.experiencia = newExperiencia;
       } else {
-        this.experiencia.imagen = this.imagen;
-        this.experiencia.empresa = this.empresa;
-        this.experiencia.fecha_desde = this.fecha_desde;   
-        this.experiencia.fecha_hasta = this.fecha_hasta;   
-        this.experiencia.cargo = this.cargo;   
-        this.experiencia.detalle = this.detalle;   
+        this.experiencia.imagen = this.f['imagen'].value;
+        this.experiencia.empresa = this.f['empresa'].value;
+        this.experiencia.fecha_desde = this.f['fecha_desde'].value;   
+        this.experiencia.fecha_hasta = this.f['fecha_hasta'].value;   
+        this.experiencia.cargo = this.f['cargo'].value;   
+        this.experiencia.detalle = this.f['detalle'].value;   
         }
       this.activeModal.close(this.experiencia);
     }

@@ -2,7 +2,7 @@
 	<h1 class="modal-title">Datos Sobre Mi</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
@@ -12,7 +12,6 @@
 				<textarea 
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['sobre_mi'].errors }"
-				[(ngModel)]="sobre_mi"
 				name="sobre_mi"
 				formControlName="sobre_mi"
 				placeholder="Sobre Mi... "

@@ -2,27 +2,43 @@
 	<h1 class="modal-title">Inicio Sesión</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
-	<div class="container">
-		<input
-		type="email"
-		[(ngModel)]="email"
-		name="email"
-		placeholder="Email"
-		required="required"
-		/>
-		<input
-		type="password"
-		[(ngModel)]="password"
-		name="password"
-		placeholder="Password"
-		required="required"
-		/>
-		<button type="button" (click)="validarLogin()">Ingresar</button>
-	</div>
+	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+		<div class="container">
+			<input
+			class="form-control"
+			[ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+			formControlName="email"
+			type="email"
+			name="email"
+			placeholder="Email"
+			required="required"
+			autofocus
+			/>
+			<div *ngIf="submitted && f['email'].errors" class="error">
+				<div *ngIf="f['email'].errors['required']">* Debe ingresar un Email</div>
+				<div *ngIf="f['email'].errors['email']">* Debe ingresar un Email válido</div>
+			</div>
+
+			<input
+			class="form-control"
+			[ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+			formControlName="password"
+			type="password"
+			name="password"
+			placeholder="Password"
+			required="required"
+			/>
+			<div *ngIf="submitted && f['password'].errors" class="error">
+				<div *ngIf="f['password'].errors['required']">* Debe ingresar una password.</div>
+			</div>
+
+			<button type="submit">Ingresar</button>
+		</div>
+	</form>
 </div>
 <div class="modal-footer">
 </div>

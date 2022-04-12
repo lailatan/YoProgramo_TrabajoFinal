@@ -228,12 +228,6 @@
       "imagen": "assets/imagenes/tecnologias/git_github.png",
       "nombre": "GIT - GITHUB",
       "detalle": "GIT es un software de control de versiones, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando tienen un gran número de archivos de código fuente.GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de Git."
-    },
-    {
-      "imagen": "i",
-      "nombre": "VVV",
-      "detalle": "iiii",
-      "id": 10
     }
   ]
 }

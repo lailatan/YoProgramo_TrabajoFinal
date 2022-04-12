@@ -10,11 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ProyectoModalComponent implements OnInit {
   @Input()  proyecto: Proyecto;
-  imagen: string ="";
-  link: string ="";
-  icono: string ="";
-  nombre: string ="";
-  tecnologias: string ="";
   id: number = 0;
   //Form Validables 
   dataForm: FormGroup;
@@ -34,11 +29,11 @@ export class ProyectoModalComponent implements OnInit {
       tecnologias: ['', [Validators.required]],
       });
     if (this.proyecto!==undefined){
-      this.imagen = this.proyecto.imagen;
-      this.link = this.proyecto.link;
-      this.icono = this.proyecto.icono;    
-      this.nombre = this.proyecto.nombre;    
-      this.tecnologias = this.proyecto.tecnologias;    
+      this.f['imagen'].setValue(this.proyecto.imagen);
+      this.f['link'].setValue(this.proyecto.link);
+      this.f['icono'].setValue(this.proyecto.icono);
+      this.f['nombre'].setValue(this.proyecto.nombre);
+      this.f['tecnologias'].setValue(this.proyecto.tecnologias);  
     }  
   }
 
@@ -54,19 +49,19 @@ export class ProyectoModalComponent implements OnInit {
     {
       if (this.proyecto===undefined){
         const newProyecto = 
-        { imagen: this.imagen,
-          link: this.link,
-          icono: this.icono,
-          nombre: this.nombre,
-          tecnologias: this.tecnologias
+        { imagen: this.f['imagen'].value,
+          link: this.f['link'].value,
+          icono: this.f['icono'].value,
+          nombre: this.f['nombre'].value,
+          tecnologias: this.f['tecnologias'].value
         };
         this.proyecto = newProyecto;
       } else {
-        this.proyecto.imagen = this.imagen;
-        this.proyecto.link = this.link;
-        this.proyecto.icono = this.icono;
-        this.proyecto.nombre = this.nombre;
-        this.proyecto.tecnologias = this.tecnologias;   
+        this.proyecto.imagen = this.f['imagen'].value;
+        this.proyecto.link = this.f['link'].value;
+        this.proyecto.icono = this.f['icono'].value;
+        this.proyecto.nombre = this.f['nombre'].value;
+        this.proyecto.tecnologias = this.f['tecnologias'].value;   
         }
       this.activeModal.close(this.proyecto);
     }

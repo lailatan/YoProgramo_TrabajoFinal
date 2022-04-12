@@ -2,7 +2,7 @@
 	<h1 class="modal-title">Datos Experiencia</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
@@ -13,7 +13,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
 				type="text"
-				[(ngModel)]="imagen"
 				name="imagen"
 				formControlName="imagen"
 				placeholder="Imagen"
@@ -29,7 +28,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['empresa'].errors }"
 				type="text"
-				[(ngModel)]="empresa"
 				name="empresa"
 				formControlName="empresa"
 				placeholder="Empresa"
@@ -45,7 +43,6 @@
 				[ngClass]="{ 'is-invalid': submitted && f['fecha_desde'].errors }"
 				type="month" min="1900-01" value="2000-01"
 				pattern="[0-9]{4}-[0-9]{2}"
-				[(ngModel)]="fecha_desde"
 				name="fecha_desde"
 				formControlName="fecha_desde"
 				placeholder="mm/aaaa"
@@ -62,7 +59,6 @@
 				[ngClass]="{ 'is-invalid': submitted && f['fecha_hasta'].errors }"
 				type="month" min="1900-01" value="2000-01"
 				pattern="[0-9]{4}-[0-9]{2}"
-				[(ngModel)]="fecha_hasta"
 				name="fecha_hasta"
 				formControlName="fecha_hasta"
 				placeholder="mm/aaaa"
@@ -78,7 +74,6 @@
 				class="form-control"
 				[ngClass]="{ 'is-invalid': submitted && f['cargo'].errors }"
 				type="text"
-				[(ngModel)]="cargo"
 				name="cargo"
 				formControlName="cargo"
 				placeholder="Cargo"
@@ -91,7 +86,6 @@
             <textarea 
             class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f['detalle'].errors }"
-            [(ngModel)]="detalle"
             name="detalle"
             formControlName="detalle"
             placeholder="Detalle... "

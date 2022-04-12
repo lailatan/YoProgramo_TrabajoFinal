@@ -10,9 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TecnologiaModalComponent implements OnInit {
   @Input()  tecnologia: Tecnologia;
-  nombre: string ="";
-  detalle: string ="";
-  imagen: string ="";
   id: number = 0;
   //Form Validables 
   dataForm: FormGroup;
@@ -30,9 +27,9 @@ export class TecnologiaModalComponent implements OnInit {
       detalle: ['', [Validators.required]],
       });
     if (this.tecnologia!==undefined){
-      this.nombre = this.tecnologia.nombre;
-      this.detalle = this.tecnologia.detalle;
-      this.imagen = this.tecnologia.imagen;    
+      this.f['nombre'].setValue(this.tecnologia.nombre); 
+      this.f['detalle'].setValue(this.tecnologia.detalle); 
+      this.f['imagen'].setValue(this.tecnologia.imagen);    
     }  
   }
 
@@ -48,15 +45,15 @@ export class TecnologiaModalComponent implements OnInit {
     {
       if (this.tecnologia===undefined){
         const newTecnologia = 
-        { imagen: this.imagen,
-          nombre: this.nombre,
-          detalle: this.detalle
+        { imagen: this.f['imagen'].value,
+          nombre: this.f['nombre'].value,
+          detalle: this.f['detalle'].value
         };
         this.tecnologia = newTecnologia;
       } else {
-        this.tecnologia.nombre = this.nombre;
-        this.tecnologia.detalle = this.detalle;
-        this.tecnologia.imagen = this.imagen;   
+        this.tecnologia.imagen = this.f['imagen'].value;
+        this.tecnologia.nombre = this.f['nombre'].value;
+        this.tecnologia.detalle = this.f['detalle'].value;   
         }
       this.activeModal.close(this.tecnologia);
     }

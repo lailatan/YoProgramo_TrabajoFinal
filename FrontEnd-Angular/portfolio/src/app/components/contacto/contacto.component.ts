@@ -7,9 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-  mail: string ="";
-  titulo: string ="";
-  mensaje: string ="";
   enviado:boolean =false;
 
   //Form Validables 
@@ -39,6 +36,9 @@ export class ContactoComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
+      //this.f['mail'].value
+      //this.f['titulo'].value
+      //this.f['mensaje'].value
       this.enviado =true;
     }
   }
