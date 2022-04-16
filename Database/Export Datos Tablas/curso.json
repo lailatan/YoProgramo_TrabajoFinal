@@ -1,0 +1,9 @@
+[{"id":1, "titulo":"Licenciatura en An\u00e1lisis de Sistemas", "anio":1995, "descripcion":"Facultad de Ingenier\u00eda. \\nCursado hasta 3er. a\u00f1o.", "formacion_id":1},
+ {"id":2, "titulo":"MCP - Microsoft Certified Professional", "anio":1998, "descripcion":"Microsoft - Examen Drake Sylvan Prometric. \\nDeveloping Applications with Microsoft Visual Basic 5.0", "formacion_id":2},
+ {"id":3, "titulo":"Introducci\u00f3n Phyton", "anio":2020, "descripcion":"", "formacion_id":3},
+ {"id":4, "titulo":"SQL y MySQL", "anio":2020, "descripcion":"", "formacion_id":3},
+ {"id":5, "titulo":"POO en Phyton", "anio":2020, "descripcion":"", "formacion_id":3},
+ {"id":6, "titulo":"Desarrollo Aplicaciones M\u00f3viles (48hs)", "anio":2020, "descripcion":"", "formacion_id":4},
+ {"id":7, "titulo":"Programaci\u00f3n Phyton (42hs)", "anio":2020, "descripcion":"", "formacion_id":4},
+ {"id":8, "titulo":"Javascript Desarrollador Avanzado (30hs)", "anio":2021, "descripcion":"", "formacion_id":4},
+ {"id":9, "titulo":"Java BackEnd Developer (400 horas)", "anio":2021, "descripcion":"Java / Spring Boot/ Hibernate. \\nMySQL", "formacion_id":5}]

@@ -1,0 +1,5 @@
+[{"id":1, "escuela":"Universidad de Buenos Aires", "imagen":"assets/imagenes/formacion/uba.jpeg", "persona_id":1},
+ {"id":2, "escuela":"Microsoft", "imagen":"assets/imagenes/formacion/mcp.jpeg", "persona_id":1},
+ {"id":3, "escuela":"FabLab Vicente L\u00f3pez", "imagen":"assets/imagenes/formacion/fablab.jpeg", "persona_id":1},
+ {"id":4, "escuela":"Centro Universitario Vicente L\u00f3pez / EducacionIT", "imagen":"assets/imagenes/formacion/cuvl.jpeg", "persona_id":1},
+ {"id":5, "escuela":"Ada ITW", "imagen":"assets/imagenes/formacion/ada.jpeg", "persona_id":1}]
