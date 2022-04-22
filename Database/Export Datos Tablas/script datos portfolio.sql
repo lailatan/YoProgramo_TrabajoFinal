@@ -136,7 +136,7 @@ CREATE TABLE `persona` (
   `linkedin` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `github` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `año` int NOT NULL,
+  `anio` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
