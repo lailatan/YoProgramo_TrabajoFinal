@@ -1,5 +1,6 @@
 package com.lailatan.Portfolio.model;
 
+import com.lailatan.Portfolio.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +34,11 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" + "id=" + id + ", mail=" + mail + ", password=" + password + '}';
+    }
+    public boolean datosCorrectos(){
+         return (((mail!=null && Utils.largoValidoString(mail)) &&
+                 (password!=null && Utils.largoValidoString(password))) 
+                 && Utils.mailValido(mail));
     }
 
 }

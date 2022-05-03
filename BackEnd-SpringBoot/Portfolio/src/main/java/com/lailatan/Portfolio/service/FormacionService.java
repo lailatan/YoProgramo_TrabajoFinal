@@ -13,13 +13,13 @@ public class FormacionService implements IFormacionService{
     private FormacionRepository formacionRepository;
 
     @Override
-    public List<Formacion> traerFormacionesPorPersona(Integer id_persona) {
-        return formacionRepository.findAllFormacionByPersona(id_persona);
+    public List<Formacion> traerFormaciones() {
+        return formacionRepository.findAll();
     }
 
     @Override
-    public void guardarFormacion(Formacion formacion) {
-        formacionRepository.save(formacion);
+    public Formacion guardarFormacion(Formacion formacion) {
+        return (formacion.datosCorrectos()?formacionRepository.save(formacion):null);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.lailatan.Portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.lailatan.Portfolio.Utils;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -7,8 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,12 +21,9 @@ public class Formacion {
    private Integer id;
    private String escuela;
    private String imagen;    
-    @OneToMany (mappedBy = "formacion", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+   @JsonManagedReference
+    @OneToMany (mappedBy = "formacion", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
    private List<Curso> cursos;
-    @ManyToOne
-     @JoinColumn(name = "id_persona")
-   private Persona persona;
-    
 
     public Formacion() {
     }
@@ -45,6 +42,10 @@ public class Formacion {
     @Override
     public String toString() {
         return "Formacion{" + "id=" + id + ", escuela=" + escuela + ", imagen=" + imagen + '}';
+    }
+    public boolean datosCorrectos(){
+         return ((escuela!=null && Utils.largoValidoString(escuela)) &&
+                 (imagen!=null && Utils.largoValidoString(imagen)));
     }
 
 }

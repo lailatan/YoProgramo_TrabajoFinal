@@ -8,10 +8,12 @@ public interface IPersonaService {
     
     public List<Persona> traerPersonas();
     
-    public void guardarPersona(Persona persona);
+    public Persona guardarPersona(Persona persona);
     
     public void borrarPersona(Integer id);
     
     public Persona traerPersonaPorId(Integer id);
+
+    public Persona traerPersona();
     
 }

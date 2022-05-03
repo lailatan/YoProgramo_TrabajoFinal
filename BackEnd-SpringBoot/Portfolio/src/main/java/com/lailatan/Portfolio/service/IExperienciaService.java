@@ -4,9 +4,9 @@ import com.lailatan.Portfolio.model.Experiencia;
 import java.util.List;
 
 public interface IExperienciaService {
-    public List<Experiencia> traerExperienciasPorPersona(Integer id_persona);
+    public List<Experiencia> traerExperiencias();
     
-    public void guardarExperiencia(Experiencia experiencia);
+    public Experiencia guardarExperiencia(Experiencia experiencia);
     
     public void borrarExperiencia(Integer id);
     

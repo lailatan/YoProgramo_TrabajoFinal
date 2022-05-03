@@ -12,13 +12,13 @@ public class ExperienciaService implements IExperienciaService{
     private ExperienciaRepository experienciaRepository;
 
     @Override
-    public List<Experiencia> traerExperienciasPorPersona(Integer id_persona) {
-        return experienciaRepository.findAllExperienciaByPersona(id_persona);
+    public List<Experiencia> traerExperiencias() {
+        return experienciaRepository.findAll();
     }
 
     @Override
-    public void guardarExperiencia(Experiencia experiencia) {
-        experienciaRepository.save(experiencia);
+    public Experiencia guardarExperiencia(Experiencia experiencia) {
+        return (experiencia.datosCorrectos()?experienciaRepository.save(experiencia):null);
     }
 
     @Override

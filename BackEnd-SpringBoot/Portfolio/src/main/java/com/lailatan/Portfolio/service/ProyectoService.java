@@ -12,13 +12,13 @@ public class ProyectoService implements IProyectoService{
     private ProyectoRepository proyectoRepository;
 
     @Override
-    public List<Proyecto> traerProyectosPorPersona(Integer id_persona) {
-        return proyectoRepository.findAllProyectoByPersona(id_persona);
+    public List<Proyecto> traerProyectos() {
+        return proyectoRepository.findAll();
     }
 
     @Override
-    public void guardarProyecto(Proyecto proyecto) {
-        proyectoRepository.save(proyecto);
+    public Proyecto guardarProyecto(Proyecto proyecto) {
+        return (proyecto.datosCorrectos()?proyectoRepository.save(proyecto):null);
     }
 
     @Override

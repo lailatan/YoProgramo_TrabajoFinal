@@ -5,9 +5,9 @@ import java.util.List;
 
 
 public interface IProyectoService {
-    public List<Proyecto> traerProyectosPorPersona(Integer id_persona);
+    public List<Proyecto> traerProyectos();
     
-    public void guardarProyecto(Proyecto proyecto);
+    public Proyecto guardarProyecto(Proyecto proyecto);
     
     public void borrarProyecto(Integer id);
     

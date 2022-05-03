@@ -6,7 +6,7 @@ import java.util.List;
 public interface IUsuarioService {
     public List<Usuario> traerUsuarios();
     
-    public void guardarUsuario(Usuario usuario);
+    public Usuario guardarUsuario(Usuario usuario);
     
     public void borrarUsuario(Integer id);
     

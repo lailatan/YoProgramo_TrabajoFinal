@@ -1,5 +1,7 @@
 package com.lailatan.Portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.lailatan.Portfolio.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +19,8 @@ public class Curso {
    private Integer id;
    private Integer anio;
    private String titulo;
-   private String descripcion;   
+   private String descripcion;  
+   @JsonBackReference
     @ManyToOne
      @JoinColumn(name = "id_formacion")
    private Formacion formacion;
@@ -42,7 +45,14 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" + "id=" + id + ", anio=" + anio + ", titulo=" + titulo + ", descripcion=" + descripcion + ", formacion=" + formacion + '}';
+        return "Curso{" + "id=" + id + ", anio=" + anio + ", titulo=" + titulo + ", descripcion=" + descripcion + '}';
+    }
+
+    public boolean datosCorrectos(){
+     return (((titulo!=null && Utils.largoValidoString(titulo)) &&
+            ((descripcion!=null && Utils.largoValidoString(descripcion))|| (descripcion==null)) 
+             && (anio!=null)) 
+             && Utils.añoValido(anio));
     }
 
 }

@@ -13,30 +13,21 @@ public class TecnologiaService implements ITecnologiaService{
     private TecnologiaRepository tecnologiaRepository;
 
     @Override
-    public List<Tecnologia> traerTecnologiasPorPersona(Integer id_persona) {
-        //return tecnologiaRepository.findAllTecnologiaByPersona(id_persona);
-        return null;
+    public List<Tecnologia> traerTecnologias() {
+        return tecnologiaRepository.findAll();
     }
 
     @Override
-    public void guardarTecnologia(Tecnologia tecnologia) {
-        tecnologiaRepository.save(tecnologia);
+    public Tecnologia guardarTecnologia(Tecnologia tecnologia) {
+        return (tecnologia.datosCorrectos()?tecnologiaRepository.save(tecnologia):null);
     }
 
-    @Override
-    public void guardarTecnologiaPersona(Integer id_tecnologia, Integer id_persona) {
-        //TO DO
-    }
 
     @Override
     public void borrarTecnologia(Integer id) {
         tecnologiaRepository.deleteById(id);
     }
 
-    @Override
-    public void borrarTecnologiaPersona(Integer id_tecnologia, Integer id_persona) {
-        //TO DO
-    }
 
     @Override
     public Tecnologia traerTecnologiaPorId(Integer id) {

@@ -1,12 +1,11 @@
 package com.lailatan.Portfolio.model;
 
-import java.util.List;
+
+import com.lailatan.Portfolio.Utils;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,8 +19,6 @@ public class Tecnologia {
    private String imagen;
    private String nombre;
    private String detalle;    
-    @ManyToMany(mappedBy = "tecnologias", fetch = FetchType.LAZY)
-    private List<Persona> personas;
 
     public Tecnologia() {
     }
@@ -42,6 +39,11 @@ public class Tecnologia {
     @Override
     public String toString() {
         return "Tecnologia{" + "id=" + id + ", imagen=" + imagen + ", nombre=" + nombre + ", detalle=" + detalle + '}';
+    }
+    public boolean datosCorrectos(){
+         return ((imagen!=null && Utils.largoValidoString(imagen)) &&
+                 (nombre!=null && Utils.largoValidoString(nombre)) &&
+                 (detalle!=null && Utils.largoValidoString(detalle)));
     }
 
     

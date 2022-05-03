@@ -1,11 +1,10 @@
 package com.lailatan.Portfolio.model;
 
+import com.lailatan.Portfolio.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,36 +19,38 @@ public class Proyecto {
    private String icono;
    private String nombre;
    private String detalle;  
-    @ManyToOne
-     @JoinColumn(name = "id_persona")
-   private Persona persona;
 
     public Proyecto() {
     }
 
-    public Proyecto(Integer id, String imagen, String link, String icono, String nombre, String detalle, Persona persona) {
+    public Proyecto(Integer id, String imagen, String link, String icono, String nombre, String detalle) {
         this.id = id;
         this.imagen = imagen;
         this.link = link;
         this.icono = icono;
         this.nombre = nombre;
         this.detalle = detalle;
-        this.persona = persona;
     }
 
-    public Proyecto(String imagen, String link, String icono, String nombre, String detalle, Persona persona) {
+    public Proyecto(String imagen, String link, String icono, String nombre, String detalle) {
         this.imagen = imagen;
         this.link = link;
         this.icono = icono;
         this.nombre = nombre;
         this.detalle = detalle;
-        this.persona = persona;
     }
 
     @Override
     public String toString() {
-        return "Proyecto{" + "id=" + id + ", imagen=" + imagen + ", link=" + link + ", icono=" + icono + ", nombre=" + nombre + ", detalle=" + detalle + ", persona=" + persona + '}';
+        return "Proyecto{" + "id=" + id + ", imagen=" + imagen + ", link=" + link + ", icono=" + icono + ", nombre=" + nombre + ", detalle=" + detalle + '}';
     }
 
+    public boolean datosCorrectos(){
+         return ((imagen!=null && Utils.largoValidoString(imagen)) &&
+                 (link!=null && Utils.largoValidoString(link)) &&
+                 (icono!=null && Utils.largoValidoString(icono)) &&
+                 (nombre!=null && Utils.largoValidoString(nombre)) &&
+                 (detalle!=null && Utils.largoValidoString(detalle)));
+    }
     
 }

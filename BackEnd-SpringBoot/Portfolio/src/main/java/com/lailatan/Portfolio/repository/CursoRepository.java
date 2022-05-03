@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Integer>{
     public List<Curso> findAllCursoByFormacion(Integer id_formacion);
-    //findCharactersByNameContainingAndAgeEqualsAndMoviesContaining
 }

@@ -1,20 +1,11 @@
 package com.lailatan.Portfolio.model;
 
-import java.util.List;
-import javax.persistence.CascadeType;
+import com.lailatan.Portfolio.Utils;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
 @Entity
 public class Persona {
      @Id
@@ -29,17 +20,6 @@ public class Persona {
     private String github;
     private String ubicacion;
     private Integer anio;
-     @OneToMany (mappedBy = "persona", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Experiencia> experiencias;
-     @OneToMany (mappedBy = "persona", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Formacion> formaciones;
-     @OneToMany (mappedBy = "persona", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Proyecto> proyectos;
-    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-        @JoinTable (name="tecnologias_x_personas",
-                    joinColumns = @JoinColumn (name="id_persona"),
-                    inverseJoinColumns = @JoinColumn (name="id_tecnologia"))
-    private List<Tecnologia> tecnologias;
     
     public Persona() {
     }
@@ -74,5 +54,97 @@ public class Persona {
         return "Persona{" + "id=" + id + ", foto=" + foto + ", nombre=" + nombre + ", mail=" + mail + ", profesion=" + profesion + ", sobre_mi=" + sobre_mi + ", linkedin=" + linkedin + ", github=" + github + ", ubicacion=" + ubicacion + ", anio=" + anio + '}';
     }
 
+    public boolean datosCorrectos(){
+         return (((foto!=null && Utils.largoValidoString(foto)) &&
+                 (nombre!=null && Utils.largoValidoString(nombre)) &&
+                 (mail!=null && Utils.largoValidoString(mail)) &&
+                 (profesion!=null && Utils.largoValidoString(profesion)) &&
+                 (sobre_mi!=null && Utils.largoValidoString(sobre_mi)) &&
+                 (linkedin!=null && Utils.largoValidoString(linkedin)) &&
+                 (github!=null && Utils.largoValidoString(github)) &&
+                 (ubicacion!=null && Utils.largoValidoString(ubicacion)) &&
+                 (anio!=null)) 
+                 && Utils.añoValido(anio) && Utils.mailValido(mail));
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+
+    public String getSobre_mi() {
+        return sobre_mi;
+    }
+
+    public void setSobre_mi(String sobre_mi) {
+        this.sobre_mi = sobre_mi;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public Integer getAnio() {
+        return anio;
+    }
+
+    public void setAnio(Integer anio) {
+        this.anio = anio;
+    }
 
 }
