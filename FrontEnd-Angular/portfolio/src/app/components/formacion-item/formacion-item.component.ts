@@ -27,7 +27,7 @@ export class FormacionItemComponent implements OnInit {
   }
 
   prepararDatos(datos:string) {
-    if (datos!==undefined){
+    if (datos!==undefined && datos!==null && datos!==""){
       datos = datos.split("\n").join("<br />");
     }
     return datos;

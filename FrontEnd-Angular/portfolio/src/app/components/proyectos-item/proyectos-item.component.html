@@ -7,7 +7,7 @@
         <img class="icono" [src]="miProyecto.icono" alt="">
         <h4>{{miProyecto.nombre}}</h4>
         <h5>Tecnologías utilizadas:</h5>
-        <p><span class="tecnologia">{{miProyecto.tecnologias}}</span></p>
+        <p><span class="tecnologia">{{miProyecto.detalle}}</span></p>
         <div class="contenedor-edicion-bloque<">
             <span><i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i></span>
             <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion" (click)="eliminarDatos()"></i></span>

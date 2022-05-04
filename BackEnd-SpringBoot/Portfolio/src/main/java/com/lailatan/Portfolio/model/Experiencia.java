@@ -52,7 +52,7 @@ public class Experiencia {
          return ((empresa!=null && Utils.largoValidoString(empresa)) &&
                  (imagen!=null && Utils.largoValidoString(imagen)) &&
                  (fecha_desde!=null && Utils.yyyymmValido(fecha_desde)) &&
-                 (fecha_hasta!=null && Utils.yyyymmValido(fecha_hasta)) &&
+                 ((fecha_hasta!=null && Utils.yyyymmValido(fecha_hasta)) || fecha_hasta==null || fecha_hasta=="") &&
                  (cargo!=null && Utils.largoValidoString(cargo)) &&
                  (detalle!=null && Utils.largoValidoString(detalle)));
     }

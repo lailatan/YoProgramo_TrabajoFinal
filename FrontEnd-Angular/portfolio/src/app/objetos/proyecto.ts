@@ -4,5 +4,5 @@ export interface Proyecto {
     link: string;
     icono: string;
     nombre: string;
-    tecnologias: string;
+    detalle: string;
 }

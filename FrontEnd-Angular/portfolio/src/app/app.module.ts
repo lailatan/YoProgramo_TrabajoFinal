@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
-import{HttpClientModule} from '@angular/common/http';
+import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -32,7 +32,6 @@ import { CursoModalComponent } from './components/curso-modal/curso-modal.compon
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 
-
 const appRoutes: Routes = [
   {path:'',component: EncabezadoComponent},
   {path:'home',component: EncabezadoComponent},
@@ -45,7 +44,7 @@ const appRoutes: Routes = [
   {path:'experiencias',component: ExperienciaComponent},
   {path:'contacto',component: ContactoComponent},
   {path:'edit',component: EncabezadoComponent},
-  {path:'login',component: LoginModalComponent}
+  {path:'login',component: EncabezadoComponent}
 ]
 
 @NgModule({

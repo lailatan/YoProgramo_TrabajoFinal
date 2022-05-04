@@ -24,7 +24,7 @@ export class ExperienciaModalComponent implements OnInit {
       imagen: ['', [Validators.required]],
       empresa: ['', [Validators.required]],
       fecha_desde: ['', [Validators.required, Validators.pattern("[0-9]{4}-[0-9]{2}")]],
-      fecha_hasta: ['', [Validators.required, Validators.pattern("[0-9]{4}-[0-9]{2}")]],
+      fecha_hasta: ['', [Validators.pattern("[0-9]{4}-[0-9]{2}")]],
       cargo: ['', [Validators.required]],
       detalle: ['', [Validators.required]],
       });

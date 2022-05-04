@@ -67,16 +67,16 @@
 			</div>
             <input 
             class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['tecnologias'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['detalle'].errors }"
             type="text"
-            name="tecnologias"
-            formControlName="tecnologias"
-            placeholder="Tecnologías Usadas"
+            name="detalle"
+            formControlName="detalle"
+            placeholder="Detalle..."
             required="required"
             rows="10"
             />
-            <div *ngIf="submitted && f['tecnologias'].errors" class="error">
-              <div *ngIf="f['tecnologias'].errors['required']">* Debe detallar las Tecnoloías Usadas</div>
+            <div *ngIf="submitted && f['detalle'].errors" class="error">
+              <div *ngIf="f['detalle'].errors['required']">* Debe dau un detalle del Proyecto</div>
            </div>
         <button type="submit">Guardar</button>
 		</div>	

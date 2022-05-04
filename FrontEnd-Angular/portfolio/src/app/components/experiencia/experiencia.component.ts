@@ -14,7 +14,7 @@ import {ExperienciaModalComponent} from '../experiencia-modal/experiencia-modal.
 export class ExperienciaComponent implements OnInit {
   experienciaList: Experiencia[];
   modoEdicion: boolean = false;
-Subscription?: Subscription;
+  Subscription?: Subscription;
 
   constructor( private uiService: UiService,
     private experienciaService:ExperienciaService ,private modalService: NgbModal

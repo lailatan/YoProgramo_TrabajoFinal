@@ -50,7 +50,7 @@ public class Curso {
 
     public boolean datosCorrectos(){
      return (((titulo!=null && Utils.largoValidoString(titulo)) &&
-            ((descripcion!=null && Utils.largoValidoString(descripcion))|| (descripcion==null)) 
+            ((descripcion!=null && Utils.largoValidoString(descripcion))|| (descripcion==null) || (descripcion=="")) 
              && (anio!=null)) 
              && Utils.añoValido(anio));
     }

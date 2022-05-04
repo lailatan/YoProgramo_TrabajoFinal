@@ -17,6 +17,7 @@ export class ExperienciaItemComponent implements OnInit {
   @Output() onUpdateExperiencia :  EventEmitter<Experiencia> = new EventEmitter();
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  texto_fecha_hasta: String;
   
   constructor(private uiService: UiService,private modalService: NgbModal) {
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
@@ -24,6 +25,7 @@ export class ExperienciaItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.modoEdicion = this.uiService.esModoEdicion();
+    this.texto_fecha_hasta= ((this.miExperiencia.fecha_hasta=="" || this.miExperiencia.fecha_hasta==null)?"Hoy":this.miExperiencia.fecha_hasta);
   }
 
   editarDatos(){

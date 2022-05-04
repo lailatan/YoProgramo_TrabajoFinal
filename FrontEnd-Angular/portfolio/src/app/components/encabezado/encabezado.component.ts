@@ -24,6 +24,7 @@ export class EncabezadoComponent implements OnInit {
     this.personaService.getPersona().subscribe(datos => 
       this.misDatos = datos
       );
+      this.modoEdicion = this.uiService.esModoEdicion();
   }
 
   editarDatos(){

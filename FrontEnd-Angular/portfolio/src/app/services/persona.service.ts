@@ -14,18 +14,18 @@ const httpOptions = {
 })
 
 export class PersonaService {
-  private apiUrl = 'http://localhost:5001/persona'
+  private apiUrl = 'http://localhost:8080/APIportfolio/persona'
 
   constructor(private http: HttpClient) {
    }
 
   getPersona(): Observable<Persona> {
-    return this.http.get<Persona>(this.apiUrl)
+    return this.http.get<Persona>(this.apiUrl + "/find")
   }
 
   updatePersona(persona: Persona): Observable<Persona>{
     const url = `${this.apiUrl}`;
-    return this.http.put<Persona>(url,persona,httpOptions);
+    return this.http.put<Persona>(url+"/save",persona,httpOptions);
   }
 
 }

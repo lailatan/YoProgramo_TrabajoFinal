@@ -82,7 +82,8 @@ export class FormacionModalComponent implements OnInit {
     //modalRef.componentInstance.formacion = new Formacion();
     modalRef.result.then((result) => {
       if (result) {
-        result.id=this.proximoId(); 
+        //result.id=this.proximoId(); 
+        result.id=null;
         this.cursos.push(result);
       }
     });

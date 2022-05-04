@@ -62,10 +62,8 @@
 				name="fecha_hasta"
 				formControlName="fecha_hasta"
 				placeholder="mm/aaaa"
-				required="required"
 				/>
 				<div *ngIf="submitted && f['fecha_hasta'].errors" class="error">
-				  <div *ngIf="f['fecha_hasta'].errors['required']">* Debe ingresar una Fecha de Fin</div>
 				  <div *ngIf="f['fecha_hasta'].errors['pattern']">* Debe ingresar una Fecha de Fin válida</div>
 			   </div>
 			</div>

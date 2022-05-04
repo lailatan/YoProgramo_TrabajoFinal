@@ -10,30 +10,31 @@
 		<div class="container">
 			<input
 			class="form-control"
-			[ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
-			formControlName="email"
-			type="email"
-			name="email"
+			[ngClass]="{'is-invalid': (f['mail'].touched || submitted) && f['mail'].errors, 'is-valid': (f['mail'].touched || submitted) && !f['mail'].errors}"
+			formControlName="mail"
+			type="mail"
+			name="mail"
 			placeholder="Email"
-			required="required"
 			autofocus
 			/>
-			<div *ngIf="submitted && f['email'].errors" class="error">
-				<div *ngIf="f['email'].errors['required']">* Debe ingresar un Email</div>
-				<div *ngIf="f['email'].errors['email']">* Debe ingresar un Email válido</div>
+			<div *ngIf="f['mail'].errors && (f['mail'].touched || submitted)" class="error">
+				<div *ngIf="f['mail'].errors['required']">* Debe ingresar un Email</div>
+				<div *ngIf="f['mail'].errors['email']">* Debe ingresar un Email válido</div>
+				<div *ngIf="f['mail'].errors['maxlength']">* El mail debe tener como máximo 255 caracteres.</div>
 			</div>
 
 			<input
 			class="form-control"
-			[ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+			[ngClass]="{'is-invalid': (f['password'].touched || submitted) && f['password'].errors, 'is-valid': (f['password'].touched || submitted) && !f['password'].errors}"
 			formControlName="password"
 			type="password"
 			name="password"
 			placeholder="Password"
-			required="required"
 			/>
-			<div *ngIf="submitted && f['password'].errors" class="error">
+			<div *ngIf="(f['password'].touched || submitted) && f['password'].errors" class="error">
 				<div *ngIf="f['password'].errors['required']">* Debe ingresar una password.</div>
+				<div *ngIf="f['password'].errors['minlength']">* El password debe ser de 8 o más caracteres.</div>
+				<div *ngIf="f['password'].errors['maxlength']">* El password debe tener como máximo 15 caracteres.</div>
 			</div>
 
 			<button type="submit">Ingresar</button>

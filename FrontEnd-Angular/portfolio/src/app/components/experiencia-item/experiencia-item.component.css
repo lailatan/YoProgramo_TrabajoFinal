@@ -8,6 +8,16 @@
       filter: grayscale(100);
     }
   }
+
+  .fechas{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+  }
+  .fechas .h5{
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
   .item{
     padding: 1rem 0.5rem;
     background: #ffffff;

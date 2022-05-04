@@ -16,8 +16,8 @@
       "id": 1,
       "imagen": "assets/imagenes/experiencia/ing.jpg",
       "empresa": "ING Insurance",
-      "fecha_desde": "2001-04",
-      "fecha_hasta": "2003-11",
+      "fecha_desde": "2001-03",
+      "fecha_hasta": "",
       "cargo": "Analista Programadora",
       "detalle": "Análisis, diseño y desarrollo de nuevas aplicaciones y mantenimiento de las existentes: interfases con CobolAS400, SQLCobol, Visual Basic y bases de datos Oracle.Interfases y desarrollo de impresiones mediante JetFormControl de cartas a clientes, reportes e informes."
     },
@@ -147,7 +147,7 @@
       "link": "https://github.com/lailatan/Android_Calc_Insulina_Activa",
       "icono": "assets/imagenes/proyectos/ia.jpg",
       "nombre": "Insulina Activa",
-      "tecnologias": "Android Studio - Java"
+      "detalle": "Android Studio - Java"
     },
     {
       "id": 2,
@@ -155,7 +155,7 @@
       "link": "https://github.com/lailatan/Android_ConteodeCarbohidratos_V2",
       "icono": "assets/imagenes/proyectos/ch.jpg",
       "nombre": "Conteo Carbohidratos",
-      "tecnologias": "Android Studio - Java"
+      "detalle": "Android Studio - Java"
     },
     {
       "id": 3,
@@ -163,7 +163,7 @@
       "link": "https://github.com/lailatan/Android_FecNacTarot",
       "icono": "assets/imagenes/proyectos/tarot.jpg",
       "nombre": "Tarot",
-      "tecnologias": "Android Studio - Java"
+      "detalle": "Android Studio - Java"
     },
     {
       "id": 4,
@@ -171,7 +171,7 @@
       "link": "https://github.com/lailatan/Android_ConvertidorMedidasNatalia",
       "icono": "assets/imagenes/proyectos/medidas.jpg",
       "nombre": "Conversor Medidas",
-      "tecnologias": "Android Studio - Java"
+      "detalle": "Android Studio - Java"
     }
   ],
   "tecnologias": [

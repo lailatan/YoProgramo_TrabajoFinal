@@ -26,14 +26,14 @@ export class ProyectoModalComponent implements OnInit {
       link: ['', [Validators.required]],
       icono: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
-      tecnologias: ['', [Validators.required]],
+      detalle: ['', [Validators.required]],
       });
     if (this.proyecto!==undefined){
       this.f['imagen'].setValue(this.proyecto.imagen);
       this.f['link'].setValue(this.proyecto.link);
       this.f['icono'].setValue(this.proyecto.icono);
       this.f['nombre'].setValue(this.proyecto.nombre);
-      this.f['tecnologias'].setValue(this.proyecto.tecnologias);  
+      this.f['detalle'].setValue(this.proyecto.detalle);  
     }  
   }
 
@@ -53,7 +53,7 @@ export class ProyectoModalComponent implements OnInit {
           link: this.f['link'].value,
           icono: this.f['icono'].value,
           nombre: this.f['nombre'].value,
-          tecnologias: this.f['tecnologias'].value
+          detalle: this.f['detalle'].value
         };
         this.proyecto = newProyecto;
       } else {
@@ -61,7 +61,7 @@ export class ProyectoModalComponent implements OnInit {
         this.proyecto.link = this.f['link'].value;
         this.proyecto.icono = this.f['icono'].value;
         this.proyecto.nombre = this.f['nombre'].value;
-        this.proyecto.tecnologias = this.f['tecnologias'].value;   
+        this.proyecto.detalle = this.f['detalle'].value;   
         }
       this.activeModal.close(this.proyecto);
     }

@@ -1,8 +1,8 @@
 import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UiService } from '../../services/ui.service';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login-modal',
   templateUrl: './login-modal.component.html',
@@ -14,10 +14,10 @@ export class LoginModalComponent  {
   dataForm: FormGroup;
   submitted = false;
 
-  email: string = "";
+  mail: string = "";
   password: string = "";
 
-  constructor(public activeModal: NgbActiveModal,
+  constructor(public activeModal: NgbActiveModal, 
     private uiService: UiService,private formBuilder: FormBuilder) {}
 
   get f() { return this.dataForm.controls; }
@@ -25,10 +25,15 @@ export class LoginModalComponent  {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      email: ['', [Validators.required,Validators.email]],
-      password: ['', [Validators.required]]
-      });
-    }
+      mail: ['', [Validators.required,Validators.email,Validators.maxLength(255)]],
+      password: ['', [Validators.required,Validators.minLength(8),Validators.maxLength(15)]],
+      deviceInfo: this.formBuilder.group({
+          deviceId:['17867868768'],
+          deviceType:['DEVICE_TYPE_ANDROID'],
+          notificationToken:['67657575eececc34']
+      })
+    });
+  }
 
   onSubmit() {
     this.submitted = true;
