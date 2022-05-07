@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Persona } from 'src/app/objetos/persona';
 import {PersonaService } from '../../services/persona.service';
 import {FooterModalComponent} from '../footer-modal/footer-modal.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,7 +19,8 @@ export class FooterComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
 
-  constructor( private modalService: NgbModal, private uiService: UiService, private personaService:PersonaService ) {
+  constructor( private modalService: NgbModal, private uiService: UiService, 
+                private personaService:PersonaService ,  private authService: AuthService,) {
       this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value); }
 
   ngOnInit(): void {
@@ -39,22 +41,11 @@ export class FooterComponent implements OnInit {
   }
 
   toggleLogIn() {
-      const modalRef = this.modalService.open(LoginModalComponent);
-      //const modalRef = this.modalService.open(LoginModalComponent,{ disableClose: true });
-      //const modalRef = this.modalService.open(LoginModalComponent);
-      
-      //pasar valor
-      //modalRef.componentInstance.lesson = lesson;
-     
-      //recibir valor
-      //modalRef.result.then((result) => {
-      //  if ( result) {
-      //    this.uiService.toggleLogin();
-      //   }
-      //});       
+      const modalRef = this.modalService.open(LoginModalComponent);      
     }
 
   toggleLogOut(){
     this.uiService.cambiarModoEdicion();
+    this.authService.logout();
   }
 }

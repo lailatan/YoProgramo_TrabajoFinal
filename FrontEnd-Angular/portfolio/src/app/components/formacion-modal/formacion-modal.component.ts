@@ -25,8 +25,8 @@ export class FormacionModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      imagen: ['', [Validators.required]],
-      escuela: ['', [Validators.required]],
+      imagen: ['', [Validators.required,Validators.maxLength(255)]],
+      escuela: ['', [Validators.required,Validators.maxLength(255)]],
       });
     if (this.formacion!==undefined){
       this.f['imagen'].setValue(this.formacion.imagen);

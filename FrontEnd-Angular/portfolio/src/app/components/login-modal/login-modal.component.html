@@ -6,7 +6,10 @@
 	></i>
 </div>
 <div class="modal-body">
-	<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+	<form [formGroup]="dataForm" (ngSubmit)="onEnviar($event)">
+		<div *ngIf="datosInvalidos" class="error">
+			<div >Acceso inválido. Por favor, inténtelo otra vez.</div>
+		</div>
 		<div class="container">
 			<input
 			class="form-control"

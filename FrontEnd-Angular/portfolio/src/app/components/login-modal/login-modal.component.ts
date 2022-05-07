@@ -13,11 +13,12 @@ export class LoginModalComponent  {
   //Form Validables 
   dataForm: FormGroup;
   submitted = false;
+  datosInvalidos=false;
 
   mail: string = "";
   password: string = "";
 
-  constructor(public activeModal: NgbActiveModal, 
+  constructor(public activeModal: NgbActiveModal, private authService: AuthService,
     private uiService: UiService,private formBuilder: FormBuilder) {}
 
   get f() { return this.dataForm.controls; }
@@ -26,18 +27,12 @@ export class LoginModalComponent  {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
       mail: ['', [Validators.required,Validators.email,Validators.maxLength(255)]],
-      password: ['', [Validators.required,Validators.minLength(8),Validators.maxLength(15)]],
-      deviceInfo: this.formBuilder.group({
-          deviceId:['17867868768'],
-          deviceType:['DEVICE_TYPE_ANDROID'],
-          notificationToken:['67657575eececc34']
-      })
+      password: ['', [Validators.required,Validators.minLength(8),Validators.maxLength(15)]] 
     });
   }
 
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.dataForm.invalid) {
         return;
@@ -49,4 +44,36 @@ export class LoginModalComponent  {
       this.uiService.cambiarModoEdicion();
       this.activeModal.close(true);
     }
+
+    onEnviar(event: Event){
+      //	<form [formGroup]="dataForm" (ngSubmit)="onEnviar($event)">
+        this.submitted = true;
+        // stop here if form is invalid
+        if (this.dataForm.invalid) {
+          return;
+        }
+        if(this.submitted){
+          event.preventDefault;  
+          console.log("DATAFORM LOGIN" + this.dataForm.value);
+          const newEUsuario = 
+            { mail: this.f['mail'].value,
+            password: this.f['password'].value,
+            token: ''
+            };
+          this.authService.login(newEUsuario).subscribe(data=>{
+                if (data==null){
+                  this.datosInvalidos=true;
+                  this.f['mail'].reset();
+                  this.f['password'].reset();
+                  this.submitted=false;
+              } else {
+                this.uiService.cambiarModoEdicion();
+                this.activeModal.close(true);          
+              }
+      
+        })
+    
+        }
+    }
+  
 }

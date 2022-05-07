@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/APIportfolio/formacion")
+@RequestMapping("APIportfolio/formacion")
 @CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class FormacionController {
     

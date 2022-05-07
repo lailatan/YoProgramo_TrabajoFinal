@@ -11,16 +11,17 @@
 			<div>
 				<textarea 
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['sobre_mi'].errors }"
-				name="sobre_mi"
 				formControlName="sobre_mi"
+				name="sobre_mi"
 				placeholder="Sobre Mi... "
+				[ngClass]="{ 'is-invalid': (f['sobre_mi'].touched || submitted) && f['sobre_mi'].errors, 'is-valid': (f['sobre_mi'].touched || submitted) && !f['sobre_mi'].errors }"
 				required="required"
 				rows="10"
 				autofocus
 				></textarea>
-				<div *ngIf="submitted && f['sobre_mi'].errors" class="error">
+				<div *ngIf="(f['sobre_mi'].touched || submitted) && f['sobre_mi'].errors" class="error">
 				  <div *ngIf="f['sobre_mi'].errors['required']">* Debe ingresar un Detalle Sobre Mi </div>
+				  <div *ngIf="f['sobre_mi'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<button type="submit">Guardar</button>

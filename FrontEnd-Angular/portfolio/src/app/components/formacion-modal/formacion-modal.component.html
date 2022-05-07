@@ -11,7 +11,7 @@
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
+				[ngClass]="{ 'is-invalid': (f['imagen'].touched || submitted) && f['imagen'].errors , 'is-valid': (f['imagen'].touched || submitted) && !f['imagen'].errors}"
 				type="text"
 				name="imagen"
 				formControlName="imagen"
@@ -19,22 +19,24 @@
 				required="required"
 				autofocus
 				/>
-				<div *ngIf="submitted && f['imagen'].errors" class="error">
+				<div *ngIf="(f['imagen'].touched || submitted) && f['imagen'].errors" class="error">
 				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>
+				  <div *ngIf="f['imagen'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['escuela'].errors }"
+				[ngClass]="{ 'is-invalid': (f['escuela'].touched || submitted) && f['escuela'].errors , 'is-valid': (f['escuela'].touched || submitted) && !f['escuela'].errors}"
 				type="text"
 				name="escuela"
 				formControlName="escuela"
 				placeholder="Establecimiento Educativo"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['escuela'].errors" class="error">
+				<div *ngIf="(f['escuela'].touched || submitted) && f['escuela'].errors" class="error">
 				  <div *ngIf="f['escuela'].errors['required']">* Debe ingresar un Establecimiento Educativo </div>
+				  <div *ngIf="f['escuela'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div class="detalle">

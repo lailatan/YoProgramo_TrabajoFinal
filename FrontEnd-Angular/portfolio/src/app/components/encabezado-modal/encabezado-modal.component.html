@@ -11,47 +11,47 @@
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['foto'].errors }"
+				[ngClass]="{ 'is-invalid': (f['foto'].touched || submitted) && f['foto'].errors , 'is-valid': (f['foto'].touched || submitted) && !f['foto'].errors}"
 				type="text"
-				[(ngModel)]="foto"
 				name="foto"
 				formControlName="foto"
 				placeholder="Foto"
 				required="required"
 				autofocus
 				/>
-				<div *ngIf="submitted && f['foto'].errors" class="error">
+				<div *ngIf="(f['foto'].touched || submitted) && f['foto'].errors" class="error">
 				  <div *ngIf="f['foto'].errors['required']">* Debe ingresar una Foto </div>
+				  <div *ngIf="f['foto'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['nombre'].errors }"
+				[ngClass]="{ 'is-invalid': (f['nombre'].touched || submitted) && f['nombre'].errors, 'is-valid': (f['nombre'].touched || submitted) && !f['nombre'].errors }"
 				type="text"
-				[(ngModel)]="nombre"
 				name="nombre"
 				formControlName="nombre"
 				placeholder="Nombre"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['nombre'].errors" class="error">
+				<div *ngIf="(f['nombre'].touched || submitted) && f['nombre'].errors" class="error">
 				  <div *ngIf="f['nombre'].errors['required']">* Debe ingresar un Nombre </div>
+				  <div *ngIf="f['nombre'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div >
 				<input
 				formControlName="profesion" 
 				class="form-control" 
-				[ngClass]="{ 'is-invalid': submitted && f['profesion'].errors }"
+				[ngClass]="{ 'is-invalid': (f['profesion'].touched || submitted) && f['profesion'].errors, 'is-valid': (f['profesion'].touched || submitted) && !f['profesion'].errors }"
 				type="text"
-				[(ngModel)]="profesion"
 				name="profesion"
 				placeholder="Profesión"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['profesion'].errors" class="error">
+				<div *ngIf="(f['profesion'].touched || submitted) && f['profesion'].errors" class="error">
 					<div *ngIf="f['profesion'].errors['required']">* Debe ingresar una Profesión</div>
+					<div *ngIf="f['profesion'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 				</div>
 			</div>
 			<button type="submit">Guardar</button>

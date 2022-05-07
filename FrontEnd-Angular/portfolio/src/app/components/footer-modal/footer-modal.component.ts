@@ -10,11 +10,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class FooterModalComponent implements OnInit {
   @Input()  persona: Persona;
-  linkedin: string;
-  github: string;
-  anio: number;
-  ubicacion: string;
-  mail: string;
+  
   //Form Validables 
   dataForm: FormGroup;
   submitted = false;
@@ -25,20 +21,21 @@ export class FooterModalComponent implements OnInit {
   get f() { return this.dataForm.controls; }
 
   ngOnInit(): void {
-    this.linkedin = this.persona.linkedin;
-    this.github = this.persona.github;
-    this.anio = this.persona.anio;  
-    this.ubicacion = this.persona.ubicacion;  
-    this.mail = this.persona.mail;    
-
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      linkedin: ['', [Validators.required]],
-      github: ['', [Validators.required]],
-      anio: ['', [Validators.required, Validators.maxLength, Validators.minLength,Validators.max, Validators.min]],
-      ubicacion: ['', [Validators.required]],
-      mail: ['', [Validators.required, Validators.email]],
+      linkedin: ['', [Validators.required,Validators.maxLength(255)]],
+      github: ['', [Validators.required,Validators.maxLength(255)]],
+      anio: ['', [Validators.required, Validators.maxLength, Validators.minLength,Validators.max(3000), Validators.min(1900)]],
+      ubicacion: ['', [Validators.required,Validators.maxLength(255)]],
+      mail: ['', [Validators.required, Validators.email,Validators.maxLength(255)]],
       });
+      if (this.persona!==undefined){
+        this.f['linkedin'].setValue(this.persona.linkedin); 
+        this.f['github'].setValue(this.persona.github); 
+        this.f['anio'].setValue(this.persona.anio); 
+        this.f['ubicacion'].setValue(this.persona.ubicacion); 
+        this.f['mail'].setValue(this.persona.mail); 
+      }  
     
   }
 
@@ -52,11 +49,11 @@ export class FooterModalComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
-      this.persona.linkedin = this.linkedin;
-      this.persona.github = this.github;
-      this.persona.anio = this.anio;   
-      this.persona.ubicacion = this.ubicacion;   
-      this.persona.mail = this.mail;   
+      this.persona.linkedin = this.f['linkedin'].value;
+      this.persona.github = this.f['github'].value;
+      this.persona.anio = this.f['anio'].value;  
+      this.persona.ubicacion = this.f['ubicacion'].value;  
+      this.persona.mail = this.f['mail'].value;  
   
       this.activeModal.close(this.persona);
       }

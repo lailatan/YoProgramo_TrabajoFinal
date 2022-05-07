@@ -22,7 +22,7 @@ export class SobreMiModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      sobre_mi: ['', [Validators.required]],
+      sobre_mi: ['', [Validators.required,Validators.maxLength(255)]],
       });
 
     //this.sobre_mi = this.persona.sobre_mi;

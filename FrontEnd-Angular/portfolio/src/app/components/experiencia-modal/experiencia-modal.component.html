@@ -11,7 +11,7 @@
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
+				[ngClass]="{ 'is-invalid': (f['imagen'].touched || submitted) && f['imagen'].errors, 'is-valid': (f['imagen'].touched || submitted) && !f['imagen'].errors }"
 				type="text"
 				name="imagen"
 				formControlName="imagen"
@@ -19,28 +19,30 @@
 				required="required"
 				autofocus
 				/>
-				<div *ngIf="submitted && f['imagen'].errors" class="error">
+				<div *ngIf="(f['imagen'].touched || submitted) && f['imagen'].errors" class="error">
 				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>
+				  <div *ngIf="f['imagen'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['empresa'].errors }"
+				[ngClass]="{ 'is-invalid': (f['empresa'].touched || submitted) && f['empresa'].errors, 'is-valid': (f['empresa'].touched || submitted) && !f['empresa'].errors }"
 				type="text"
 				name="empresa"
 				formControlName="empresa"
 				placeholder="Empresa"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['empresa'].errors" class="error">
+				<div *ngIf="(f['empresa'].touched || submitted) && f['empresa'].errors" class="error">
 				  <div *ngIf="f['empresa'].errors['required']">* Debe ingresar una Empresa </div>
+				  <div *ngIf="f['empresa'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
             <div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['fecha_desde'].errors }"
+				[ngClass]="{ 'is-invalid': (f['fecha_desde'].touched || submitted) && f['fecha_desde'].errors, 'is-valid': (f['fecha_desde'].touched || submitted) && !f['fecha_desde'].errors }"
 				type="month" min="1900-01" value="2000-01"
 				pattern="[0-9]{4}-[0-9]{2}"
 				name="fecha_desde"
@@ -48,7 +50,7 @@
 				placeholder="mm/aaaa"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['fecha_desde'].errors" class="error">
+				<div *ngIf="(f['fecha_desde'].touched || submitted) && f['fecha_desde'].errors" class="error">
 				  <div *ngIf="f['fecha_desde'].errors['required']">* Debe ingresar una Fecha de Inicio </div>
 				  <div *ngIf="f['fecha_desde'].errors['pattern']">* Debe ingresar una Fecha de Inicio válida</div>
 			   </div>
@@ -56,42 +58,44 @@
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['fecha_hasta'].errors }"
+				[ngClass]="{ 'is-invalid': (f['fecha_hasta'].touched || submitted) && f['fecha_hasta'].errors, 'is-valid': (f['fecha_hasta'].touched || submitted) && !f['fecha_hasta'].errors }"
 				type="month" min="1900-01" value="2000-01"
 				pattern="[0-9]{4}-[0-9]{2}"
 				name="fecha_hasta"
 				formControlName="fecha_hasta"
 				placeholder="mm/aaaa"
 				/>
-				<div *ngIf="submitted && f['fecha_hasta'].errors" class="error">
+				<div *ngIf="(f['fecha_hasta'].touched || submitted) && f['fecha_hasta'].errors" class="error">
 				  <div *ngIf="f['fecha_hasta'].errors['pattern']">* Debe ingresar una Fecha de Fin válida</div>
 			   </div>
 			</div>
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['cargo'].errors }"
+				[ngClass]="{ 'is-invalid': (f['cargo'].touched || submitted) && f['cargo'].errors, 'is-valid': (f['cargo'].touched || submitted) && !f['cargo'].errors }"
 				type="text"
 				name="cargo"
 				formControlName="cargo"
 				placeholder="Cargo"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['cargo'].errors" class="error">
+				<div *ngIf="(f['cargo'].touched || submitted) && f['cargo'].errors" class="error">
 				  <div *ngIf="f['cargo'].errors['required']">* Debe ingresar un Cargo </div>
+				  <div *ngIf="f['cargo'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
             <textarea 
             class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['detalle'].errors }"
+            [ngClass]="{ 'is-invalid': (f['detalle'].touched || submitted) && f['detalle'].errors, 'is-valid': (f['detalle'].touched || submitted) && !f['detalle'].errors }"
             name="detalle"
             formControlName="detalle"
             placeholder="Detalle... "
             required="required"
             rows="10"
             ></textarea>
-            <div *ngIf="submitted && f['detalle'].errors" class="error">
+            <div *ngIf="(f['detalle'].touched || submitted) && f['detalle'].errors" class="error">
               <div *ngIf="f['detalle'].errors['required']">* Debe ingresar un Detalle</div>
+			  <div *ngIf="f['detalle'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
            </div>
         <button type="submit">Guardar</button>
 		</div>	

@@ -11,5 +11,7 @@ public interface IUsuarioService {
     public void borrarUsuario(Integer id);
     
     public Usuario traerUsuarioPorId(Integer id);  
+
+    public Usuario validarUsuario(String mail, String password);
     
 }

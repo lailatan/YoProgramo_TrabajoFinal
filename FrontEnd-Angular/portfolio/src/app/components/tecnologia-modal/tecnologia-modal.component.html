@@ -11,7 +11,7 @@
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['imagen'].errors }"
+				[ngClass]="{ 'is-invalid': (f['imagen'].touched || submitted) && f['imagen'].errors, 'is-valid': (f['imagen'].touched || submitted) && !f['imagen'].errors }"
 				type="text"
 				name="imagen"
 				formControlName="imagen"
@@ -19,35 +19,41 @@
 				required="required"
 				autofocus
 				/>
-				<div *ngIf="submitted && f['imagen'].errors" class="error">
+				<div *ngIf="(f['imagen'].touched || submitted) && f['imagen'].errors" class="error">
 				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>
+				  <div *ngIf="f['imagen'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
+
 			   </div>
 			</div>
 			<div>
 				<input
 				class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f['nombre'].errors }"
+				[ngClass]="{ 'is-invalid': (f['nombre'].touched || submitted) && f['nombre'].errors, 'is-valid': (f['nombre'].touched || submitted) && !f['nombre'].errors }"
 				type="text"
 				name="nombre"
 				formControlName="nombre"
 				placeholder="Nombre"
 				required="required"
 				/>
-				<div *ngIf="submitted && f['nombre'].errors" class="error">
+				<div *ngIf="(f['nombre'].touched || submitted) && f['nombre'].errors" class="error">
 				  <div *ngIf="f['nombre'].errors['required']">* Debe ingresar un Nombre </div>
+				  <div *ngIf="f['nombre'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
+
 			   </div>
 			</div>
             <textarea 
             class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['detalle'].errors }"
+            [ngClass]="{ 'is-invalid': (f['detalle'].touched || submitted) && f['detalle'].errors, 'is-valid': (f['detalle'].touched || submitted) && !f['detalle'].errors }"
             name="detalle"
             formControlName="detalle"
             placeholder="Detalle... "
             required="required"
             rows="10"
             ></textarea>
-            <div *ngIf="submitted && f['detalle'].errors" class="error">
+            <div *ngIf="(f['detalle'].touched || submitted) && f['detalle'].errors" class="error">
               <div *ngIf="f['detalle'].errors['required']">* Debe ingresar un Detalle</div>
+			  <div *ngIf="f['detalle'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
+
            </div>
         <button type="submit">Guardar</button>
 		</div>	

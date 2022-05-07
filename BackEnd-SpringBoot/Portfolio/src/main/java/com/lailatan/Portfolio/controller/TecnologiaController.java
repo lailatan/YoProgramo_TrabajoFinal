@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/APIportfolio/tecnologia")
+@RequestMapping("APIportfolio/tecnologia")
 @CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class TecnologiaController {
     

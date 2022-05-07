@@ -12,50 +12,48 @@
 				<input
 					formControlName="linkedin" 
 					class="form-control"
-					[ngClass]="{ 'is-invalid': submitted && f['linkedin'].errors }"
 					type="text"
-					[(ngModel)]="linkedin"
+					[ngClass]="{ 'is-invalid': (f['linkedin'].touched || submitted) && f['linkedin'].errors, 'is-valid': (f['linkedin'].touched || submitted) && !f['linkedin'].errors }"
 					name="linkedin"
 					placeholder="LinkedIn"
 					required="required"
 					autofocus	
 				/>
-				<div *ngIf="submitted && f['linkedin'].errors" class="error">
+				<div *ngIf="(f['linkedin'].touched || submitted) && f['linkedin'].errors" class="error">
 				  <div *ngIf="f['linkedin'].errors['required']">* Debe ingresar una direccion de LinkedIn </div>
+				  <div *ngIf="f['linkedin'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
 			</div>
 			<div >
 				<input
 					formControlName="github" 
 					class="form-control" 
-					[ngClass]="{ 'is-invalid': submitted && f['github'].errors }"
+					[ngClass]="{ 'is-invalid': (f['github'].touched || submitted) && f['github'].errors , 'is-valid': (f['github'].touched || submitted) && !f['github'].errors}"
 					type="text"
-					[(ngModel)]="github"
 					name="github"
 					placeholder="GitHub"
 					required="required"
 				/>
-				<div *ngIf="submitted && f['github'].errors" class="error">
+				<div *ngIf="(f['github'].touched || submitted) && f['github'].errors" class="error">
 					<div *ngIf="f['github'].errors['required']">* Debe ingresar una direccion de GitHub</div>
+					<div *ngIf="f['github'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 				</div>			
 			</div>
 			<div >
 				<input
 					formControlName="anio" 
 					class="form-control" 
-					[ngClass]="{ 'is-invalid': submitted && f['anio'].errors }"
+					[ngClass]="{ 'is-invalid': (f['anio'].touched || submitted) && f['anio'].errors , 'is-valid': (f['anio'].touched || submitted) && !f['anio'].errors}"
 					type="number"
-					[(ngModel)]="anio"
 					name="anio"
 					placeholder="Año"
 					min="1900"
 					max="3000"
 					step="1"
 					required="required"
-					maxlength="4"
-					minlength="4"
+
 				/>
-				<div *ngIf="submitted && f['anio'].errors" class="error">
+				<div *ngIf="(f['anio'].touched || submitted) && f['anio'].errors" class="error">
 					<div *ngIf="f['anio'].errors['required']">* Debe ingresar un Año</div>
 					<div *ngIf="f['anio'].errors['max'] || f['anio'].errors['min']">* Debe ingresar un Año válido</div>
 					<div *ngIf="f['anio'].errors['maxlength'] || f['anio'].errors['minlength']">* Debe ingresar un Año válido</div>
@@ -65,31 +63,31 @@
 				<input
 					formControlName="ubicacion" 
 					class="form-control" 
-					[ngClass]="{ 'is-invalid': submitted && f['ubicacion'].errors }"
+					[ngClass]="{ 'is-invalid': (f['ubicacion'].touched || submitted) && f['ubicacion'].errors, 'is-valid': (f['ubicacion'].touched || submitted) && !f['ubicacion'].errors }"
 					type="text"
-					[(ngModel)]="ubicacion"
 					name="ubicacion"
 					placeholder="Ubicacion"
 					required="required"
 				/>
-				<div *ngIf="submitted && f['ubicacion'].errors" class="error">
+				<div *ngIf="(f['ubicacion'].touched || submitted) && f['ubicacion'].errors" class="error">
 					<div *ngIf="f['ubicacion'].errors['required']">* Debe ingresar una Ubicación</div>
+					<div *ngIf="f['ubicacion'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 				</div>			
 			</div>
 			<div>
 				<input
 					formControlName="mail" 
 					class="form-control" 
-					[ngClass]="{ 'is-invalid': submitted && f['mail'].errors }"
+					[ngClass]="{ 'is-invalid': (f['mail'].touched || submitted) && f['mail'].errors , 'is-valid': (f['mail'].touched || submitted) && !f['mail'].errors}"
 					type="text"
-					[(ngModel)]="mail"
 					name="mail"
 					placeholder="Email"
 					required="required"
 				/>
-				<div *ngIf="submitted && f['mail'].errors" class="error">
+				<div *ngIf="(f['mail'].touched || submitted) && f['mail'].errors" class="error">
 					<div *ngIf="f['mail'].errors['required']">* Debe ingresar un Mail</div>
 					<div *ngIf="f['mail'].errors['email']">* Debe ingresar un Mail válido</div>
+					<div *ngIf="f['mail'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 				</div>			
 			</div>	
 			<button type="submit">Guardar</button>

@@ -21,12 +21,12 @@ export class ExperienciaModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      imagen: ['', [Validators.required]],
-      empresa: ['', [Validators.required]],
+      imagen: ['', [Validators.required,Validators.maxLength(255)]],
+      empresa: ['', [Validators.required,Validators.maxLength(255)]],
       fecha_desde: ['', [Validators.required, Validators.pattern("[0-9]{4}-[0-9]{2}")]],
       fecha_hasta: ['', [Validators.pattern("[0-9]{4}-[0-9]{2}")]],
-      cargo: ['', [Validators.required]],
-      detalle: ['', [Validators.required]],
+      cargo: ['', [Validators.required,Validators.maxLength(255)]],
+      detalle: ['', [Validators.required,Validators.maxLength(255)]],
       });
     if (this.experiencia!==undefined){
       this.f['imagen'].setValue(this.experiencia.imagen); 

@@ -24,9 +24,9 @@ export class CursoModalComponent implements OnInit {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
       //anio: ['', [Validators.required,Validators.pattern("\d{4}")]],
-      anio: ['', [Validators.required,Validators.max,Validators.min]],
-      titulo: ['', [Validators.required]],
-      descripcion: ['',]
+      anio: ['', [Validators.required,Validators.max(3000),Validators.min(1900)]],
+      titulo: ['', [Validators.required,Validators.maxLength(255)]],
+      descripcion: ['',[Validators.maxLength(255)]]
       });
     if (this.curso!==undefined){
       this.f['anio'].setValue(this.curso.anio); 

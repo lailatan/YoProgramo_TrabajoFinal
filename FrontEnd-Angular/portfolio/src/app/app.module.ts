@@ -30,6 +30,8 @@ import { ExperienciaModalComponent } from './components/experiencia-modal/experi
 import { ProyectoModalComponent } from './components/proyecto-modal/proyecto-modal.component';
 import { CursoModalComponent } from './components/curso-modal/curso-modal.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { PersonaService } from './services/persona.service';
+import { InterceptorService } from './services/interceptor.service';
 
 
 const appRoutes: Routes = [
@@ -82,7 +84,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes,{enableTracing: true})
   ],
-  providers: [],
+  providers: [PersonaService, 
+    {provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

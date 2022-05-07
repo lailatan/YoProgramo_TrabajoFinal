@@ -11,15 +11,15 @@
             <div>
                 <input
                     class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f['anio'].errors }"
-                    type="number" pattern="\d{4}" min="1900" max="3000"
+                    [ngClass]="{ 'is-invalid': (f['anio'].touched || submitted) && f['anio'].errors, 'is-valid': (f['anio'].touched || submitted) && !f['anio'].errors }"
+                    type="number"
                     name="anio"
                     formControlName="anio"
                     placeholder="Año"
                     required="required"
                     autofocus
                 />
-                <div *ngIf="submitted && f['anio'].errors" class="error">
+                <div *ngIf="(f['anio'].touched || submitted) && f['anio'].errors" class="error">
                     <div *ngIf="f['anio'].errors['required']">* Debe ingresar un Año</div>
                     <div *ngIf="f['anio'].errors['min'] || f['anio'].errors['max']">* Debe ingresar un Año válido</div>
                 </div>
@@ -27,26 +27,31 @@
 			<div>
 				<input
                     class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f['titulo'].errors }"
+                    [ngClass]="{ 'is-invalid': (f['titulo'].touched || submitted) && f['titulo'].errors, 'is-valid': (f['titulo'].touched || submitted) && !f['titulo'].errors }"
                     type="text"
                     name="titulo"
                     formControlName="titulo"
                     placeholder="Título"
                     required="required"
 				/>
-				<div *ngIf="submitted && f['titulo'].errors" class="error">
+				<div *ngIf="(f['titulo'].touched || submitted) && f['titulo'].errors" class="error">
 				  <div *ngIf="f['titulo'].errors['required']">* Debe ingresar un Título </div>
+                  <div *ngIf="f['titulo'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
 			   </div>
             </div>
 			<div>
                 <textarea 
                     class="form-control"
+                    [ngClass]="{ 'is-invalid': (f['descripcion'].touched || submitted) && f['descripcion'].errors, 'is-valid': (f['descripcion'].touched || submitted) && !f['descripcion'].errors }"
                     name="descripcion"
                     formControlName="descripcion"
                     placeholder="Descripción... "
                     rows="10"
                 ></textarea>
-            </div>
+				<div *ngIf="(f['descripcion'].touched || submitted) && f['descripcion'].errors" class="error">
+                    <div *ngIf="f['descripcion'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
+                 </div>
+              </div>
 			<button type="submit">Guardar</button>
 		</div>	
 	</form>

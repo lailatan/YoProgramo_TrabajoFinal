@@ -10,9 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EncabezadoModalComponent implements OnInit {
   @Input()  persona: Persona;
-  nombre: string;
-  profesion: string;
-  foto: string;
   //Form Validables 
   dataForm: FormGroup;
   submitted = false;
@@ -24,14 +21,15 @@ export class EncabezadoModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      nombre: ['', [Validators.required]],
-      profesion: ['', [Validators.required]],
-      foto: ['', [Validators.required]],
+      nombre: ['', [Validators.required,Validators.maxLength(255)]],
+      profesion: ['', [Validators.required,Validators.maxLength(255)]],
+      foto: ['', [Validators.required,Validators.maxLength(255)]],
       });
-
-    this.nombre = this.persona.nombre;
-    this.profesion = this.persona.profesion;
-    this.foto = this.persona.foto;   
+      if (this.persona!==undefined){
+        this.f['nombre'].setValue(this.persona.nombre); 
+        this.f['profesion'].setValue(this.persona.profesion); 
+        this.f['foto'].setValue(this.persona.foto); 
+      }  
   }
 
   onSubmit() {
@@ -44,9 +42,9 @@ export class EncabezadoModalComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
-      this.persona.nombre = this.nombre;
-      this.persona.profesion = this.profesion;
-      this.persona.foto = this.foto;   
+      this.persona.nombre = this.f['nombre'].value;
+      this.persona.profesion = this.f['profesion'].value;
+      this.persona.foto = this.f['foto'].value;   
 
       this.activeModal.close(this.persona);
     }

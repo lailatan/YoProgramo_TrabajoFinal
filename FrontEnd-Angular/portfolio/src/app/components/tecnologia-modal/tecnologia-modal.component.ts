@@ -22,9 +22,9 @@ export class TecnologiaModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      imagen: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
-      detalle: ['', [Validators.required]],
+      imagen: ['', [Validators.required,Validators.maxLength(255)]],
+      nombre: ['', [Validators.required,Validators.maxLength(255)]],
+      detalle: ['', [Validators.required,Validators.maxLength(255)]],
       });
     if (this.tecnologia!==undefined){
       this.f['nombre'].setValue(this.tecnologia.nombre); 
