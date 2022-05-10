@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +24,7 @@ public class Formacion {
    private String imagen;    
    @JsonManagedReference
     @OneToMany (mappedBy = "formacion", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+    @OrderBy("anio DESC")
    private List<Curso> cursos;
 
     public Formacion() {

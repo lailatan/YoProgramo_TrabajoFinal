@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
-import {Observable,of} from 'rxjs';
+import {catchError, Observable,of, throwError} from 'rxjs';
 import{Proyecto} from '../objetos/proyecto';
 
 const httpOptions = {
@@ -19,21 +19,40 @@ export class ProyectoService {
   constructor(private http: HttpClient) { }
 
   getProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(this.apiUrl + "/find")
+    return this.http
+      .get<Proyecto[]>(this.apiUrl + "/find")
+      .pipe(catchError(error=>{
+        return throwError(() => new Error(error.status));        
+      }));
+
   }
 
   updateProyecto(proyecto: Proyecto): Observable<Proyecto>{
     //const url = `${this.apiUrl}/${proyecto.id}`;
-    return this.http.put<Proyecto>(this.apiUrl + "/save",proyecto,httpOptions);
+    return this.http
+        .put<Proyecto>(this.apiUrl + "/save",proyecto,httpOptions)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
 
   deleteProyecto(proyecto: Proyecto): Observable<Proyecto>{
     const url = `${this.apiUrl}/delete/${proyecto.id}`;
-    return this.http.delete<Proyecto>(url);
+    return this.http
+        .delete<Proyecto>(url)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
   
   addProyecto(proyecto: Proyecto): Observable<Proyecto>{
-    return this.http.post<Proyecto>(this.apiUrl + "/new",proyecto,httpOptions);
+    return this.http
+        .post<Proyecto>(this.apiUrl + "/new",proyecto,httpOptions)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
   }
 
 

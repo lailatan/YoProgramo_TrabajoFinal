@@ -19,8 +19,8 @@ export class AuthService {
   currentUserSubject: BehaviorSubject<Usuario>;
 
   constructor(private http: HttpClient) {
-    console.log("Servicio ath corriendo");
-    console.log(this.currentUserSubject)
+    //console.log("Servicio ath corriendo");
+    //console.log(this.currentUserSubject)
     this.currentUserSubject = new BehaviorSubject<Usuario>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
 
    }
@@ -39,7 +39,7 @@ export class AuthService {
 
   get UsuarioAutenticado() {
     var token = sessionStorage.getItem('currentUser');
-    console.log("sessionStorage "+token);
+    //console.log("sessionStorage "+token);
     return this.currentUserSubject.value;
   }
 

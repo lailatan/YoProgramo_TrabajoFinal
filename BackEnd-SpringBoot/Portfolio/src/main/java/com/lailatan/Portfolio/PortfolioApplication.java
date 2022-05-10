@@ -27,7 +27,6 @@ public class PortfolioApplication {
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/APIportfolio/usuario/login").permitAll()
-				//.antMatchers(HttpMethod.POST).permitAll()
 				.antMatchers(HttpMethod.GET).permitAll()
 				.anyRequest().authenticated();
                         http.cors();

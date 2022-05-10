@@ -13,7 +13,8 @@ public class ExperienciaService implements IExperienciaService{
 
     @Override
     public List<Experiencia> traerExperiencias() {
-        return experienciaRepository.findAll();
+        //return experienciaRepository.findAll();
+        return experienciaRepository.findAllExperienciaByOrderByFechaDesdeDesc();
     }
 
     @Override

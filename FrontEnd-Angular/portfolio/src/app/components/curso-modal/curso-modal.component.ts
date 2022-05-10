@@ -47,18 +47,18 @@ export class CursoModalComponent implements OnInit {
     {
       if (this.curso===undefined){
         const newCurso =
-        { id: 0,
-          anio: this.f['anio'].value,
+        { anio: this.f['anio'].value,
           titulo: this.f['titulo'].value,
           descripcion: this.f['descripcion'].value
         };
-        this.curso = newCurso;
+        this.activeModal.close(newCurso);
       } else {
-        this.curso.anio =this.f['anio'].value;
-        this.curso.titulo = this.f['titulo'].value;
-        this.curso.descripcion = this.f['descripcion'].value;
-        }
-      this.activeModal.close(this.curso);
+        var cursoUpd=Object.assign({}, this.curso);
+        cursoUpd.anio =this.f['anio'].value;
+        cursoUpd.titulo = this.f['titulo'].value;
+        cursoUpd.descripcion = this.f['descripcion'].value;
+        this.activeModal.close(cursoUpd);
+      }
     }
   }
 }

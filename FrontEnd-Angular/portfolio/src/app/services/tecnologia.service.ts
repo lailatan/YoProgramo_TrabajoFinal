@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
-import {Observable,of} from 'rxjs';
+import {catchError, Observable,of, throwError} from 'rxjs';
 import { Tecnologia } from '../objetos/tecnologia';
 
 const httpOptions = {
@@ -18,21 +18,41 @@ export class TecnologiaService {
   constructor(private http: HttpClient) { }
 
   getTecnologias(): Observable<Tecnologia[]> {
-    return this.http.get<Tecnologia[]>(this.apiUrl+"/find")
+    return this.http
+        .get<Tecnologia[]>(this.apiUrl+"/find")
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
 
   updateTecnologia(tecnologia: Tecnologia): Observable<Tecnologia>{
    // const url = `${this.apiUrl}/${tecnologia.id}`;
-    return this.http.put<Tecnologia>(this.apiUrl+"/save",tecnologia,httpOptions);
+    return this.http
+        .put<Tecnologia>(this.apiUrl+"/save",tecnologia,httpOptions)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
 
   deleteTecnologia(tecnologia: Tecnologia): Observable<Tecnologia>{
     const url = `${this.apiUrl}/delete/${tecnologia.id}`;
-    return this.http.delete<Tecnologia>(url);
+    return this.http
+        .delete<Tecnologia>(url)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
   
   addTecnologia(tecnologia: Tecnologia): Observable<Tecnologia>{
-    return this.http.post<Tecnologia>(this.apiUrl+"/new",tecnologia,httpOptions);
+    return this.http
+        .post<Tecnologia>(this.apiUrl+"/new",tecnologia,httpOptions)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+        }));
+
   }
 
 }

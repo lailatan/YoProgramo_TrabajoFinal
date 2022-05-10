@@ -27,6 +27,18 @@
     letter-spacing: 0.1rem;
     font-size: 2rem;
   }
+
+  .error {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 0.5rem;
+    margin-top: 1rem;
+    color:#9f0e0e;
+    margin-bottom: 1rem;
+    font-size:1rem;
+  }
+
 /** Solo en pantalla Computadoras **/
 @media only screen and (min-width: 48rem) {
   .contenedor-header{

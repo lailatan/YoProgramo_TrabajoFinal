@@ -49,13 +49,14 @@ export class FooterModalComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
-      this.persona.linkedin = this.f['linkedin'].value;
-      this.persona.github = this.f['github'].value;
-      this.persona.anio = this.f['anio'].value;  
-      this.persona.ubicacion = this.f['ubicacion'].value;  
-      this.persona.mail = this.f['mail'].value;  
+      var personaUpd=Object.assign({}, this.persona);
+      personaUpd.linkedin = this.f['linkedin'].value;
+      personaUpd.github = this.f['github'].value;
+      personaUpd.anio = this.f['anio'].value;  
+      personaUpd.ubicacion = this.f['ubicacion'].value;  
+      personaUpd.mail = this.f['mail'].value;  
   
-      this.activeModal.close(this.persona);
+      this.activeModal.close(personaUpd);
       }
   }
 }

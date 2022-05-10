@@ -19,3 +19,15 @@
     width: 90%;
     margin: 0 auto;
   }
+
+  .error {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 0.5rem;
+    margin-top: 1rem;
+    color:#9f0e0e;
+    margin-bottom: 1rem;
+    font-size:1rem;
+  }
+  

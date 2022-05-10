@@ -56,7 +56,7 @@ public class UsuarioController {
     
     @DeleteMapping("/delete/{id}")
     public void borrarUsuario(@PathVariable Integer id){
-        usuarioService.borrarUsuario(id);
+         usuarioService.borrarUsuario(id);
     }
     
     @PostMapping("/login")
@@ -70,13 +70,13 @@ public class UsuarioController {
             
             Usuario usuario = usuarioService.validarUsuario(mail, password);
             if (usuario!=null) {
-                String secretKey = "mySecretKey";
+                String secretKey = "portfolio";
                 List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                                 .commaSeparatedStringToAuthorityList("ROLE_USER");
 
                 String token =  Jwts
                                 .builder()
-                                .setId("softtekJWT")
+                                .setId("lailatan")
                                 .setSubject(mail)
                                 .claim("authorities",
                                                 grantedAuthorities.stream()

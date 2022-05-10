@@ -2,7 +2,7 @@
     <div>
         <a><img [src]="miExperiencia.imagen" [alt]="miExperiencia.empresa"></a>
         <h5>{{miExperiencia.empresa}}</h5>
-        <h5>{{miExperiencia.fecha_desde}} a {{texto_fecha_hasta}}</h5>
+        <h5>{{miExperiencia.fechaDesde}} a {{texto_fecha_hasta}}</h5>
     </div>
     <div>
         <h5 >{{miExperiencia.cargo}}</h5>
@@ -12,5 +12,9 @@
             <span><i class="boton-edicion fa fa-trash-alt"  *ngIf="modoEdicion" (click)="eliminarDatos()"></i></span>
         </div>
     </div>
+</div>
+<div *ngIf="errorMsg!='' && errorId==miExperiencia.id" class="error">
+    <div>{{errorMsg}} </div>
+    <div>Vuelva a intentar más tarde.</div>
 </div>
 

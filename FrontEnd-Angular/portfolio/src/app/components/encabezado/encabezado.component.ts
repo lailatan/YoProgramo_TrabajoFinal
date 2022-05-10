@@ -15,15 +15,18 @@ export class EncabezadoComponent implements OnInit {
   misDatos: Persona = {} as Persona;
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: String="";
 
   constructor( private uiService: UiService, private  personaService: PersonaService,private modalService: NgbModal ) { 
       this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
   }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(datos => 
-      this.misDatos = datos
-      );
+    this.personaService.getPersona().subscribe({
+      next: (value) => {this.misDatos=value; this.errorMsg=""},
+      error: (e) => {this.errorMsg = "Se ha producido un error" + 
+      (e.message==0?".":": " + e.message + ". ")}
+});
       this.modoEdicion = this.uiService.esModoEdicion();
   }
 
@@ -32,9 +35,13 @@ export class EncabezadoComponent implements OnInit {
     modalRef.componentInstance.persona = this.misDatos;
     modalRef.result.then((result) => {
       if (result) {
-        this.misDatos=result;
-        this.personaService.updatePersona(this.misDatos).subscribe();
+        this.personaService.updatePersona(result).subscribe({
+            next: (value) => {this.misDatos=value; this.errorMsg=""},
+            error: (e) => {this.errorMsg = "Se ha producido un error" + 
+              (e.message==0?".":": " + e.message + ". ")}
+          });
       }
+
     });
   }
 }

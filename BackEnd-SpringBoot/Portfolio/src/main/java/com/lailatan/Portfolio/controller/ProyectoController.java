@@ -48,7 +48,7 @@ public class ProyectoController {
     
     @DeleteMapping("/delete/{id}")
     public void borrarProyecto(@PathVariable Integer id){
-        proyectoService.borrarProyecto(id);
+         proyectoService.borrarProyecto(id);
     }
 
 }

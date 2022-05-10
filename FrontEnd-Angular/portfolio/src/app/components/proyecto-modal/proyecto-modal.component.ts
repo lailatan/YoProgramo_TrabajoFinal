@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './proyecto-modal.component.html',
   styleUrls: ['./proyecto-modal.component.css']
 })
+
 export class ProyectoModalComponent implements OnInit {
   @Input()  proyecto: Proyecto;
   id: number = 0;
@@ -55,15 +56,16 @@ export class ProyectoModalComponent implements OnInit {
           nombre: this.f['nombre'].value,
           detalle: this.f['detalle'].value
         };
-        this.proyecto = newProyecto;
+        this.activeModal.close(newProyecto);
       } else {
-        this.proyecto.imagen = this.f['imagen'].value;
-        this.proyecto.link = this.f['link'].value;
-        this.proyecto.icono = this.f['icono'].value;
-        this.proyecto.nombre = this.f['nombre'].value;
-        this.proyecto.detalle = this.f['detalle'].value;   
-        }
-      this.activeModal.close(this.proyecto);
+        var proyectoUpd=Object.assign({}, this.proyecto);
+        proyectoUpd.imagen = this.f['imagen'].value;
+        proyectoUpd.link = this.f['link'].value;
+        proyectoUpd.icono = this.f['icono'].value;
+        proyectoUpd.nombre = this.f['nombre'].value;
+        proyectoUpd.detalle = this.f['detalle'].value;   
+        this.activeModal.close(proyectoUpd);
+      }
     }
   }
 

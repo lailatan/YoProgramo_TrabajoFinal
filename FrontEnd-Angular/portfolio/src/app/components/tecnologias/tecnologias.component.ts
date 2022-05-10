@@ -15,36 +15,32 @@ export class TecnologiasComponent implements OnInit {
   tecnologiasList: Tecnologia[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: string="";
 
   constructor( private uiService: UiService,
-    private tecnologiaService:TecnologiaService,private modalService: NgbModal
-  ) {
+    private tecnologiaService:TecnologiaService,private modalService: NgbModal) {
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
    }
 
   ngOnInit(): void {
-    this.tecnologiaService.getTecnologias().subscribe(data => {
-      this.tecnologiasList = data;
-    });
+    this.tecnologiaService.getTecnologias().subscribe({
+      next: (value) => {this.tecnologiasList = value; this.errorMsg=""},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}    });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 
   agregarDatos(){
     const modalRef = this.modalService.open(TecnologiaModalComponent);
-    //modalRef.componentInstance.formacion = new Formacion();
     modalRef.result.then((result) => {
       if (result) {
-        this.tecnologiaService.addTecnologia(result).subscribe(t => 
-          this.tecnologiasList.push(t));
+        this.tecnologiaService.addTecnologia(result).subscribe({
+          next: (value) => {this.tecnologiasList.push(value); this.errorMsg=""},
+          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
       }
     });
   }
-  cambiarTecnologia(tecnologia:Tecnologia) {
-    this.tecnologiaService.updateTecnologia(tecnologia).subscribe();
-  }
+
   eliminarTecnologia(tecnologia:Tecnologia) {
-    this.tecnologiaService.deleteTecnologia(tecnologia).subscribe( o => 
-      this.tecnologiasList = this.tecnologiasList.filter(t => t.id !== tecnologia.id) 
-      );
+    this.tecnologiasList = this.tecnologiasList.filter(t => t.id !== tecnologia.id);
   }
 }

@@ -1,20 +1,22 @@
 <!--TECNOLOGIAS-->
-<section>
-    <div class="conocimientos">
-        <h2 class="titulo" id="conocimientos">Tecnologías</h2>
-        <div class="contenedor">
-            <div class="contenedor-conocimientos">
-                <app-tecnologias-item
-                    *ngFor="let unaTecnologia of tecnologiasList"
-                    [miTecnologia]="unaTecnologia"
-                    (onDeleteTecnologia)="eliminarTecnologia(unaTecnologia)"
-                    (onUpdateTecnologia)="cambiarTecnologia(unaTecnologia)"
-                >
-                </app-tecnologias-item>
-            </div>
+
+<section class="conocimientos">
+    <h2 class="titulo" id="conocimientos">Tecnologías</h2>
+    <div class="contenedor">
+        <div class="contenedor-conocimientos">
+            <app-tecnologias-item
+                *ngFor="let unaTecnologia of tecnologiasList"
+                [miTecnologia]="unaTecnologia"
+                (onDeleteTecnologia)="eliminarTecnologia(unaTecnologia)"
+            >
+            </app-tecnologias-item>
         </div>
-        <div class="contenedor-edicion-titulo">
-            <span><i class="boton-edicion-fill fa fa-plus" *ngIf="modoEdicion" (click)="agregarDatos()"></i></span>    
-        </div>    
     </div>
+    <div class="contenedor-edicion-titulo">
+        <span><i class="boton-edicion-fill fa fa-plus" *ngIf="modoEdicion" (click)="agregarDatos()"></i></span>    
+    </div>    
+    <div *ngIf="errorMsg!=''" class="error">
+        <div>{{errorMsg}}</div>
+        <div>Vuelva a intentar más tarde.</div>
+    </div>    
 </section>

@@ -6,13 +6,15 @@
             *ngFor="let unaFormacion of formacionList"
             [miFormacion]= "unaFormacion"
             (onDeleteFormacion)="eliminarFormacion(unaFormacion)"
-            (onUpdateFormacion)="cambiarFormacion(unaFormacion)"
-
         >
         </app-formacion-item>
     </div>
     <div class="contenedor-edicion-titulo">
         <span><i class="boton-edicion-fill fa fa-plus"  *ngIf="modoEdicion" (click)="agregarDatos()"></i></span>    
     </div>    
+    <div *ngIf="errorMsg!=''" class="error">
+        <div>{{errorMsg}}</div>
+        <div> Vuelva a intentar más tarde.</div>
+    </div>
 </section>
 

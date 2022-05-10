@@ -50,7 +50,7 @@ public class FormacionController {
     
     @DeleteMapping("/delete/{id}")
     public void borrarFormacion(@PathVariable Integer id){
-        formacionService.borrarFormacion(id);
+         formacionService.borrarFormacion(id);
     }
     
 }

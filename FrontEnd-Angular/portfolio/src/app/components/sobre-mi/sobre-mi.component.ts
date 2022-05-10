@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
-import { Subscription } from 'rxjs';
+import { catchError, of, Subscription } from 'rxjs';
 import { Persona } from 'src/app/objetos/persona';
 import {PersonaService } from '../../services/persona.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -12,17 +12,29 @@ import {SobreMiModalComponent} from '../sobre-mi-modal/sobre-mi-modal.component'
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
-  misDatos: Persona;
+  misDatos: Persona = {    
+          foto: "",
+          nombre: "",
+          ubicacion: "",
+          mail: "",
+          anio:0,
+          profesion: "",
+          sobre_mi: "",
+          linkedin: "",
+          github: ""};
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: String;
 
   constructor(private uiService: UiService, private personaService:PersonaService,private modalService: NgbModal) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
+    this.errorMsg="";
   }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {
-      this.misDatos = data;
+    this.personaService.getPersona().subscribe({
+      next: (value) => {this.misDatos=value; this.errorMsg=""},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
     });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
@@ -32,8 +44,10 @@ export class SobreMiComponent implements OnInit {
     modalRef.componentInstance.persona = this.misDatos;
     modalRef.result.then((result) => {
       if (result) {
-        this.misDatos=result;
-        this.personaService.updatePersona(this.misDatos).subscribe();
+        this.personaService.updatePersona(result).subscribe({
+            next: (value) => {this.misDatos=value; this.errorMsg=""},
+            error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
+          });
       }
     });
   }

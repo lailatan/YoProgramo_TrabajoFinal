@@ -6,11 +6,14 @@
             *ngFor="let unaExperiencia of experienciaList"
             [miExperiencia]="unaExperiencia"
             (onDeleteExperiencia)="eliminarExperiencia(unaExperiencia)"
-            (onUpdateExperiencia)="cambiarExperiencia(unaExperiencia)"
         >
         </app-experiencia-item>
     </div>
     <div class="contenedor-edicion-titulo">
         <span><i class="boton-edicion-fill fa fa-plus"  *ngIf="modoEdicion"  (click)="agregarDatos()"></i></span>    
     </div>    
+    <div *ngIf="errorMsg!=''" class="error">
+        <div>{{errorMsg}} </div>
+        <div>Vuelva a intentar más tarde.</div>
+    </div>
 </section>

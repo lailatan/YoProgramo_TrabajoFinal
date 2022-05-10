@@ -2,11 +2,13 @@ import { Component, OnInit,Input,Output } from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { Experiencia } from 'src/app/objetos/experiencia';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-experiencia-modal',
   templateUrl: './experiencia-modal.component.html',
   styleUrls: ['./experiencia-modal.component.css']
 })
+
 export class ExperienciaModalComponent implements OnInit {
   @Input()  experiencia: Experiencia;
   id: number = 0;
@@ -31,8 +33,8 @@ export class ExperienciaModalComponent implements OnInit {
     if (this.experiencia!==undefined){
       this.f['imagen'].setValue(this.experiencia.imagen); 
       this.f['empresa'].setValue(this.experiencia.empresa); 
-      this.f['fecha_desde'].setValue(this.experiencia.fecha_desde); 
-      this.f['fecha_hasta'].setValue(this.experiencia.fecha_hasta); 
+      this.f['fecha_desde'].setValue(this.experiencia.fechaDesde); 
+      this.f['fecha_hasta'].setValue(this.experiencia.fechaHasta); 
       this.f['cargo'].setValue(this.experiencia.cargo); 
       this.f['detalle'].setValue(this.experiencia.detalle); 
     }  
@@ -52,21 +54,22 @@ export class ExperienciaModalComponent implements OnInit {
         const newExperiencia = 
         { imagen: this.f['imagen'].value,
           empresa: this.f['empresa'].value,
-          fecha_desde: this.f['fecha_desde'].value,
-          fecha_hasta: this.f['fecha_hasta'].value,
+          fechaDesde: this.f['fecha_desde'].value,
+          fechaHasta: this.f['fecha_hasta'].value,
           cargo: this.f['cargo'].value,
           detalle:this.f['detalle'].value
         };
-        this.experiencia = newExperiencia;
+        this.activeModal.close(newExperiencia);
       } else {
-        this.experiencia.imagen = this.f['imagen'].value;
-        this.experiencia.empresa = this.f['empresa'].value;
-        this.experiencia.fecha_desde = this.f['fecha_desde'].value;   
-        this.experiencia.fecha_hasta = this.f['fecha_hasta'].value;   
-        this.experiencia.cargo = this.f['cargo'].value;   
-        this.experiencia.detalle = this.f['detalle'].value;   
-        }
-      this.activeModal.close(this.experiencia);
+        var experienciaUpd=Object.assign({}, this.experiencia);
+        experienciaUpd.imagen = this.f['imagen'].value;
+        experienciaUpd.empresa = this.f['empresa'].value;
+        experienciaUpd.fechaDesde = this.f['fecha_desde'].value;   
+        experienciaUpd.fechaHasta = this.f['fecha_hasta'].value;   
+        experienciaUpd.cargo = this.f['cargo'].value;   
+        experienciaUpd.detalle = this.f['detalle'].value;   
+        this.activeModal.close(experienciaUpd);
+      }
     }
   }
 

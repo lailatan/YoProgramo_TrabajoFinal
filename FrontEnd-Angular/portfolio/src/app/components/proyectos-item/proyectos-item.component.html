@@ -14,4 +14,8 @@
         </div>    
     </div>
 </div>
+<div *ngIf="errorMsg!='' && errorId==miProyecto.id" class="error">
+    <div>{{errorMsg}} </div>
+    <div>Vuelva a intentar más tarde.</div>
+</div>
 

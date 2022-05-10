@@ -1,6 +1,7 @@
 package com.lailatan.Portfolio.model;
 
 import com.lailatan.Portfolio.Utils;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,10 @@ public class Experiencia {
    private Integer id;
    private String empresa;
    private String imagen;
-   private String fecha_desde;
-   private String fecha_hasta;
+   @Column(name = "fecha_desde", nullable = false)
+   private String fechaDesde;
+   @Column(name = "fecha_hasta")
+   private String fechaHasta;
    private String cargo;
    private String detalle;   
 
@@ -28,8 +31,8 @@ public class Experiencia {
         this.id = id;
         this.empresa = empresa;
         this.imagen = imagen;
-        this.fecha_desde = fecha_desde;
-        this.fecha_hasta = fecha_hasta;
+        this.fechaDesde = fecha_desde;
+        this.fechaHasta = fecha_hasta;
         this.cargo = cargo;
         this.detalle = detalle;
     }
@@ -37,22 +40,22 @@ public class Experiencia {
     public Experiencia(String empresa, String imagen, String fecha_desde, String fecha_hasta, String cargo, String detalle) {
         this.empresa = empresa;
         this.imagen = imagen;
-        this.fecha_desde = fecha_desde;
-        this.fecha_hasta = fecha_hasta;
+        this.fechaDesde = fecha_desde;
+        this.fechaHasta = fecha_hasta;
         this.cargo = cargo;
         this.detalle = detalle;
     }
 
     @Override
     public String toString() {
-        return "Experiencia{" + "id=" + id + ", empresa=" + empresa + ", imagen=" + imagen + ", fecha_desde=" + fecha_desde + ", fecha_hasta=" + fecha_hasta + ", cargo=" + cargo + ", detalle=" + detalle + '}';
+        return "Experiencia{" + "id=" + id + ", empresa=" + empresa + ", imagen=" + imagen + ", fecha_desde=" + fechaDesde + ", fecha_hasta=" + fechaHasta + ", cargo=" + cargo + ", detalle=" + detalle + '}';
     }
 
     public boolean datosCorrectos(){
          return ((empresa!=null && Utils.largoValidoString(empresa)) &&
                  (imagen!=null && Utils.largoValidoString(imagen)) &&
-                 (fecha_desde!=null && Utils.yyyymmValido(fecha_desde)) &&
-                 ((fecha_hasta!=null && Utils.yyyymmValido(fecha_hasta)) || fecha_hasta==null || fecha_hasta=="") &&
+                 (fechaDesde!=null && Utils.yyyymmValido(fechaDesde)) &&
+                 ((fechaHasta!=null && Utils.yyyymmValido(fechaHasta)) || fechaHasta==null || fechaHasta=="") &&
                  (cargo!=null && Utils.largoValidoString(cargo)) &&
                  (detalle!=null && Utils.largoValidoString(detalle)));
     }

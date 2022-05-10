@@ -13,4 +13,8 @@
         <p>{{miTecnologia.detalle}}</p>
     </div>
 </div>
+<div *ngIf="errorMsg!='' && errorId==miTecnologia.id" class="error">
+    <div>{{errorMsg}} </div>
+    <div>Vuelva a intentar más tarde.</div>
+</div>
 

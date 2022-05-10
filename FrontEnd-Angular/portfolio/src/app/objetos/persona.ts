@@ -4,7 +4,7 @@ export interface Persona {
     nombre: string;
     ubicacion: string;
     mail: string;
-    anio:number;
+    anio?:number;
     profesion: string;
     sobre_mi: string;
     linkedin: string;

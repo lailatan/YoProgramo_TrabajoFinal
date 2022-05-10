@@ -11,6 +11,7 @@ import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-m
   templateUrl: './formacion-modal.component.html',
   styleUrls: ['./formacion-modal.component.css']
 })
+
 export class FormacionModalComponent implements OnInit {
   @Input()  formacion: Formacion;
   cursos: Curso[]=[];
@@ -31,7 +32,8 @@ export class FormacionModalComponent implements OnInit {
     if (this.formacion!==undefined){
       this.f['imagen'].setValue(this.formacion.imagen);
       this.f['escuela'].setValue(this.formacion.escuela);
-      this.cursos = this.formacion.cursos;    
+      //this.cursos = this.formacion.cursos;    
+      this.formacion.cursos.forEach(curso => this.cursos.push(Object.assign({}, curso)));
     }  
   }
 
@@ -56,18 +58,20 @@ export class FormacionModalComponent implements OnInit {
           escuela: this.f['escuela'].value,
           cursos: this.cursos
         };
-        this.formacion = newFormacion;
+        this.activeModal.close(newFormacion);
       } else {
-        this.formacion.imagen = this.f['imagen'].value;
-        this.formacion.escuela = this.f['escuela'].value;
-        this.formacion.cursos = this.cursos;   
-        }
-      this.activeModal.close(this.formacion);
+        var formacionUpd=Object.assign({}, this.formacion);
+        formacionUpd.imagen = this.f['imagen'].value;
+        formacionUpd.escuela = this.f['escuela'].value;
+        formacionUpd.cursos = this.cursos;   
+        this.activeModal.close(formacionUpd);
+      }
     }
   }
 
   prepararDatos(datos:string) {
-    if (datos!==undefined){
+    //console.log(datos);
+    if (datos!==undefined && datos!=null){
       datos = datos.split("\n").join("<br />");
     }
     return datos;
@@ -94,7 +98,10 @@ export class FormacionModalComponent implements OnInit {
     modalRef.componentInstance.curso = curso;
     modalRef.result.then((result) => {
       if (result) {
-        this.cursos = this.cursos.filter(c => c.id !== result.id);
+        this.cursos = this.cursos.filter(c => !(c.id == curso.id && 
+                                                        c.anio == curso.anio && 
+                                                        c.titulo == curso.titulo && 
+                                                        c.descripcion == curso.descripcion )); 
         this.cursos.push(result);
       }
     });
@@ -105,7 +112,10 @@ export class FormacionModalComponent implements OnInit {
     modalRef.componentInstance.texto = "¿Confirma eliminar este Curso?";
     modalRef.result.then((result) => {
       if (result===true) {
-        this.cursos = this.cursos.filter(c => c.id !== curso.id); 
+        this.cursos = this.cursos.filter(c => !(c.id == curso.id && 
+                                                c.anio == curso.anio && 
+                                                c.titulo == curso.titulo && 
+                                                c.descripcion == curso.descripcion )); 
       }
     });
   }

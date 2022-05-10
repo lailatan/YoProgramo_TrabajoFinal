@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
-import {Observable,of} from 'rxjs';
+import {catchError, Observable,of, throwError} from 'rxjs';
 import { Experiencia } from '../objetos/experiencia';
 
 const httpOptions = {
@@ -18,21 +18,39 @@ export class ExperienciaService {
   constructor(private http: HttpClient) { }
 
   getExperiencias(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(this.apiUrl+"/find")
+    return this.http
+      .get<Experiencia[]>(this.apiUrl+"/find")          
+      .pipe(catchError(error=>{
+        return throwError(() => new Error(error.status));        
+      }));  
   }
 
   updateExperiencia(experiencia: Experiencia): Observable<Experiencia>{
     //const url = `${this.apiUrl}/${experiencia.id}`;
-    return this.http.put<Experiencia>(this.apiUrl+"/save",experiencia,httpOptions);
+    return this.http
+      .put<Experiencia>(this.apiUrl+"/save",experiencia,httpOptions)
+      .pipe(catchError(error=>{
+        return throwError(() => new Error(error.status));        
+      }));
+
   }
 
   deleteExperiencia(experiencia: Experiencia): Observable<Experiencia>{
     const url = `${this.apiUrl}/delete/${experiencia.id}`;
-    return this.http.delete<Experiencia>(url);
+    return this.http
+        .delete<Experiencia>(url)
+        .pipe(catchError(error=>{
+          return throwError(() => new Error(error.status));        
+    }));
+
   }
   
   addExperiencia(experiencia: Experiencia): Observable<Experiencia>{
-    return this.http.post<Experiencia>(this.apiUrl+"/new",experiencia,httpOptions);
+    return this.http
+      .post<Experiencia>(this.apiUrl+"/new",experiencia,httpOptions)
+      .pipe(catchError(error=>{
+        return throwError(() => new Error(error.status));        
+      }));
   }
 
 }

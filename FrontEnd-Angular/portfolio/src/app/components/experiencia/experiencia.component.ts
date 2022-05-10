@@ -15,37 +15,32 @@ export class ExperienciaComponent implements OnInit {
   experienciaList: Experiencia[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: string="";
 
   constructor( private uiService: UiService,
-    private experienciaService:ExperienciaService ,private modalService: NgbModal
-  ) { 
+    private experienciaService:ExperienciaService ,private modalService: NgbModal ) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
   }
 
   ngOnInit(): void {
-    this.experienciaService.getExperiencias().subscribe(data => {
-      this.experienciaList = data;
-    });
+    this.experienciaService.getExperiencias().subscribe({
+      next: (value) => {this.experienciaList=value; this.errorMsg=""},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}    });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 
   agregarDatos(){
     const modalRef = this.modalService.open(ExperienciaModalComponent);
-    //modalRef.componentInstance.formacion = new Formacion();
     modalRef.result.then((result) => {
       if (result) {
-        this.experienciaService.addExperiencia(result).subscribe(t => 
-          this.experienciaList.push(t));
+        this.experienciaService.addExperiencia(result).subscribe({
+          next: (value) => {this.experienciaList.push(value); this.errorMsg=""},
+          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
       }
     });
   }
-  cambiarExperiencia(experiencia:Experiencia) {
-    this.experienciaService.updateExperiencia(experiencia).subscribe();
-  }
-  eliminarExperiencia(experiencia:Experiencia) {
-    this.experienciaService.deleteExperiencia(experiencia).subscribe( o => 
-      this.experienciaList = this.experienciaList.filter(t => t.id !== experiencia.id) 
-      );
-  }
 
+  eliminarExperiencia(experiencia:Experiencia) {
+    this.experienciaList = this.experienciaList.filter(t => t.id !== experiencia.id);
+  }
 }

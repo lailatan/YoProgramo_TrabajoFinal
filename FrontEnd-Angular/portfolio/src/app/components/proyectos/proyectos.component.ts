@@ -15,36 +15,32 @@ export class ProyectosComponent implements OnInit {
   proyectosList: Proyecto[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: String="";
 
   constructor(private uiService: UiService,
-    private proyectoService:ProyectoService,private modalService: NgbModal
-  ) { 
+    private proyectoService:ProyectoService,private modalService: NgbModal) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
   }
 
   ngOnInit(): void {
-    this.proyectoService.getProyectos().subscribe(data => {
-      this.proyectosList = data;
-    });
+    this.proyectoService.getProyectos().subscribe({
+      next: (value) => {this.proyectosList=value; this.errorMsg=""},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}   });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
   agregarDatos(){
     const modalRef = this.modalService.open(ProyectoModalComponent);
-    //modalRef.componentInstance.formacion = new Formacion();
     modalRef.result.then((result) => {
       if (result) {
-        this.proyectoService.addProyecto(result).subscribe(t => 
-          this.proyectosList.push(t));
+        this.proyectoService.addProyecto(result).subscribe({
+          next: (value) => {this.proyectosList.push(value); this.errorMsg=""},
+          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
       }
     });
   }
-  cambiarProyecto(proyecto:Proyecto) {
-    this.proyectoService.updateProyecto(proyecto).subscribe();
-  }
+
   eliminarProyecto(proyecto:Proyecto) {
-    this.proyectoService.deleteProyecto(proyecto).subscribe( o => 
-      this.proyectosList = this.proyectosList.filter(t => t.id !== proyecto.id) 
-      );
+        this.proyectosList = this.proyectosList.filter(t => t.id !== proyecto.id);
   }
 
 }

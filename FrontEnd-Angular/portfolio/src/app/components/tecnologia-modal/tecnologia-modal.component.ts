@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './tecnologia-modal.component.html',
   styleUrls: ['./tecnologia-modal.component.css']
 })
+
 export class TecnologiaModalComponent implements OnInit {
   @Input()  tecnologia: Tecnologia;
   id: number = 0;
@@ -49,13 +50,14 @@ export class TecnologiaModalComponent implements OnInit {
           nombre: this.f['nombre'].value,
           detalle: this.f['detalle'].value
         };
-        this.tecnologia = newTecnologia;
+        this.activeModal.close(newTecnologia);
       } else {
-        this.tecnologia.imagen = this.f['imagen'].value;
-        this.tecnologia.nombre = this.f['nombre'].value;
-        this.tecnologia.detalle = this.f['detalle'].value;   
-        }
-      this.activeModal.close(this.tecnologia);
+        var tecnologiaUpd=Object.assign({}, this.tecnologia);
+        tecnologiaUpd.imagen = this.f['imagen'].value;
+        tecnologiaUpd.nombre = this.f['nombre'].value;
+        tecnologiaUpd.detalle = this.f['detalle'].value;   
+        this.activeModal.close(tecnologiaUpd);
+      }
     }
   }
 }

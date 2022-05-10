@@ -4,6 +4,17 @@
     color: #000000;
     padding: 2rem 0 0 0;
   }
+
+  .error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5rem;
+    color:#9f0e0e;
+    margin-bottom: 1rem;
+    font-size:1rem;
+  }
+
   .footer .contenedor .redes-sociales {
     display: flex;
     justify-content: center;
@@ -14,7 +25,8 @@
     background: #d1d1d1;
     padding: 0.5rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-bottom: 3rem;
     text-align: center;
   }

@@ -40,9 +40,9 @@ export class SobreMiModalComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
-      //this.persona.sobre_mi = this.sobre_mi
-      this.persona.sobre_mi = this.f['sobre_mi'].value; 
-      this.activeModal.close(this.persona);
+      var personaUpd=Object.assign({}, this.persona);
+      personaUpd.sobre_mi = this.f['sobre_mi'].value; 
+      this.activeModal.close(personaUpd);
     }
   }
 }

@@ -5,6 +5,7 @@ import { Tecnologia } from 'src/app/objetos/tecnologia';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {TecnologiaModalComponent} from '../tecnologia-modal/tecnologia-modal.component';
 import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-modal.component';
+import { TecnologiaService } from 'src/app/services/tecnologia.service';
 
 @Component({
   selector: 'app-tecnologias-item',
@@ -14,11 +15,12 @@ import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-m
 export class TecnologiasItemComponent implements OnInit {
   @Input() miTecnologia: Tecnologia;
   @Output() onDeleteTecnologia :  EventEmitter<Tecnologia> = new EventEmitter();
-  @Output() onUpdateTecnologia :  EventEmitter<Tecnologia> = new EventEmitter();
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: string="";
+  errorId?:number = 0;
 
-  constructor(private uiService: UiService,private modalService: NgbModal) { 
+  constructor(private uiService: UiService,private modalService: NgbModal,private tecnologiaService:TecnologiaService) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
   }
 
@@ -31,17 +33,26 @@ export class TecnologiasItemComponent implements OnInit {
     modalRef.componentInstance.tecnologia = this.miTecnologia;
     modalRef.result.then((result) => {
       if (result) {
-        this.miTecnologia=result;
-        this.onUpdateTecnologia.emit(this.miTecnologia);
+          this.tecnologiaService.updateTecnologia(result).subscribe({
+            next: (value) => {this.miTecnologia=value; this.errorMsg=""; this.errorId=0},
+            error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+                          this.errorId=this.miTecnologia.id}    
+          });
       }
     });
   }
+
+
   eliminarDatos(){
     const modalRef = this.modalService.open(ConfirmacionModalComponent);
     modalRef.componentInstance.texto = "¿Confirma borrar esta Tecnología?";
     modalRef.result.then((result) => {
       if (result===true) {
-        this.onDeleteTecnologia.emit(this.miTecnologia);
+        this.tecnologiaService.deleteTecnologia(this.miTecnologia).subscribe({
+          next: (value) => {this.onDeleteTecnologia.emit(this.miTecnologia); this.errorMsg=""; this.errorId=0},
+          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+                        this.errorId=this.miTecnologia.id}         
+        });
       }
     });
   }

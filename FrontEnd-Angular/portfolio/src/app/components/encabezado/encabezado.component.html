@@ -8,8 +8,12 @@
             <h1 class="nombre">{{misDatos.nombre}}</h1>
             <div class="contenedor-edicion-linea">
                 <h2 class="profesion">{{misDatos.profesion}}</h2>
-                <i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i>
+                <i class="boton-edicion fa fa-pencil-alt"  *ngIf="modoEdicion" (click)="editarDatos()"></i>       
             </div> 
+            <div *ngIf="errorMsg!=''" class="error">
+                <div>{{errorMsg}}</div>
+                <div>Vuelva a intentar más tarde.</div>
+            </div>
         </div>
     </div>
-  </header>
+</header>

@@ -34,7 +34,7 @@ public class UsuarioService implements IUsuarioService{
     @Override
     public Usuario validarUsuario(String mail, String password) {
         Usuario usuario = usuarioRepository.findUsuarioByMail(mail);
-        System.out.println("USARIO: " + usuario);
+        //System.out.println("USARIO: " + usuario);
         return (usuario!=null && usuario.getPassword().equals(password))?usuario:null;
     }
     

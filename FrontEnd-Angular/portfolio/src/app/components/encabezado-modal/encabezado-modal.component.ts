@@ -42,11 +42,12 @@ export class EncabezadoModalComponent implements OnInit {
     //True if all the fields are filled
     if(this.submitted)
     {
-      this.persona.nombre = this.f['nombre'].value;
-      this.persona.profesion = this.f['profesion'].value;
-      this.persona.foto = this.f['foto'].value;   
+      var personaUpd=Object.assign({}, this.persona);
+      personaUpd.nombre = this.f['nombre'].value;
+      personaUpd.profesion = this.f['profesion'].value;
+      personaUpd.foto = this.f['foto'].value;     
 
-      this.activeModal.close(this.persona);
+      this.activeModal.close(personaUpd);
     }
   }
 }

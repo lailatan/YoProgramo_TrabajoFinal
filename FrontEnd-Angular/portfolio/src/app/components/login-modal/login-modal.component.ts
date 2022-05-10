@@ -14,6 +14,7 @@ export class LoginModalComponent  {
   dataForm: FormGroup;
   submitted = false;
   datosInvalidos=false;
+  errorMsg: String="";
 
   mail: string = "";
   password: string = "";
@@ -54,26 +55,26 @@ export class LoginModalComponent  {
         }
         if(this.submitted){
           event.preventDefault;  
-          console.log("DATAFORM LOGIN" + this.dataForm.value);
+          //console.log("DATAFORM LOGIN" + this.dataForm.value);
           const newEUsuario = 
             { mail: this.f['mail'].value,
             password: this.f['password'].value,
             token: ''
             };
-          this.authService.login(newEUsuario).subscribe(data=>{
-                if (data==null){
-                  this.datosInvalidos=true;
-                  this.f['mail'].reset();
-                  this.f['password'].reset();
-                  this.submitted=false;
-              } else {
-                this.uiService.cambiarModoEdicion();
-                this.activeModal.close(true);          
-              }
-      
-        })
-    
+            this.authService.login(newEUsuario).subscribe({
+              next: (value) => {if (value==null){
+                                this.datosInvalidos=true;
+                                this.f['mail'].reset();
+                                this.f['password'].reset();
+                                this.submitted=false;
+                                } else {
+                                  this.uiService.cambiarModoEdicion();
+                                  this.activeModal.close(true);          
+                                }     
+              },
+              error: (e) => {this.errorMsg = "Se ha producido un error" + 
+              (e.status==0?".":": " + e.status + ". "); console.log(e)}
+            });            
         }
     }
-  
 }

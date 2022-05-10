@@ -41,7 +41,7 @@ public class TecnologiaController {
         return tecnologiaService.guardarTecnologia(tecnologia);
     } 
 
-    @PutMapping("/save")
+    @PutMapping("/savee")
     @ResponseBody
     public Tecnologia guardarTecnologia(@RequestBody Tecnologia tecnologia) {
         return tecnologiaService.guardarTecnologia(tecnologia);
@@ -49,7 +49,7 @@ public class TecnologiaController {
     
     @DeleteMapping("/delete/{id}")
     public void borrarTecnologia(@PathVariable Integer id){
-        tecnologiaService.borrarTecnologia(id);
+         tecnologiaService.borrarTecnologia(id);
     }
     
 }

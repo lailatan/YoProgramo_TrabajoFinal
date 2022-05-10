@@ -14,7 +14,7 @@ public class FormacionService implements IFormacionService{
 
     @Override
     public List<Formacion> traerFormaciones() {
-        return formacionRepository.findAll();
+        return formacionRepository.findAllFormacionByOrderByIdDesc();
     }
 
     @Override

@@ -9,4 +9,8 @@
             </div>
         </div>
     </div>
+    <div *ngIf="errorMsg!=''" class="error">
+        <div>{{errorMsg}}</div>
+        <div>Vuelva a intentar más tarde.</div>
+    </div>
 </section>

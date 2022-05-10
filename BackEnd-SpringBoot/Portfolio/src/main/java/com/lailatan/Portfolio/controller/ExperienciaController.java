@@ -49,7 +49,7 @@ public class ExperienciaController {
     
     @DeleteMapping("/delete/{id}")
     public void borrarExperiencia(@PathVariable Integer id){
-        experienciaService.borrarExperiencia(id);
+         experienciaService.borrarExperiencia(id);
     }
     
 }

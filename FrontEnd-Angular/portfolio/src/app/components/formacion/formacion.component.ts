@@ -15,18 +15,17 @@ export class FormacionComponent implements OnInit {
   formacionList: Formacion[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
+  errorMsg: String="";
 
-  constructor(private uiService: UiService,
-    private formacionService:FormacionService,
-    private modalService: NgbModal
-  ) { 
+  constructor(private uiService: UiService,private formacionService:FormacionService,
+    private modalService: NgbModal) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
   }
 
   ngOnInit(): void {
-    this.formacionService.getFormaciones().subscribe(data => {
-      this.formacionList = data;
-    });
+    this.formacionService.getFormaciones().subscribe({
+        next: (value) => {this.formacionList=value; this.errorMsg=""},
+        error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}   });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 
@@ -35,17 +34,14 @@ export class FormacionComponent implements OnInit {
     //modalRef.componentInstance.formacion = new Formacion();
     modalRef.result.then((result) => {
       if (result) {
-        this.formacionService.addFormacion(result).subscribe(t => 
-          this.formacionList.push(t));
+        this.formacionService.addFormacion(result).subscribe({
+          next: (value) => {this.formacionList.push(value); this.errorMsg=""},
+          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
       }
     });
   }
-  cambiarFormacion(formacion:Formacion) {
-    this.formacionService.updateFormacion(formacion).subscribe();
-  }
+
   eliminarFormacion(formacion:Formacion) {
-    this.formacionService.deleteFormacion(formacion).subscribe( o => 
-      this.formacionList = this.formacionList.filter(t => t.id !== formacion.id) 
-      );
+        this.formacionList = this.formacionList.filter(t => t.id !== formacion.id);
   }
 }
