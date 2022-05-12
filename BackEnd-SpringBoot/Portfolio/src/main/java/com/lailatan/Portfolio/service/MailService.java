@@ -19,7 +19,7 @@ public class MailService implements IMailService{
     private IPersonaService personaService;
     
     public Integer enviarMail(Mail mail){
-        String mail_from = "portfolio.natalia19@gmail.com";
+        String mail_from = "########";
         String asunto = "Mensaje desde Portfolio";
 
         Persona persona = personaService.traerPersona();
