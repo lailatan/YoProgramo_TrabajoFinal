@@ -56,12 +56,12 @@ export class LoginModalComponent  {
         if(this.submitted){
           event.preventDefault;  
           //console.log("DATAFORM LOGIN" + this.dataForm.value);
-          const newEUsuario = 
+          const newUsuario = 
             { mail: this.f['mail'].value,
-            password: this.f['password'].value,
-            token: ''
+              password: this.f['password'].value,
+              token: ''
             };
-            this.authService.login(newEUsuario).subscribe({
+            this.authService.login(newUsuario).subscribe({
               next: (value) => {if (value==null){
                                 this.datosInvalidos=true;
                                 this.f['mail'].reset();
@@ -73,7 +73,7 @@ export class LoginModalComponent  {
                                 }     
               },
               error: (e) => {this.errorMsg = "Se ha producido un error" + 
-              (e.status==0?".":": " + e.status + ". "); console.log(e)}
+              (e.status==0?".":": " + e.status + ". "); }
             });            
         }
     }

@@ -2,53 +2,65 @@
 <section class="contacto">
     <h2 class="titulo" id="contacto">Contacto</h2>
     <div class="contenedor contenedor-contacto">
-        <div class="mensaje-enviado">
-            <h3 *ngIf="enviado">Su mensaje ha sido enviado.</h3>
+        <div *ngIf="enviando" class="mensaje-enviando">
+            <div>Enviando mensaje...</div>
         </div>
-        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" *ngIf="!enviado">
+        <div class="mensaje-enviado">
+            <h3 *ngIf="enviado && errorMsg==''">Su mensaje ha sido enviado.</h3>
+        </div>
+        <div *ngIf="enviado && errorMsg!=''" class="mensaje-error">
+            <div>{{errorMsg}}</div>
+            <div>Vuelva a intentar más tarde.</div>
+        </div>
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" *ngIf="!enviado && !enviando">
             <div class="container">
                 <div>
                     <input
                         class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f['mail'].errors }"
-                        type="mail"
-                        name="mail"
-                        formControlName="mail"
+                        [ngClass]="{ 'is-invalid': (f['from'].touched || submitted) && f['from'].errors, 'is-valid': (f['from'].touched || submitted) && !f['from'].errors }"
+                        type="email"
+                        name="from"
+                        formControlName="from"
                         placeholder="Email"
                         required="required"
                         autofocus
                     />
-                    <div *ngIf="submitted && f['mail'].errors" class="error">
-                        <div *ngIf="f['mail'].errors['required']">* Debe ingresar un Email</div>
-                        <div *ngIf="f['mail'].errors['email']">* Debe ingresar un Email válido</div>
+                    <div *ngIf="(f['from'].touched || submitted) && f['from'].errors" class="error">
+                        <div *ngIf="f['from'].errors['required']">* Debe ingresar un Email</div>
+                        <div *ngIf="f['from'].errors['email']">* Debe ingresar un Email válido</div>
+                        <div *ngIf="f['from'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
                     </div>
                 </div>
                 <div>
                     <input
                         class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f['titulo'].errors }"
+                        [ngClass]="{ 'is-invalid': (f['subject'].touched || submitted) && f['subject'].errors , 'is-valid': (f['subject'].touched || submitted) && !f['subject'].errors}"
                         type="text"
-                        name="titulo"
-                        formControlName="titulo"
+                        name="subject"
+                        formControlName="subject"
                         placeholder="Título"
                         required="required"
                     />
-                    <div *ngIf="submitted && f['titulo'].errors" class="error">
-                        <div *ngIf="f['titulo'].errors['required']">* Debe ingresar un Título </div>
+                    <div *ngIf="(f['subject'].touched || submitted) && f['subject'].errors" class="error">
+                        <div *ngIf="f['subject'].errors['required']">* Debe ingresar un Título </div>
+                        <div *ngIf="f['subject'].errors['maxlength']">* Debe tener como máximo 255 caracteres.</div>
+
                     </div>
                 </div>
                 <div>
                     <textarea 
                         class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f['mensaje'].errors }"
-                        name="mensaje"
-                        formControlName="mensaje"
+                        [ngClass]="{ 'is-invalid': (f['text'].touched || submitted) && f['text'].errors , 'is-valid': (f['text'].touched || submitted) && !f['text'].errors}"
+                        name="text"
+                        formControlName="text"
                         placeholder="Mensaje... "
                         rows="10"
                         required="required"
                     ></textarea>
-                    <div *ngIf="submitted && f['mensaje'].errors" class="error">
-                        <div *ngIf="f['mensaje'].errors['required']">* Debe ingresar un Mensaje </div>
+                    <div *ngIf="(f['text'].touched || submitted) && f['text'].errors" class="error">
+                        <div *ngIf="f['text'].errors['required']">* Debe ingresar un Mensaje </div>
+                        <div *ngIf="f['text'].errors['maxlength']">* Debe tener como máximo 500 caracteres.</div>
+
                     </div>
                 </div>
                 <button type="submit">Enviar</button>

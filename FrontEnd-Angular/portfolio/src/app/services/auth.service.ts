@@ -35,7 +35,7 @@ export class AuthService {
       this.currentUserSubject.next(data);     
       return data;
     }))
-}
+  }
 
   get UsuarioAutenticado() {
     var token = sessionStorage.getItem('currentUser');
