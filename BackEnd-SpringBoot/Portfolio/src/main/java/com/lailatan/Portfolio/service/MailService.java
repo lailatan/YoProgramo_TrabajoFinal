@@ -5,13 +5,18 @@ import com.lailatan.Portfolio.model.Persona;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MailService implements IMailService{
+public class MailService implements IMailService{   
+    @Value("${spring.mail.username}")
+    private String mail_from;
+    @Value("${spring.mail.tema-default}")
+    private String mail_asunto;
     
     @Autowired
     private JavaMailSender javaMailSender;
@@ -19,8 +24,6 @@ public class MailService implements IMailService{
     private IPersonaService personaService;
     
     public Integer enviarMail(Mail mail){
-        String mail_from = "########";
-        String asunto = "Mensaje desde Portfolio";
 
         Persona persona = personaService.traerPersona();
         if (persona!=null){
@@ -28,10 +31,9 @@ public class MailService implements IMailService{
         
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             mail.setSendDate(dtf.format(LocalDateTime.now()));
-
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(mail_from);
-            message.setSubject(asunto);
+            message.setSubject(mail_asunto);
             message.setTo(mail_to);
             message.setText(mail.toString());
             try {

@@ -24,7 +24,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("APIportfolio/usuario")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+@CrossOrigin(origins = {"${settings.cors_origin}"}, allowedHeaders="*")
+
 public class UsuarioController {
     
     @Autowired

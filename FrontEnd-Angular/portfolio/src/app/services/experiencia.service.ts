@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import {catchError, Observable,of, throwError} from 'rxjs';
 import { Experiencia } from '../objetos/experiencia';
+import * as myGlobales from '../globals';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiUrl = 'http://localhost:8080/APIportfolio/experiencia'
+  private apiUrl = myGlobales.PATH_SERVER + myGlobales.PATH_API_EXPERIENCIA;
 
   constructor(private http: HttpClient) { }
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import {catchError, Observable,of, throwError} from 'rxjs';
 import { Formacion } from '../objetos/formacion';
+import * as myGlobales from '../globals';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class FormacionService {
-  private apiUrl = 'http://localhost:8080/APIportfolio/formacion'
+  private apiUrl = myGlobales.PATH_SERVER + myGlobales.PATH_API_FORMACION;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,6 @@ export class FormacionService {
       .pipe(catchError(error=>{
         return throwError(() => new Error(error.status));        
       }));
-
   }
 
   updateFormacion(formacion: Formacion): Observable<Formacion>{
@@ -43,7 +43,6 @@ export class FormacionService {
       .pipe(catchError(error=>{
         return throwError(() => new Error(error.status));        
       }));
-
   }
   
   addFormacion(formacion: Formacion): Observable<Formacion>{
@@ -52,7 +51,6 @@ export class FormacionService {
       .pipe(catchError(error=>{
         return throwError(() => new Error(error.status));        
       }));
-
   }
 }
 

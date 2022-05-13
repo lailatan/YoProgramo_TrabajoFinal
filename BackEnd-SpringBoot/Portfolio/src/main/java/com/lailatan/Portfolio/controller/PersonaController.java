@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("APIportfolio/persona")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+//@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+@CrossOrigin(origins = {"${settings.cors_origin}"}, allowedHeaders="*")
+
 public class PersonaController {
      @Autowired
     private IPersonaService personaService;

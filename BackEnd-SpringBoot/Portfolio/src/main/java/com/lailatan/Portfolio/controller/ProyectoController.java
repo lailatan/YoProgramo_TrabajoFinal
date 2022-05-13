@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("APIportfolio/proyecto")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+@CrossOrigin(origins = {"${settings.cors_origin}"}, allowedHeaders="*")
+
 public class ProyectoController {   
     @Autowired
     private IProyectoService proyectoService;

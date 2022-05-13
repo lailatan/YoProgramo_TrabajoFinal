@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Mail } from '../objetos/mail';
+import * as myGlobales from '../globals';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -12,8 +13,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MailService {
-  url="http://localhost:8080/APIportfolio/mail"
-
+  private url = myGlobales.PATH_SERVER + myGlobales.PATH_API_MAIL;
+  
   constructor(private http: HttpClient) { }
 
   enviarMail(mail: Mail): Observable<Mail>{

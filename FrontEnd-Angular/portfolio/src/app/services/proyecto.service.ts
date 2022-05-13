@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import {catchError, Observable,of, throwError} from 'rxjs';
 import{Proyecto} from '../objetos/proyecto';
+import * as myGlobales from '../globals';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProyectoService {
-  private apiUrl = 'http://localhost:8080/APIportfolio/proyecto'
+ private apiUrl = myGlobales.PATH_SERVER + myGlobales.PATH_API_PROYECTO;
 
 
   constructor(private http: HttpClient) { }
@@ -34,7 +35,6 @@ export class ProyectoService {
         .pipe(catchError(error=>{
           return throwError(() => new Error(error.status));        
         }));
-
   }
 
   deleteProyecto(proyecto: Proyecto): Observable<Proyecto>{
@@ -44,7 +44,6 @@ export class ProyectoService {
         .pipe(catchError(error=>{
           return throwError(() => new Error(error.status));        
         }));
-
   }
   
   addProyecto(proyecto: Proyecto): Observable<Proyecto>{
@@ -54,6 +53,5 @@ export class ProyectoService {
           return throwError(() => new Error(error.status));        
         }));
   }
-
 
 }
