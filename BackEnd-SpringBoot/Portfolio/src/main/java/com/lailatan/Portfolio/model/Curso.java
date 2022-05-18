@@ -1,7 +1,7 @@
 package com.lailatan.Portfolio.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.lailatan.Portfolio.Utils;
+import com.lailatan.Portfolio.util.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

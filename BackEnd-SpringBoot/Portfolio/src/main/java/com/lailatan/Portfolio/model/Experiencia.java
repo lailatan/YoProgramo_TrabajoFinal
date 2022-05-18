@@ -1,6 +1,6 @@
 package com.lailatan.Portfolio.model;
 
-import com.lailatan.Portfolio.Utils;
+import com.lailatan.Portfolio.util.Utils;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

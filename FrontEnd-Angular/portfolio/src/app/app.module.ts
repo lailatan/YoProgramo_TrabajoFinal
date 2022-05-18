@@ -34,6 +34,7 @@ import { PersonaService } from './services/persona.service';
 import { InterceptorService } from './services/interceptor.service';
 
 
+
 const appRoutes: Routes = [
   {path:'',component: EncabezadoComponent},
   {path:'home',component: EncabezadoComponent},

@@ -1,7 +1,6 @@
-LOCK TABLES `persona` WRITE;
-/*!40000 ALTER TABLE `persona` DISABLE KEYS */;
+
 INSERT INTO `persona`(id,foto,nombre,mail,profesion,sobre_mi,linkedin,github,ubicacion,anio) VALUES (1,
-'assets/imagenes/foto.jpg',
+'https://user-images.githubusercontent.com/64036788/169144495-c91a28d3-ae0c-49a6-81f9-f53dce80f339.jpg',
 'Natalia Lopardo',
 'natalialopardo19@gmail.com',
 'Desarrolladora Java FullStack',
@@ -10,37 +9,24 @@ INSERT INTO `persona`(id,foto,nombre,mail,profesion,sobre_mi,linkedin,github,ubi
 'https://github.com/lailatan/',
 'Argentina',
 2022);
-/*!40000 ALTER TABLE `persona` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
+INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (1,'Inner Consulting S.A.','https://user-images.githubusercontent.com/64036788/169148535-9bfa31c0-e8dc-4856-948f-dac5c3bee80b.png','1997-03','1998-08','Analista Programadora','Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL). Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A.');
 
-LOCK TABLES `experiencia` WRITE;
-/*!40000 ALTER TABLE `experiencia` DISABLE KEYS */;
-INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (1,'Inner Consulting S.A.','assets/imagenes/experiencia/empresa.png','1997-03','1998-08','Analista Programadora','Diseño y Desarrollo de software bajo entorno Windows, integrando tecnología, lenguajes, y herramientas de desarrollo Microsoft (Visual Basic 4 y 5 - MS-SQL). Clientes Principales: Omint S.A., Banco Santander, Telecom –Arnet, COMPAR S.A.');
-INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (2,'Metropolitan Life','assets/imagenes/experiencia/met.jpg','1998-09','1999-09','Analista de Nuevas Tecnologías','Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, interfaces con AS400. Análisis y dirección del proyecto de compatibilidad con el Año 2000. Soporte a los usuarios. Generación de listados y reportes de datos.');
-INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (3,'División CRM','assets/imagenes/experiencia/empresa.png','1999-09','2001-03','Consultora/Analista Programadora Vantive','Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package enPL/SQL y Base de Datos Oracle). Capacitaciones en Vantive a programadores.');
-INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (4,'ING Insurance','assets/imagenes/experiencia/ing.jpg','2001-04','2003-11','Analista Programadora','Análisis, diseño y desarrollo de aplicaciones y mantenimiento de las existentes: interfases con CobolAS400, SQLCobol, Visual Basic y BD Oracle. Interfases y desarrollo de impresiones mediante JetFormControl de cartas a clientes, reportes e informes.');
-/*!40000 ALTER TABLE `experiencia` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (2,'Metropolitan Life','https://user-images.githubusercontent.com/64036788/169148933-c2453848-40df-4056-8735-a3f41652ac6c.jpg','1998-09','1999-09','Analista de Nuevas Tecnologías','Análisis, diseño, desarrollo y mantenimiento de los sistemas de la Empresa: Visual Basic, interfaces con AS400. Análisis y dirección del proyecto de compatibilidad con el Año 2000. Soporte a los usuarios. Generación de listados y reportes de datos.');
+
+INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (3,'División CRM','https://user-images.githubusercontent.com/64036788/169148535-9bfa31c0-e8dc-4856-948f-dac5c3bee80b.png','1999-09','2001-03','Consultora/Analista Programadora Vantive','Análisis y Diseño para Customización de distintos módulos del Sistema Vantive 8 (desarrollo en Vantive de objetos deaplicación, creación de ActiveX en Visual Basic 5, package enPL/SQL y Base de Datos Oracle). Capacitaciones en Vantive a programadores.');
+
+INSERT INTO `experiencia` (id,empresa,imagen,fecha_desde,fecha_hasta,cargo,detalle) VALUES (4,'ING Insurance','https://user-images.githubusercontent.com/64036788/169148781-8844652f-796c-4146-8f53-fb7ee3a8144a.jpg','2001-04','2003-11','Analista Programadora','Análisis, diseño y desarrollo de aplicaciones y mantenimiento de las existentes: interfases con CobolAS400, SQLCobol, Visual Basic y BD Oracle. Interfases y desarrollo de impresiones mediante JetFormControl de cartas a clientes, reportes e informes.');
 
 
-
-LOCK TABLES `formacion` WRITE;
-/*!40000 ALTER TABLE `formacion` DISABLE KEYS */;
-INSERT INTO `formacion` VALUES (1,'Universidad de Buenos Aires','assets/imagenes/formacion/uba.jpeg');
-INSERT INTO `formacion` VALUES (2,'Microsoft','assets/imagenes/formacion/mcp.jpeg');
-INSERT INTO `formacion` VALUES (3,'FabLab Vicente López','assets/imagenes/formacion/fablab.jpeg');
-INSERT INTO `formacion` VALUES (4,'Centro Universitario Vicente López / EducacionIT','assets/imagenes/formacion/cuvl.jpeg');
-INSERT INTO `formacion` VALUES (5,'Ada ITW','assets/imagenes/formacion/ada.jpeg');
-/*!40000 ALTER TABLE `formacion` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `formacion` VALUES (1,'Universidad de Buenos Aires','https://user-images.githubusercontent.com/64036788/169149562-4e5a3830-ea58-4e09-8759-1a2e2cce1f8a.jpeg');
+INSERT INTO `formacion` VALUES (2,'Microsoft','https://user-images.githubusercontent.com/64036788/169149501-98a3301f-4022-4067-be59-5bd7009e2476.jpeg');
+INSERT INTO `formacion` VALUES (3,'FabLab Vicente López','https://user-images.githubusercontent.com/64036788/169149409-c97a6e50-fbbc-47ec-845f-e44f336594f0.jpeg');
+INSERT INTO `formacion` VALUES (4,'Centro Universitario Vicente López / EducacionIT','https://user-images.githubusercontent.com/64036788/169149307-4350785a-f626-42f7-842e-73e92995a715.jpeg');
+INSERT INTO `formacion` VALUES (5,'Ada ITW','https://user-images.githubusercontent.com/64036788/169149194-05b4002e-228c-48ed-9101-8d3af2925f10.jpeg');
 
 
-
-
-
-/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (1,'Licenciatura en Análisis de Sistemas',1995,'Facultad de Ingeniería. \\nCursado hasta 3er. año.',1);
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (2,'MCP - Microsoft Certified Professional',1998,'Microsoft - Examen Drake Sylvan Prometric. \\nDeveloping Applications with Microsoft Visual Basic 5.0',2);
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (3,'Introducción Phyton',2020,NULL,3);
@@ -50,51 +36,32 @@ INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (6,'Desarro
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (7,'Programación Phyton (42hs)',2020,NULL,4);
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (8,'Javascript Desarrollador Avanzado (30hs)',2021,NULL,4);
 INSERT INTO `curso` (id,titulo,anio,descripcion,id_formacion) VALUES (9,'Java BackEnd Developer (400 horas)',2021,'Java / Spring Boot/ Hibernate. \\nMySQL',5);
-/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
+INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (1,'https://user-images.githubusercontent.com/64036788/169150506-587d3935-5dff-4bfd-97d1-38877836622a.png','https://github.com/lailatan/Android_ConvertidorMedidasNatalia','https://user-images.githubusercontent.com/64036788/169150071-b1c4793a-3875-47d0-a536-4733ca4ab14b.jpg','Conversor Medidas','Android Studio - Java');
+INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (2,'https://user-images.githubusercontent.com/64036788/169150589-ee679d55-7334-465d-b307-c669b803ba3c.jpg','https://github.com/lailatan/Android_FecNacTarot','https://user-images.githubusercontent.com/64036788/169150134-a96bc1a8-505b-4d37-975a-4c0140a68ec5.jpg','Tarot','Android Studio - Java');
+INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (3,'https://user-images.githubusercontent.com/64036788/169150287-2c32b01a-9f8f-4704-849e-a3d179324ce6.jpg','https://github.com/lailatan/Android_ConteodeCarbohidratos_V2','https://user-images.githubusercontent.com/64036788/169149707-bff23549-9c35-4866-874b-c2c56075ace6.jpg','Conteo Carbohidratos','Android Studio - Java');
+INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (4,'https://user-images.githubusercontent.com/64036788/169150385-d299ce23-327f-4e53-8973-6c9e678fd4f8.png','https://github.com/lailatan/Android_Calc_Insulina_Activa','https://user-images.githubusercontent.com/64036788/169149920-16144499-8b55-433c-bb8d-37c9e18ebb67.jpg','Insulina Activa','Android Studio - Java');
 
 
-LOCK TABLES `proyecto` WRITE;
-/*!40000 ALTER TABLE `proyecto` DISABLE KEYS */;
-INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (1,'assets/imagenes/proyectos/medidas_pantallas.png','https://github.com/lailatan/Android_ConvertidorMedidasNatalia','assets/imagenes/proyectos/medidas.jpg','Conversor Medidas','Android Studio - Java');
-INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (2,'assets/imagenes/proyectos/tarot_pantallas.jpg','https://github.com/lailatan/Android_FecNacTarot','assets/imagenes/proyectos/tarot.jpg','Tarot','Android Studio - Java');
-INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (3,'assets/imagenes/proyectos/ch_pantallas.jpg','https://github.com/lailatan/Android_ConteodeCarbohidratos_V2','assets/imagenes/proyectos/ch.jpg','Conteo Carbohidratos','Android Studio - Java');
-INSERT INTO `proyecto` (id,imagen,link,icono,nombre,detalle) VALUES (4,'assets/imagenes/proyectos/ia_pantallas.png','https://github.com/lailatan/Android_Calc_Insulina_Activa','assets/imagenes/proyectos/ia.jpg','Insulina Activa','Android Studio - Java');
-/*!40000 ALTER TABLE `proyecto` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-
-
-LOCK TABLES `tecnologia` WRITE;
-/*!40000 ALTER TABLE `tecnologia` DISABLE KEYS */;
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (1,'assets/imagenes/tecnologias/git_github.png','GIT - GITHUB',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (1,'https://user-images.githubusercontent.com/64036788/169151102-d1938ebe-ff60-45e8-bf83-7dc3ffb426ab.png','GIT - GITHUB',
 'GIT es un software de control de versiones, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones. GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de Git.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (2,'assets/imagenes/tecnologias/android_intellij_vsc.png','Android Studio - IntelliJ Idea - Visual Studio Code',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (2,'https://user-images.githubusercontent.com/64036788/169150882-71a12a26-068c-4bb6-a7ec-e45c3efaad3d.png','Android Studio - IntelliJ Idea - Visual Studio Code',
 'Android Studio es el entorno de desarrollo integrado (IDE) oficial para la plataforma Android. IntelliJ IDEA es un IDE para el desarrollo de programas informáticos. Visual Studio Code es un editor de código fuente para Windows, Linux, MacOS y Web.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (3,'assets/imagenes/tecnologias/json_api_sql.png','SQL - JSON - API REST',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (3,'https://user-images.githubusercontent.com/64036788/169151897-8c32d2d1-502a-4b0b-be6b-667aadaafbae.png','SQL - JSON - API REST',
 'SQL es un lenguaje diseñado para administrar información de BD relacionales. API REST define un conjunto de funciones para realizar solicitudes y recibir respuestas a través del protocolo HTTP. JSON es un formato de texto para el intercambio de datos.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (4,'assets/imagenes/tecnologias/js.png','JAVASCRIPT',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (4,'https://user-images.githubusercontent.com/64036788/169151792-8f9132d1-8fc3-4843-9812-b243590d5194.png','JAVASCRIPT',
 'JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (5,'assets/imagenes/tecnologias/css.png','CSS',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (5,'https://user-images.githubusercontent.com/64036788/169151037-d8e3e9b1-991c-4f8c-bfeb-de204e692503.png','CSS',
 'CSS (siglas en inglés de Cascading Style Sheets), en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (6,'assets/imagenes/tecnologias/html.png','HTML',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (6,'https://user-images.githubusercontent.com/64036788/169151545-bb5347c3-4f15-4f54-830e-3f08d69d2fb5.png','HTML',
 'El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página web y sus contenidos. HTML5 es la quinta revisión del estándar HTML y permite soportar lo último en multimedia.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (7,'assets/imagenes/tecnologias/vb.png','VISUAL BASIC',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (7,'https://user-images.githubusercontent.com/64036788/169152085-e922bff7-efde-4f21-ae70-003555df9a6a.png','VISUAL BASIC',
 'Visual Basic (VB) es un lenguaje de programación dirigido por eventos. Es un dialecto de BASIC, con importantes agregados. Su primera versión fue presentada en 1991, con la intención de simplificar la programación utilizando un ambiente de desarrollo.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (8,'assets/imagenes/tecnologias/python.png','PYTHON',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (8,'https://user-images.githubusercontent.com/64036788/169151983-8d91272c-15e0-41f8-83f4-1f3735d61eb5.png','PYTHON',
 'Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Es un lenguaje interpretado, dinámico, multiplataforma y multiparadigma.');
-INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (9,'assets/imagenes/tecnologias/java.png','JAVA',
+INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (9,'https://user-images.githubusercontent.com/64036788/169151706-0550e70a-35bf-4eca-bfec-75e86029116f.png','JAVA',
 'Java es un lenguaje de Programación Orientado a Objetos. La idea de Java es que pueda realizarse programas con la posibilidad de ejecutarse en cualquier contexto, en cualquier ambiente, siendo así su portabilidad uno de sus principales logros.');
-/*!40000 ALTER TABLE `tecnologia` ENABLE KEYS */;
-UNLOCK TABLES;
 
-
-
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` VALUES (1,'natalialopardo19@gmail.com','12341234');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `usuario` VALUES (2,'test@test.com','12345678');

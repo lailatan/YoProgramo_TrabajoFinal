@@ -30,7 +30,7 @@ modoEdicion: boolean = false;
   errorMsg: String;
 
   constructor( private modalService: NgbModal, private uiService: UiService, 
-                private personaService:PersonaService ,  private authService: AuthService,) {
+                private personaService:PersonaService ,  private authService: AuthService) {
       this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value); 
       this.errorMsg="";
     }

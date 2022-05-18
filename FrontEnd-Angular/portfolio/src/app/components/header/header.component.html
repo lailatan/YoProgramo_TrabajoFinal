@@ -1,7 +1,8 @@
 <nav class="menu">
     <div class="foto">
         <a routerLink="/encabezado">
-        <p><img src="assets/imagenes/foto.jpg" alt="Natalia Lopardo" class="foto"></p></a>
+            <p><img [src]="misDatos.foto" [alt]="misDatos.nombre" class="foto"></p>
+        </a>
     </div>
     <div class="contenedor contenedor-menu">
         <a routerLink="/sobre-mi" class="primera_linea">Sobre mí</a>

@@ -1,7 +1,7 @@
 package com.lailatan.Portfolio.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.lailatan.Portfolio.Utils;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
