@@ -63,5 +63,5 @@ INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (8,'https://user-ima
 INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (9,'https://user-images.githubusercontent.com/64036788/169151706-0550e70a-35bf-4eca-bfec-75e86029116f.png','JAVA',
 'Java es un lenguaje de Programación Orientado a Objetos. La idea de Java es que pueda realizarse programas con la posibilidad de ejecutarse en cualquier contexto, en cualquier ambiente, siendo así su portabilidad uno de sus principales logros.');
 
-INSERT INTO `usuario` VALUES (1,'natalialopardo19@gmail.com','12341234');
-INSERT INTO `usuario` VALUES (2,'test@test.com','12345678');
+INSERT INTO `usuario` VALUES (1,'natalialopardo19@gmail.com','11111111',null);
+INSERT INTO `usuario` VALUES (2,'test@test.com','12345678',null);
