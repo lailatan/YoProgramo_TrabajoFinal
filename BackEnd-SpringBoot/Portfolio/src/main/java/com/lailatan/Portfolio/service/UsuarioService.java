@@ -2,6 +2,7 @@ package com.lailatan.Portfolio.service;
 
 import com.lailatan.Portfolio.model.Usuario;
 import com.lailatan.Portfolio.repository.UsuarioRepository;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,9 @@ public class UsuarioService implements IUsuarioService{
     public Usuario validarUsuario(String mail, String password) {
         Usuario usuario = usuarioRepository.findUsuarioByMail(mail);
         //System.out.println("USARIO: " + usuario);
-        return (usuario!=null && usuario.getPassword().equals(password))?usuario:null;
+        return (usuario!=null && 
+                Utils.igualEncriptado(password, usuario.getPassword()))?usuario:null;
+                //usuario.getPassword().equals(Utils.encriptar(password)))?usuario:null;
     }
     
 }

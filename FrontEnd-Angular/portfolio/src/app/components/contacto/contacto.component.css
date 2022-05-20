@@ -4,22 +4,8 @@
     padding: 3rem 0;
     background: rgba(0, 0, 0, 0.5);
     color: #000000;
-    margin-bottom: 3rem;
+    margin-bottom:  0.5rem;
   }
-  
-  .contacto .contenedor-contacto .item {
-    padding: 1.5rem ;
-    background: #ffffff;
-    color: #000000;
-    width: 70%; 
-    margin: 0 auto;
-  }
-  
-  .contacto .contenedor-contacto .item h3 {
-    width: 90%;
-    margin: 0 auto;
-  }
-
 
 * {
   box-sizing: border-box;

@@ -1,5 +1,5 @@
 .contenedor-header{
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .header .foto {
@@ -8,8 +8,8 @@
   }
   .header .foto img {
   border-radius: 50%;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   }
   .header .datos_personales{
     text-align: center;

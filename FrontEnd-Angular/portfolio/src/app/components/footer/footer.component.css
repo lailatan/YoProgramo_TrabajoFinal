@@ -18,7 +18,7 @@
   .footer .contenedor .redes-sociales {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 5px;
     text-align: center;
   }
   .footer .sector-autor{
@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 5px;
     text-align: center;
   }
   .footer .sector-autor p {

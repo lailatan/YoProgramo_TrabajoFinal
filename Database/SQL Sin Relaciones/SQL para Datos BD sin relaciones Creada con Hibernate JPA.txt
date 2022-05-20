@@ -65,3 +65,6 @@ INSERT INTO `tecnologia` (id,imagen, nombre,detalle) VALUES (9,'https://user-ima
 
 INSERT INTO `usuario` VALUES (1,'natalialopardo19@gmail.com','11111111',null);
 INSERT INTO `usuario` VALUES (2,'test@test.com','12345678',null);
+
+UPDATE `portfolio`.`usuario` SET `password` = '$2a$05$B..jdCsB/a.i6S6DhGawGeDrRXZsc/3FON3KKnr9Hky2hc06nvDXC' WHERE (`id` = '1');
+UPDATE `portfolio`.`usuario` SET `password` = '$2a$05$VgU38Hc/.jEDwtUSjwjs.uXVPLyDdNFQltMblBYZQLlAN6DeEy9c6' WHERE (`id` = '2');
