@@ -42,7 +42,7 @@ public class TecnologiaController {
         return tecnologiaService.guardarTecnologia(tecnologia);
     } 
 
-    @PutMapping("/savee")
+    @PutMapping("/save")
     @ResponseBody
     public Tecnologia guardarTecnologia(@RequestBody Tecnologia tecnologia) {
         return tecnologiaService.guardarTecnologia(tecnologia);
