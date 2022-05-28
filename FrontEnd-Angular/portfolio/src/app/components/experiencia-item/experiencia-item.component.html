@@ -2,7 +2,9 @@
     <div>
         <a><img [src]="miExperiencia.imagen" [alt]="miExperiencia.empresa"></a>
         <h5>{{miExperiencia.empresa}}</h5>
-        <h5>{{miExperiencia.fechaDesde}} a {{texto_fecha_hasta}}</h5>
+        <div class="fechas">
+            <h5>{{miExperiencia.fechaDesde}}&nbsp;a&nbsp;</h5><h5>{{texto_fecha_hasta}}</h5>
+        </div>
     </div>
     <div>
         <h5 >{{miExperiencia.cargo}}</h5>

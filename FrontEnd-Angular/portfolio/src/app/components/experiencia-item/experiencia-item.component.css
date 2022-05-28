@@ -7,10 +7,15 @@
     .item  a img:hover {
       filter: grayscale(100);
     }
+    .fechas{
+      display: flex;
+      align-items: center;
+      justify-content:left;
+    }
   }
 
   .fechas{
-    display: flex;
+    display: column;
     align-items: center;
     justify-content:left;
   }

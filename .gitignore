@@ -42,6 +42,7 @@ build/Release
 node_modules/
 jspm_packages/
 
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -154,3 +155,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+#Implementacion
+.firebase
+.angular
+.vscode
+application.properties
+BackEnd-SpringBoot/Portfolio/src/main/resources/application.properties

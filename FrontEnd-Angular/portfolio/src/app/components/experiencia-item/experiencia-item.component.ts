@@ -30,7 +30,7 @@ export class ExperienciaItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.modoEdicion = this.uiService.esModoEdicion();
-    this.texto_fecha_hasta= ((this.miExperiencia.fechaHasta=="" || this.miExperiencia.fechaHasta==null)?
+    this.texto_fecha_hasta=  ((this.miExperiencia.fechaHasta=="" || this.miExperiencia.fechaHasta==null)?
                                                               "Hoy":this.miExperiencia.fechaHasta);
   }
 
