@@ -17,7 +17,6 @@
 				formControlName="imagen"
 				placeholder="Imagen"
 				required="required"
-				autofocus
 				/>
 				<div *ngIf="(f['imagen'].touched || submitted) && f['imagen'].errors" class="error">
 				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>
@@ -56,7 +55,7 @@
 			<div *ngIf="submitted && faltanCursos()" class="error" >
 				<div *ngIf="faltanCursos()"><p>* Debe ingresar al menos un Curso</p></div>
 		   </div>
-	<button type="submit">Guardar</button>
+		<button type="submit">Guardar</button>
 		</div>	
 	</form>
   </div>

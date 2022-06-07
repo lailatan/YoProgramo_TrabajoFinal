@@ -17,7 +17,6 @@
 				formControlName="imagen"
 				placeholder="Imagen"
 				required="required"
-				autofocus
 				/>
 				<div *ngIf="(f['imagen'].touched || submitted) && f['imagen'].errors" class="error">
 				  <div *ngIf="f['imagen'].errors['required']">* Debe ingresar una Imagen </div>

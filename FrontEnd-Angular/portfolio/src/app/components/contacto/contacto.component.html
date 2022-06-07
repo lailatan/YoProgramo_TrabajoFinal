@@ -23,7 +23,7 @@
                         formControlName="from"
                         placeholder="Email"
                         required="required"
-                        autofocus
+                        #from
                     />
                     <div *ngIf="(f['from'].touched || submitted) && f['from'].errors" class="error">
                         <div *ngIf="f['from'].errors['required']">* Debe ingresar un Email</div>

@@ -2,7 +2,7 @@
 	<h1 class="modal-title">Datos Encabezado</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
@@ -17,7 +17,6 @@
 				formControlName="foto"
 				placeholder="Foto"
 				required="required"
-				autofocus
 				/>
 				<div *ngIf="(f['foto'].touched || submitted) && f['foto'].errors" class="error">
 				  <div *ngIf="f['foto'].errors['required']">* Debe ingresar una Foto </div>

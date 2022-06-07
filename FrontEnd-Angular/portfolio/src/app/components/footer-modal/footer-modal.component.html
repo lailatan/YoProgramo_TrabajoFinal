@@ -2,7 +2,7 @@
 	<h1 class="modal-title">Datos Pie de Página</h1>
 	<i  class='boton-edicion far fa-window-close' 
 		style="font-size: 2.5rem;"
-		(click)="activeModal.dismiss(false)"
+		(click)="activeModal.close(false)"
 	></i>
 </div>
 <div class="modal-body">
@@ -16,8 +16,7 @@
 					[ngClass]="{ 'is-invalid': (f['linkedin'].touched || submitted) && f['linkedin'].errors, 'is-valid': (f['linkedin'].touched || submitted) && !f['linkedin'].errors }"
 					name="linkedin"
 					placeholder="LinkedIn"
-					required="required"
-					autofocus	
+					required="required"	
 				/>
 				<div *ngIf="(f['linkedin'].touched || submitted) && f['linkedin'].errors" class="error">
 				  <div *ngIf="f['linkedin'].errors['required']">* Debe ingresar una direccion de LinkedIn </div>

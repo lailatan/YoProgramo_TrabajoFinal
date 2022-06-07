@@ -162,3 +162,4 @@ nbdist/
 .vscode
 application.properties
 BackEnd-SpringBoot/Portfolio/src/main/resources/application.properties
+BackEnd-SpringBoot/Portfolio/src/main/resources/application.properties

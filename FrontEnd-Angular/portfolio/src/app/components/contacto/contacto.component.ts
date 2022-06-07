@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit, ViewChild, ElementRef  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MailService } from 'src/app/services/mail.service';
 
@@ -7,7 +7,8 @@ import { MailService } from 'src/app/services/mail.service';
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
-export class ContactoComponent implements OnInit {
+export class ContactoComponent implements OnInit , AfterViewInit{
+  @ViewChild('from') fromInputElement!: ElementRef<HTMLInputElement>;
   enviado:boolean =false;
   enviando:boolean =false;
 
@@ -26,7 +27,9 @@ export class ContactoComponent implements OnInit {
       text: ['',[Validators.required,Validators.maxLength(500)]]
       });
   }
-
+  ngAfterViewInit(): void {
+    this.fromInputElement.nativeElement.focus();
+  }
   get f() { return this.dataForm.controls; }
 
   onSubmit() {

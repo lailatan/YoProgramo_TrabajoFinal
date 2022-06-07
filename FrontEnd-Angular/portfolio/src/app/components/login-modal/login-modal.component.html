@@ -15,7 +15,6 @@
 			type="mail"
 			name="mail"
 			placeholder="Email"
-			autofocus
 			/>
 			<div *ngIf="f['mail'].errors && (f['mail'].touched || submitted)" class="error">
 				<div *ngIf="f['mail'].errors['required']">* Debe ingresar un Email</div>

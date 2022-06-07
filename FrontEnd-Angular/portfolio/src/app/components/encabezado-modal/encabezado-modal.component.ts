@@ -21,14 +21,14 @@ export class EncabezadoModalComponent implements OnInit {
   ngOnInit(): void {
     //Add User form validations
     this.dataForm = this.formBuilder.group({
-      nombre: ['', [Validators.required,Validators.maxLength(255)]],
-      profesion: ['', [Validators.required,Validators.maxLength(255)]],
       foto: ['', [Validators.required,Validators.maxLength(255)]],
+      nombre: ['', [Validators.required,Validators.maxLength(255)]],
+      profesion: ['', [Validators.required,Validators.maxLength(255)]]
       });
       if (this.persona!==undefined){
+        this.f['foto'].setValue(this.persona.foto); 
         this.f['nombre'].setValue(this.persona.nombre); 
         this.f['profesion'].setValue(this.persona.profesion); 
-        this.f['foto'].setValue(this.persona.foto); 
       }  
   }
 

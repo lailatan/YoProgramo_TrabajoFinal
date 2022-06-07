@@ -17,7 +17,6 @@
 				[ngClass]="{ 'is-invalid': (f['sobre_mi'].touched || submitted) && f['sobre_mi'].errors, 'is-valid': (f['sobre_mi'].touched || submitted) && !f['sobre_mi'].errors }"
 				required="required"
 				rows="10"
-				autofocus
 				></textarea>
 				<div *ngIf="(f['sobre_mi'].touched || submitted) && f['sobre_mi'].errors" class="error">
 				  <div *ngIf="f['sobre_mi'].errors['required']">* Debe ingresar un Detalle Sobre Mi </div>

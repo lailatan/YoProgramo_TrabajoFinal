@@ -83,7 +83,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes,{enableTracing: true})
+    RouterModule.forRoot(appRoutes,{enableTracing: false})
   ],
   providers: [PersonaService, 
     {provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}

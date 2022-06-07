@@ -17,7 +17,6 @@
                     formControlName="anio"
                     placeholder="Año"
                     required="required"
-                    autofocus
                 />
                 <div *ngIf="(f['anio'].touched || submitted) && f['anio'].errors" class="error">
                     <div *ngIf="f['anio'].errors['required']">* Debe ingresar un Año</div>
