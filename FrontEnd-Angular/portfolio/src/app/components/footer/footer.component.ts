@@ -39,8 +39,8 @@ modoEdicion: boolean = false;
     this.personaService.getPersona().subscribe({
     next: (value) => {this.misDatos=value; this.errorMsg=""},
     error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
-});
-
+    });
+    this.modoEdicion = this.uiService.esModoEdicion();
   }
 
   editarDatos(){
