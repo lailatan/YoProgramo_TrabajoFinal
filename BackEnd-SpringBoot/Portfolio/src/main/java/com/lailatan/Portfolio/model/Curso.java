@@ -1,7 +1,6 @@
 package com.lailatan.Portfolio.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.lailatan.Portfolio.util.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -47,12 +46,4 @@ public class Curso {
     public String toString() {
         return "Curso{" + "id=" + id + ", anio=" + anio + ", titulo=" + titulo + ", descripcion=" + descripcion + '}';
     }
-
-    public boolean datosCorrectos(){
-     return (((titulo!=null && Utils.largoValidoString(titulo)) &&
-            ((descripcion!=null && Utils.largoValidoString(descripcion))|| (descripcion==null) || (descripcion=="")) 
-             && (anio!=null)) 
-             && Utils.añoValido(anio));
-    }
-
 }

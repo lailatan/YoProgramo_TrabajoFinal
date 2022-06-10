@@ -2,6 +2,7 @@ package com.lailatan.Portfolio.controller;
 
 import com.lailatan.Portfolio.model.Usuario;
 import com.lailatan.Portfolio.service.IUsuarioService;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -46,13 +47,13 @@ public class UsuarioController {
     @PostMapping("/new")
     @ResponseBody
     public Usuario crearUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.guardarUsuario(usuario);
+        return (datosUsuarioCorrectos(usuario)?usuarioService.guardarUsuario(usuario):null);
     } 
 
     @PutMapping("/save")
     @ResponseBody
     public Usuario guardarUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.guardarUsuario(usuario);
+        return (datosUsuarioCorrectos(usuario)?usuarioService.guardarUsuario(usuario):null);
     } 
     
     @DeleteMapping("/delete/{id}")
@@ -90,5 +91,11 @@ public class UsuarioController {
                 usuario.setToken("Bearer " + token);
             }
             return usuario;
-    }    
+    }   
+    
+    private boolean datosUsuarioCorrectos(Usuario usuario){
+         return (((usuario.getMail()!=null && Utils.largoValidoString(usuario.getMail())) &&
+                 (usuario.getPassword()!=null && Utils.largoValidoString(usuario.getPassword()))) 
+                 && Utils.mailValido(usuario.getMail()));
+    }
 }

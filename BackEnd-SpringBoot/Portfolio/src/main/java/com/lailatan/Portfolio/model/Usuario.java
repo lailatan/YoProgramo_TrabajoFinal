@@ -45,11 +45,4 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "id=" + id + ", mail=" + mail + ", password=" + password + '}';
     }
-    
-    public boolean datosCorrectos(){
-         return (((mail!=null && Utils.largoValidoString(mail)) &&
-                 (password!=null && Utils.largoValidoString(password))) 
-                 && Utils.mailValido(mail));
-    }
-
 }

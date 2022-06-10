@@ -19,7 +19,7 @@ public class ExperienciaService implements IExperienciaService{
 
     @Override
     public Experiencia guardarExperiencia(Experiencia experiencia) {
-        return (experiencia.datosCorrectos()?experienciaRepository.save(experiencia):null);
+        return experienciaRepository.save(experiencia);
     }
 
     @Override

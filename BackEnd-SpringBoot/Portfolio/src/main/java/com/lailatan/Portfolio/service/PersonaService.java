@@ -18,24 +18,7 @@ public class PersonaService implements IPersonaService{
 
     @Override
     public Persona guardarPersona(Persona persona) {
-        /*
-        if(persona.getId()!=null) {
-            Persona personaExistente = personaRepository.findById(persona.getId()).orElse(null);
-            if (personaExistente != null) {
-                if (persona.getAnio()!= null) personaExistente.setAnio(persona.getAnio());
-                if (persona.getFoto()!= null) personaExistente.setFoto(persona.getFoto());
-                if (persona.getGithub()!= null) personaExistente.setGithub(persona.getGithub());
-                if (persona.getLinkedin()!= null) personaExistente.setLinkedin(persona.getLinkedin());
-                if (persona.getMail()!= null) personaExistente.setMail(persona.getMail());
-                if (persona.getNombre()!= null) personaExistente.setNombre(persona.getNombre());
-                if (persona.getProfesion()!= null) personaExistente.setProfesion(persona.getProfesion());
-                if (persona.getSobre_mi()!= null) personaExistente.setSobre_mi(persona.getSobre_mi());
-                if (persona.getUbicacion()!= null) personaExistente.setUbicacion(persona.getUbicacion());
-                return personaRepository.save(personaExistente);
-            }else persona.setId(null);
-        }
-        */
-        return (persona.datosCorrectos()?personaRepository.save(persona):null);
+        return personaRepository.save(persona);
     }
 
     @Override

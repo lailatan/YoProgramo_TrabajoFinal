@@ -1,7 +1,6 @@
 package com.lailatan.Portfolio.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -45,9 +44,4 @@ public class Formacion {
     public String toString() {
         return "Formacion{" + "id=" + id + ", escuela=" + escuela + ", imagen=" + imagen + '}';
     }
-    public boolean datosCorrectos(){
-         return ((escuela!=null && Utils.largoValidoString(escuela)) &&
-                 (imagen!=null && Utils.largoValidoString(imagen)));
-    }
-
 }

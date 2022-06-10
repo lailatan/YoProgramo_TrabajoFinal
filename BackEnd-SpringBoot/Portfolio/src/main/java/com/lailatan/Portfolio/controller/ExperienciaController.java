@@ -2,6 +2,7 @@ package com.lailatan.Portfolio.controller;
 
 import com.lailatan.Portfolio.model.Experiencia;
 import com.lailatan.Portfolio.service.IExperienciaService;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,18 +40,27 @@ public class ExperienciaController {
     @PostMapping("/new")
     @ResponseBody
     public Experiencia crearExperiencia(@RequestBody Experiencia experiencia) {
-        return experienciaService.guardarExperiencia(experiencia);
+        return (datosExperienciaCorrectos(experiencia)?experienciaService.guardarExperiencia(experiencia):null);
     } 
 
     @PutMapping("/save")
     @ResponseBody
     public Experiencia guardarExperiencia(@RequestBody Experiencia experiencia) {
-        return experienciaService.guardarExperiencia(experiencia);
+        return (datosExperienciaCorrectos(experiencia)?experienciaService.guardarExperiencia(experiencia):null);
     } 
     
     @DeleteMapping("/delete/{id}")
     public void borrarExperiencia(@PathVariable Integer id){
          experienciaService.borrarExperiencia(id);
+    }
+
+    private boolean datosExperienciaCorrectos(Experiencia experiencia){
+         return ((experiencia.getEmpresa()!=null && Utils.largoValidoString(experiencia.getEmpresa())) &&
+                 (experiencia.getImagen()!=null && Utils.largoValidoString(experiencia.getImagen())) &&
+                 (experiencia.getFechaDesde()!=null && Utils.yyyymmValido(experiencia.getFechaDesde())) &&
+                 ((experiencia.getFechaHasta()!=null && Utils.yyyymmValido(experiencia.getFechaHasta())) || experiencia.getFechaHasta()==null || "".equals(experiencia.getFechaHasta())) &&
+                 (experiencia.getCargo()!=null && Utils.largoValidoString(experiencia.getCargo())) &&
+                 (experiencia.getDetalle()!=null && Utils.largoValidoString(experiencia.getDetalle())));
     }
     
 }

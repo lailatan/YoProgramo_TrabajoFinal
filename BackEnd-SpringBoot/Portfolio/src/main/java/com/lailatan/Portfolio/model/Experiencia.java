@@ -49,15 +49,5 @@ public class Experiencia {
     @Override
     public String toString() {
         return "Experiencia{" + "id=" + id + ", empresa=" + empresa + ", imagen=" + imagen + ", fecha_desde=" + fechaDesde + ", fecha_hasta=" + fechaHasta + ", cargo=" + cargo + ", detalle=" + detalle + '}';
-    }
-
-    public boolean datosCorrectos(){
-         return ((empresa!=null && Utils.largoValidoString(empresa)) &&
-                 (imagen!=null && Utils.largoValidoString(imagen)) &&
-                 (fechaDesde!=null && Utils.yyyymmValido(fechaDesde)) &&
-                 ((fechaHasta!=null && Utils.yyyymmValido(fechaHasta)) || fechaHasta==null || fechaHasta=="") &&
-                 (cargo!=null && Utils.largoValidoString(cargo)) &&
-                 (detalle!=null && Utils.largoValidoString(detalle)));
-    }
-    
+    }    
 }

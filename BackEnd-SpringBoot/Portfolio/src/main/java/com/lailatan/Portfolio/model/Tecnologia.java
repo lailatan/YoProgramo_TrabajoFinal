@@ -40,11 +40,4 @@ public class Tecnologia {
     public String toString() {
         return "Tecnologia{" + "id=" + id + ", imagen=" + imagen + ", nombre=" + nombre + ", detalle=" + detalle + '}';
     }
-    public boolean datosCorrectos(){
-         return ((imagen!=null && Utils.largoValidoString(imagen)) &&
-                 (nombre!=null && Utils.largoValidoString(nombre)) &&
-                 (detalle!=null && Utils.largoValidoString(detalle)));
-    }
-
-    
 }

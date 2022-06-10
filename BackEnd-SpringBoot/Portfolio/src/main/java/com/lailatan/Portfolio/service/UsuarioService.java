@@ -19,7 +19,7 @@ public class UsuarioService implements IUsuarioService{
 
     @Override
     public Usuario guardarUsuario(Usuario usuario) {
-        return (usuario.datosCorrectos()?usuarioRepository.save(usuario):null);
+        return usuarioRepository.save(usuario);
     }
 
     @Override

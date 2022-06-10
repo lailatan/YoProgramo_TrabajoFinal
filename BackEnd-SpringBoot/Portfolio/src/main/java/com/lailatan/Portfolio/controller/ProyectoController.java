@@ -2,6 +2,7 @@ package com.lailatan.Portfolio.controller;
 
 import com.lailatan.Portfolio.model.Proyecto;
 import com.lailatan.Portfolio.service.IProyectoService;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,18 +39,26 @@ public class ProyectoController {
     @PostMapping("/new")
     @ResponseBody
     public Proyecto crearProyecto(@RequestBody Proyecto proyecto) {
-        return proyectoService.guardarProyecto(proyecto);
+        return (datosProyectoCorrectos(proyecto)?proyectoService.guardarProyecto(proyecto):null);
     } 
 
     @PutMapping("/save")
     @ResponseBody
     public Proyecto guardarProyecto(@RequestBody Proyecto proyecto) {
-        return proyectoService.guardarProyecto(proyecto);
+        return (datosProyectoCorrectos(proyecto)?proyectoService.guardarProyecto(proyecto):null);
     } 
     
     @DeleteMapping("/delete/{id}")
     public void borrarProyecto(@PathVariable Integer id){
          proyectoService.borrarProyecto(id);
+    }
+
+    private boolean datosProyectoCorrectos(Proyecto proyecto){
+         return ((proyecto.getImagen()!=null && Utils.largoValidoString(proyecto.getImagen())) &&
+                 (proyecto.getLink()!=null && Utils.largoValidoString(proyecto.getLink())) &&
+                 (proyecto.getIcono()!=null && Utils.largoValidoString(proyecto.getIcono())) &&
+                 (proyecto.getNombre()!=null && Utils.largoValidoString(proyecto.getNombre())) &&
+                 (proyecto.getDetalle()!=null && Utils.largoValidoString(proyecto.getDetalle())));
     }
 
 }

@@ -19,7 +19,7 @@ public class TecnologiaService implements ITecnologiaService{
 
     @Override
     public Tecnologia guardarTecnologia(Tecnologia tecnologia) {
-        return (tecnologia.datosCorrectos()?tecnologiaRepository.save(tecnologia):null);
+        return tecnologiaRepository.save(tecnologia);
     }
 
 

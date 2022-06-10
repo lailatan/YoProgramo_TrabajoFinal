@@ -1,6 +1,5 @@
 package com.lailatan.Portfolio.model;
 
-import com.lailatan.Portfolio.util.Utils;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -52,19 +51,6 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona{" + "id=" + id + ", foto=" + foto + ", nombre=" + nombre + ", mail=" + mail + ", profesion=" + profesion + ", sobre_mi=" + sobre_mi + ", linkedin=" + linkedin + ", github=" + github + ", ubicacion=" + ubicacion + ", anio=" + anio + '}';
-    }
-
-    public boolean datosCorrectos(){
-         return (((foto!=null && Utils.largoValidoString(foto)) &&
-                 (nombre!=null && Utils.largoValidoString(nombre)) &&
-                 (mail!=null && Utils.largoValidoString(mail)) &&
-                 (profesion!=null && Utils.largoValidoString(profesion)) &&
-                 (sobre_mi!=null && Utils.largoValidoString(sobre_mi)) &&
-                 (linkedin!=null && Utils.largoValidoString(linkedin)) &&
-                 (github!=null && Utils.largoValidoString(github)) &&
-                 (ubicacion!=null && Utils.largoValidoString(ubicacion)) &&
-                 (anio!=null)) 
-                 && Utils.añoValido(anio) && Utils.mailValido(mail));
     }
 
     public Integer getId() {

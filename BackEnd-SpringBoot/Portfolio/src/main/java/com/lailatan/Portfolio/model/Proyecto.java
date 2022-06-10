@@ -43,14 +43,5 @@ public class Proyecto {
     @Override
     public String toString() {
         return "Proyecto{" + "id=" + id + ", imagen=" + imagen + ", link=" + link + ", icono=" + icono + ", nombre=" + nombre + ", detalle=" + detalle + '}';
-    }
-
-    public boolean datosCorrectos(){
-         return ((imagen!=null && Utils.largoValidoString(imagen)) &&
-                 (link!=null && Utils.largoValidoString(link)) &&
-                 (icono!=null && Utils.largoValidoString(icono)) &&
-                 (nombre!=null && Utils.largoValidoString(nombre)) &&
-                 (detalle!=null && Utils.largoValidoString(detalle)));
-    }
-    
+    }    
 }

@@ -13,7 +13,7 @@ public class CursoService implements ICursoService{
 
     @Override
     public Curso guardarCurso(Curso curso) {
-        return (curso.datosCorrectos()?cursoRepository.save(curso):null);
+        return cursoRepository.save(curso);
     }
 
     @Override

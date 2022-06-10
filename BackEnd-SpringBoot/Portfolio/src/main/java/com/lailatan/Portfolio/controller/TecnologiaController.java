@@ -2,6 +2,7 @@ package com.lailatan.Portfolio.controller;
 
 import com.lailatan.Portfolio.model.Tecnologia;
 import com.lailatan.Portfolio.service.ITecnologiaService;
+import com.lailatan.Portfolio.util.Utils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,18 +40,24 @@ public class TecnologiaController {
     @PostMapping("/new")
     @ResponseBody
     public Tecnologia crearTecnologia(@RequestBody Tecnologia tecnologia) {
-        return tecnologiaService.guardarTecnologia(tecnologia);
+        return (datosTecnologiaCorrectos(tecnologia)?tecnologiaService.guardarTecnologia(tecnologia):null);
     } 
 
     @PutMapping("/save")
     @ResponseBody
     public Tecnologia guardarTecnologia(@RequestBody Tecnologia tecnologia) {
-        return tecnologiaService.guardarTecnologia(tecnologia);
+        return (datosTecnologiaCorrectos(tecnologia)?tecnologiaService.guardarTecnologia(tecnologia):null);
     } 
     
     @DeleteMapping("/delete/{id}")
     public void borrarTecnologia(@PathVariable Integer id){
          tecnologiaService.borrarTecnologia(id);
+    }
+
+    public boolean datosTecnologiaCorrectos(Tecnologia tecnologia){
+         return ((tecnologia.getImagen())!=null && Utils.largoValidoString(tecnologia.getImagen())) &&
+                 (tecnologia.getNombre()!=null  && Utils.largoValidoString(tecnologia.getNombre())) &&
+                 (tecnologia.getDetalle()!=null && Utils.largoValidoString(tecnologia.getDetalle()));
     }
     
 }

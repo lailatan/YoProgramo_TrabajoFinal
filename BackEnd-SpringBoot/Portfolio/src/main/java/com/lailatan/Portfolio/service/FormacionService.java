@@ -19,7 +19,7 @@ public class FormacionService implements IFormacionService{
 
     @Override
     public Formacion guardarFormacion(Formacion formacion) {
-        return (formacion.datosCorrectos()?formacionRepository.save(formacion):null);
+        return formacionRepository.save(formacion);
     }
 
     @Override
