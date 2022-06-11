@@ -7,6 +7,7 @@ import { Persona } from 'src/app/objetos/persona';
 import {PersonaService } from '../../services/persona.service';
 import {FooterModalComponent} from '../footer-modal/footer-modal.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-modal.component';
 
 @Component({
   selector: 'app-footer',
@@ -61,8 +62,20 @@ modoEdicion: boolean = false;
       const modalRef = this.modalService.open(LoginModalComponent);      
     }
 
+  //toggleLogOut(){
+  //  this.uiService.cambiarModoEdicion();
+  //  this.authService.logout();
+  //}
+
   toggleLogOut(){
-    this.uiService.cambiarModoEdicion();
-    this.authService.logout();
+    const modalRef = this.modalService.open(ConfirmacionModalComponent);
+    modalRef.componentInstance.texto = "¿Confirma cerrar la Sesión?";
+    modalRef.result.then((result) => {
+      if (result===true) {
+        this.uiService.cambiarModoEdicion();
+        this.authService.logout();
+      }
+    });
   }
+
 }
