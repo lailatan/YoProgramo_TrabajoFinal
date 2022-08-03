@@ -11,6 +11,7 @@
   grid-template-rows: repeat(auto-fit, minmax(21.875rem, 1fr));
   grid-row-gap: 1rem;
 }
+
 .error {
   display: flex;
   flex-direction: row;
@@ -22,3 +23,13 @@
   font-size:1rem;
 }
 
+.waiting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 0.5rem;
+  margin-top: 1rem;
+  color:green;
+  margin-bottom: 1rem;
+  font-size:1rem;
+}

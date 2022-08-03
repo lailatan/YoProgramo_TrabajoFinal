@@ -25,7 +25,8 @@ export class SobreMiComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: String;
-
+  waiting: boolean = true;
+  
   constructor(private uiService: UiService, private personaService:PersonaService,private modalService: NgbModal) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
     this.errorMsg="";
@@ -33,8 +34,8 @@ export class SobreMiComponent implements OnInit {
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe({
-      next: (value) => {this.misDatos=value; this.errorMsg=""},
-      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
+      next: (value) => {this.misDatos=value; this.errorMsg="";this.waiting=false},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}
     });
     this.modoEdicion = this.uiService.esModoEdicion();
   }

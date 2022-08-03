@@ -26,7 +26,11 @@
             <div>{{errorMsg}}</div>
             <div> Vuelva a intentar más tarde.</div>
         </div>    
-    </div>
+        <div *ngIf="waiting==true" class="waiting">
+            <div>Cargando....</div>
+            <div> Por favor espere.</div>
+        </div>
+</div>
     
     <span>
         <i class="boton-login fa fa-user-edit" 

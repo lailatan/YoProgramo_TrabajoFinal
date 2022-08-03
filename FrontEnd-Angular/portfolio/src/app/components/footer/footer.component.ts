@@ -26,10 +26,11 @@ export class FooterComponent implements OnInit {
     sobre_mi: "",
     linkedin: "",
     github: ""};
-modoEdicion: boolean = false;
+  modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: String;
-
+  waiting: boolean = true;
+  
   constructor( private modalService: NgbModal, private uiService: UiService, 
                 private personaService:PersonaService ,  private authService: AuthService) {
       this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value); 
@@ -38,8 +39,8 @@ modoEdicion: boolean = false;
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe({
-    next: (value) => {this.misDatos=value; this.errorMsg=""},
-    error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
+    next: (value) => {this.misDatos=value; this.errorMsg="";this.waiting=false},
+    error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}
     });
     this.modoEdicion = this.uiService.esModoEdicion();
   }

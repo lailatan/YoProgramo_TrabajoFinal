@@ -2,7 +2,7 @@
 <header class="header">
     <div class="contenedor contenedor-header">
         <div class="foto">
-            <p><img [src]="misDatos.foto" [alt]="misDatos.nombre" class="foto"></p>
+            <p><img [src]="misDatos.foto" class="foto"></p>
         </div> 
         <div class="datos_personales">
             <h1 class="nombre">{{misDatos.nombre}}</h1>
@@ -14,6 +14,10 @@
                 <div>{{errorMsg}}</div>
                 <div>Vuelva a intentar más tarde.</div>
             </div>
+            <div *ngIf="waiting==true" class="waiting">
+                <div>Cargando....</div>
+                <div> Por favor espere.</div>
+                </div>
         </div>
     </div>
 </header>

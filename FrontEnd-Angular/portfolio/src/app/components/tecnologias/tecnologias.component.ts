@@ -16,6 +16,7 @@ export class TecnologiasComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: string="";
+  waiting: boolean = true;
 
   constructor( private uiService: UiService,
     private tecnologiaService:TecnologiaService,private modalService: NgbModal) {
@@ -24,8 +25,8 @@ export class TecnologiasComponent implements OnInit {
 
   ngOnInit(): void {
     this.tecnologiaService.getTecnologias().subscribe({
-      next: (value) => {this.tecnologiasList = value; this.errorMsg=""},
-      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}    });
+      next: (value) => {this.tecnologiasList = value; this.errorMsg="";this.waiting=false},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}    });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 

@@ -15,6 +15,16 @@
     font-size:1rem;
   }
 
+  .waiting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5rem;
+    color:green;
+    margin-bottom: 1rem;
+    font-size:1rem;
+  }
+
   .footer .contenedor .redes-sociales {
     display: flex;
     justify-content: center;

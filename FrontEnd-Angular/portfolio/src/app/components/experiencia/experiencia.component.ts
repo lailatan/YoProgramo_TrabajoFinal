@@ -16,6 +16,7 @@ export class ExperienciaComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: string="";
+  waiting: boolean = true;
 
   constructor( private uiService: UiService,
     private experienciaService:ExperienciaService ,private modalService: NgbModal ) { 
@@ -24,8 +25,8 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.experienciaService.getExperiencias().subscribe({
-      next: (value) => {this.experienciaList=value; this.errorMsg=""},
-      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}    });
+      next: (value) => {this.experienciaList=value; this.errorMsg="";this.waiting=false},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}});
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 

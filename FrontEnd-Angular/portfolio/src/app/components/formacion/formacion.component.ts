@@ -16,7 +16,8 @@ export class FormacionComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: String="";
-
+  waiting: boolean = true;
+  
   constructor(private uiService: UiService,private formacionService:FormacionService,
     private modalService: NgbModal) { 
     this.Subscription = this.uiService.onToggle().subscribe(value => this.modoEdicion = value);
@@ -24,8 +25,8 @@ export class FormacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.formacionService.getFormaciones().subscribe({
-        next: (value) => {this.formacionList=value; this.errorMsg=""},
-        error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}   });
+        next: (value) => {this.formacionList=value; this.errorMsg="";this.waiting=false},
+        error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}   });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
 

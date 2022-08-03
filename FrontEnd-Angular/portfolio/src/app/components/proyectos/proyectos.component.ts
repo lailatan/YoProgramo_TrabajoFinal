@@ -16,6 +16,7 @@ export class ProyectosComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   errorMsg: String="";
+  waiting: boolean = true;
 
   constructor(private uiService: UiService,
     private proyectoService:ProyectoService,private modalService: NgbModal) { 
@@ -24,8 +25,8 @@ export class ProyectosComponent implements OnInit {
 
   ngOnInit(): void {
     this.proyectoService.getProyectos().subscribe({
-      next: (value) => {this.proyectosList=value; this.errorMsg=""},
-      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}   });
+      next: (value) => {this.proyectosList=value; this.errorMsg="";this.waiting=false},
+      error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");this.waiting=false}   });
     this.modoEdicion = this.uiService.esModoEdicion();
   }
   agregarDatos(){
