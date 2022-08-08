@@ -3,6 +3,9 @@
     <h2 class="titulo" id="contacto">Contacto</h2>
     <div class="contenedor contenedor-contacto">
         <div *ngIf="enviando" class="mensaje-enviando">
+            <div class="loading">
+                <img src="assets/imagenes/loading.gif">
+            </div>
             <div>Enviando mensaje...</div>
         </div>
         <div class="mensaje-enviado">

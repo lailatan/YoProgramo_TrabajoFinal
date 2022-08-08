@@ -126,6 +126,10 @@ html {
     justify-content: center;
   }
   
+  .loading img{
+    height: 3rem;
+ }
+
   /** Solo en pantalla Computadoras **/
   @media only screen and (min-width: 48rem) {
     body{
