@@ -40,13 +40,27 @@ export class ExperienciaModalComponent implements OnInit {
     }  
   }
 
+  fechasValidas(): boolean{
+    if (this.f['fecha_hasta'].value==''){
+      return true;
+    } else {
+      var fechaDesde= this.f['fecha_desde'].value.split('-');
+      var fechaHasta= this.f['fecha_hasta'].value.split('-');
+      return ((fechaDesde[0]<fechaHasta[0]) || (fechaDesde[0]==fechaHasta[0] && fechaDesde[1]<=fechaHasta[1]));
+    }
+  }
+
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.dataForm.invalid) {
-        return;
+    return;
     }
+    if (!this.fechasValidas()){
+      this.f['fecha_hasta'].setErrors({pattern:true});
+      return;
+    }
+
     //True if all the fields are filled
     if(this.submitted)
     {

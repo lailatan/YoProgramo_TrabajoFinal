@@ -65,7 +65,7 @@
 				placeholder="mm/aaaa"
 				/>
 				<div *ngIf="(f['fecha_hasta'].touched || submitted) && f['fecha_hasta'].errors" class="error">
-				  <div *ngIf="f['fecha_hasta'].errors['pattern']">* Debe ingresar una Fecha de Fin válida</div>
+				  <div *ngIf="f['fecha_hasta'].errors['pattern']">* Debe ingresar una Fecha de Fin posterior al Inicio.</div>
 			   </div>
 			</div>
 			<div>
