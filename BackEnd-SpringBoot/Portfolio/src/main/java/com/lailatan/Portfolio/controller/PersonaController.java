@@ -33,6 +33,24 @@ public class PersonaController {
     public Persona guardarPersona(@RequestBody Persona persona) {
         return (datosPersonaCorrectos(persona)?personaService.guardarPersona(persona):null);
     } 
+
+    @PutMapping("/saveSobreMi")
+    @ResponseBody
+    public Persona guardarSobreMiPersona(@RequestBody Persona persona) {
+        return (datosPersonaCorrectos(persona)?personaService.guardarSobreMiPersona(persona):null);
+    } 
+
+    @PutMapping("/saveCabecera")
+    @ResponseBody
+    public Persona guardarCabeceraPersona(@RequestBody Persona persona) {
+        return (datosPersonaCorrectos(persona)?personaService.guardarCabeceraPersona(persona):null);
+    } 
+
+    @PutMapping("/saveFooter")
+    @ResponseBody
+    public Persona guardarFooterPersona(@RequestBody Persona persona) {
+        return (datosPersonaCorrectos(persona)?personaService.guardarFooterPersona(persona):null);
+    } 
     
     private boolean datosPersonaCorrectos(Persona persona){
          return (((persona.getFoto()!=null && Utils.largoValidoString(persona.getFoto())) &&

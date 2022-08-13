@@ -10,6 +10,12 @@ public interface IPersonaService {
     
     public Persona guardarPersona(Persona persona);
     
+    public Persona guardarSobreMiPersona(Persona persona);
+
+    public Persona guardarCabeceraPersona(Persona persona);
+
+    public Persona guardarFooterPersona(Persona persona);
+
     public void borrarPersona(Integer id);
     
     public Persona traerPersonaPorId(Integer id);

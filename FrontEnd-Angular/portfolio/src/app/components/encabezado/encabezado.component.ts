@@ -36,7 +36,7 @@ export class EncabezadoComponent implements OnInit {
     modalRef.componentInstance.persona = this.misDatos;
     modalRef.result.then((result) => {
       if (result) {
-        this.personaService.updatePersona(result).subscribe({
+        this.personaService.updateCabeceraPersona(result).subscribe({
             next: (value) => {this.misDatos=value; this.errorMsg=""},
             error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}
           });

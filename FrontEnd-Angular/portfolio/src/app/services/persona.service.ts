@@ -28,10 +28,28 @@ export class PersonaService {
           }));      
   }
 
-  updatePersona(persona: Persona): Observable<Persona>{
+  updateSobreMiPersona(persona: Persona): Observable<Persona>{
     const url = `${this.apiUrl}`;
     return this.http
-          .put<Persona>(url+"/save",persona,httpOptions)
+          .put<Persona>(url+"/saveSobreMi",persona,httpOptions)
+          .pipe(catchError(error=>{
+            return throwError(() => new Error(error.status));        
+          }));
+  }
+
+  updateCabeceraPersona(persona: Persona): Observable<Persona>{
+    const url = `${this.apiUrl}`;
+    return this.http
+          .put<Persona>(url+"/saveCabecera",persona,httpOptions)
+          .pipe(catchError(error=>{
+            return throwError(() => new Error(error.status));        
+          }));
+  }
+
+  updateFooterPersona(persona: Persona): Observable<Persona>{
+    const url = `${this.apiUrl}`;
+    return this.http
+          .put<Persona>(url+"/saveFooter",persona,httpOptions)
           .pipe(catchError(error=>{
             return throwError(() => new Error(error.status));        
           }));
