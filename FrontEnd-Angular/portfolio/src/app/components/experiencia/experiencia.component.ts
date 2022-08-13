@@ -15,7 +15,7 @@ export class ExperienciaComponent implements OnInit {
   experienciaList: Experiencia[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
-  errorMsg: string="";
+  errorMsg: String="";
   waiting: boolean = true;
 
   constructor( private uiService: UiService,
@@ -36,7 +36,8 @@ export class ExperienciaComponent implements OnInit {
       if (result) {
         this.experienciaService.addExperiencia(result).subscribe({
           next: (value) => {this.experienciaList.push(value); this.errorMsg=""},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}        
+        });
       }
     });
   }

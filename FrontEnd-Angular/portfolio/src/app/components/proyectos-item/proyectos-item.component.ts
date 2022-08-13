@@ -17,7 +17,7 @@ export class ProyectosItemComponent implements OnInit {
   @Output() onDeleteProyecto :  EventEmitter<Proyecto> = new EventEmitter();
   modoEdicion: boolean = false;
   Subscription?: Subscription;
-  errorMsg: string="";
+  errorMsg: String="";
   errorId?:number = 0;
 
   constructor(private uiService: UiService,private modalService: NgbModal,private proyectoService:ProyectoService) { 
@@ -35,7 +35,7 @@ export class ProyectosItemComponent implements OnInit {
       if (result) {
           this.proyectoService.updateProyecto(result).subscribe({
             next: (value) => {this.miProyecto=value; this.errorMsg=""; this.errorId=0},
-            error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+            error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                           this.errorId=this.miProyecto.id}    
           });
           }
@@ -49,7 +49,7 @@ export class ProyectosItemComponent implements OnInit {
       if (result===true) {
         this.proyectoService.deleteProyecto(this.miProyecto).subscribe({
           next: (value) => {this.onDeleteProyecto.emit(this.miProyecto); this.errorMsg=""; this.errorId=0},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miProyecto.id}         
         });
       }

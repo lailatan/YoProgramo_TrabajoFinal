@@ -17,7 +17,7 @@ export class FormacionItemComponent implements OnInit {
   @Output() onDeleteFormacion :  EventEmitter<Formacion> = new EventEmitter();
   modoEdicion: boolean = false;
   Subscription?: Subscription;
-  errorMsg: string="";
+  errorMsg: String="";
   errorId?:number = 0;
 
   constructor( private uiService: UiService,private modalService: NgbModal,private formacionService:FormacionService) {
@@ -42,7 +42,7 @@ export class FormacionItemComponent implements OnInit {
       if (result) {
         this.formacionService.updateFormacion(result).subscribe({
           next: (value) => {this.miFormacion=value; this.errorMsg=""; this.errorId=0},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miFormacion.id}    
         });
           }
@@ -55,7 +55,7 @@ export class FormacionItemComponent implements OnInit {
       if (result===true) {
         this.formacionService.deleteFormacion(this.miFormacion).subscribe({
           next: (value) => {this.onDeleteFormacion.emit(this.miFormacion); this.errorMsg=""; this.errorId=0},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miFormacion.id}         
         });
       }

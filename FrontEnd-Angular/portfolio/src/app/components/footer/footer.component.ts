@@ -8,6 +8,7 @@ import {PersonaService } from '../../services/persona.service';
 import {FooterModalComponent} from '../footer-modal/footer-modal.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { ConfirmacionModalComponent } from '../confirmacion-modal/confirmacion-modal.component';
+import { AvisoModalComponent } from '../aviso-modal/aviso-modal.component';
 
 @Component({
   selector: 'app-footer',
@@ -52,11 +53,11 @@ export class FooterComponent implements OnInit {
       if (result) {
         this.personaService.updatePersona(result).subscribe({
             next: (value) => {this.misDatos=value; this.errorMsg=""},
-            error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
-          });
+            //error: (e) => { this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}
+            error: (e) => { this.errorMsg=this.uiService.manejarErroresBD(e)}
+        });
       }
-
-      });
+    });
   }
 
   toggleLogIn() {

@@ -21,7 +21,7 @@ export class ExperienciaItemComponent implements OnInit {
   modoEdicion: boolean = false;
   Subscription?: Subscription;
   texto_fecha_hasta: String;
-  errorMsg: string="";
+  errorMsg: String="";
   errorId?:number = 0;
 
   constructor(private uiService: UiService,private modalService: NgbModal, private experienciaService:ExperienciaService) {
@@ -44,7 +44,7 @@ export class ExperienciaItemComponent implements OnInit {
                            this.texto_fecha_hasta= ((this.miExperiencia.fechaHasta=="" || this.miExperiencia.fechaHasta==null)?
                                                  "Hoy":this.miExperiencia.fechaHasta);},
 
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miExperiencia.id}    
         });
           }
@@ -58,7 +58,7 @@ export class ExperienciaItemComponent implements OnInit {
       if (result===true) {
         this.experienciaService.deleteExperiencia(this.miExperiencia).subscribe({
           next: (value) => {this.onDeleteExperiencia.emit(this.miExperiencia); this.errorMsg=""; this.errorId=0},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miExperiencia.id}         
         });
       }

@@ -17,7 +17,7 @@ export class TecnologiasItemComponent implements OnInit {
   @Output() onDeleteTecnologia :  EventEmitter<Tecnologia> = new EventEmitter();
   modoEdicion: boolean = false;
   Subscription?: Subscription;
-  errorMsg: string="";
+  errorMsg: String="";
   errorId?:number = 0;
 
   constructor(private uiService: UiService,private modalService: NgbModal,private tecnologiaService:TecnologiaService) { 
@@ -35,7 +35,7 @@ export class TecnologiasItemComponent implements OnInit {
       if (result) {
           this.tecnologiaService.updateTecnologia(result).subscribe({
             next: (value) => {this.miTecnologia=value; this.errorMsg=""; this.errorId=0},
-            error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+            error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                           this.errorId=this.miTecnologia.id}    
           });
       }
@@ -50,7 +50,7 @@ export class TecnologiasItemComponent implements OnInit {
       if (result===true) {
         this.tecnologiaService.deleteTecnologia(this.miTecnologia).subscribe({
           next: (value) => {this.onDeleteTecnologia.emit(this.miTecnologia); this.errorMsg=""; this.errorId=0},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ");
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e);
                         this.errorId=this.miTecnologia.id}         
         });
       }

@@ -32,6 +32,7 @@ import { CursoModalComponent } from './components/curso-modal/curso-modal.compon
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { PersonaService } from './services/persona.service';
 import { InterceptorService } from './services/interceptor.service';
+import { AvisoModalComponent } from './components/aviso-modal/aviso-modal.component';
 
 
 
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     ExperienciaModalComponent,
     ProyectoModalComponent,
     CursoModalComponent,
-    ContactoComponent
+    ContactoComponent,
+    AvisoModalComponent
   ],
   imports: [
     BrowserModule,

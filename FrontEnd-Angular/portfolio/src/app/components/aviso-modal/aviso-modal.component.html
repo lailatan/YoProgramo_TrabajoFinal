@@ -1,0 +1,21 @@
+<div class="modal-header">
+	<h1 class="modal-title">Aviso</h1>
+	<i  class='boton-edicion far fa-window-close' 
+		style="font-size: 2.5rem;"
+		(click)="activeModal.close(true)"
+	></i>
+</div>
+<div class="modal-body">
+	<form >
+		<div class="container">
+			<div class="texto">
+				<h4>{{texto}}</h4>
+			</div>
+            <div class="botones">
+                <button type="button" (click)="activeModal.close(true)">Aceptar</button>
+            </div>	
+        </div>
+    </form>
+  </div>
+<div class="modal-footer">
+</div>

@@ -15,7 +15,7 @@ export class TecnologiasComponent implements OnInit {
   tecnologiasList: Tecnologia[];
   modoEdicion: boolean = false;
   Subscription?: Subscription;
-  errorMsg: string="";
+  errorMsg: String="";
   waiting: boolean = true;
 
   constructor( private uiService: UiService,
@@ -36,7 +36,8 @@ export class TecnologiasComponent implements OnInit {
       if (result) {
         this.tecnologiaService.addTecnologia(result).subscribe({
           next: (value) => {this.tecnologiasList.push(value); this.errorMsg=""},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}        
+        });
       }
     });
   }

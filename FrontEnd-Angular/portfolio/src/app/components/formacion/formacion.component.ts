@@ -37,7 +37,8 @@ export class FormacionComponent implements OnInit {
       if (result) {
         this.formacionService.addFormacion(result).subscribe({
           next: (value) => {this.formacionList.push(value); this.errorMsg=""},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}        
+        });
       }
     });
   }

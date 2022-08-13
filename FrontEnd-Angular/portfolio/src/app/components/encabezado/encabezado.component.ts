@@ -38,8 +38,7 @@ export class EncabezadoComponent implements OnInit {
       if (result) {
         this.personaService.updatePersona(result).subscribe({
             next: (value) => {this.misDatos=value; this.errorMsg=""},
-            error: (e) => {this.errorMsg = "Se ha producido un error" + 
-              (e.message==0?".":": " + e.message + ". ")}
+            error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}
           });
       }
 

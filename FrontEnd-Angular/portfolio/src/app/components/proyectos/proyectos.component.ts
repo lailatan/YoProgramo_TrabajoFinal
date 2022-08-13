@@ -35,7 +35,8 @@ export class ProyectosComponent implements OnInit {
       if (result) {
         this.proyectoService.addProyecto(result).subscribe({
           next: (value) => {this.proyectosList.push(value); this.errorMsg=""},
-          error: (e) => {this.errorMsg = "Se ha producido un error" +  (e.message==0?". ":": " + e.message + ". ")}        });
+          error: (e) => {this.errorMsg=this.uiService.manejarErroresBD(e)}        
+        });
       }
     });
   }
