@@ -15,6 +15,7 @@ export class LoginModalComponent  {
   submitted = false;
   datosInvalidos=false;
   errorMsg: String="";
+  waiting: boolean = false;
 
   mail: string = "";
   password: string = "";
@@ -61,6 +62,9 @@ export class LoginModalComponent  {
               password: this.f['password'].value,
               token: ''
             };
+            this.errorMsg="";
+            this.datosInvalidos=true;
+            this.waiting=true;
             this.authService.login(newUsuario).subscribe({
               next: (value) => {if (value==null){
                                 this.datosInvalidos=true;
@@ -70,10 +74,11 @@ export class LoginModalComponent  {
                                 } else {
                                   this.uiService.cambiarModoEdicion();
                                   this.activeModal.close(true);          
-                                }     
+                                }    
+                                this.waiting=false; 
               },
               error: (e) => {this.errorMsg = "Se ha producido un error" + 
-              (e.status==0?".":": " + e.status + ". "); }
+              (e.status==0?".":": " + e.status + ". "); this.waiting=false}
             });            
         }
     }
