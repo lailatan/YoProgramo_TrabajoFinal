@@ -63,7 +63,7 @@ export class LoginModalComponent  {
               token: ''
             };
             this.errorMsg="";
-            this.datosInvalidos=true;
+            this.datosInvalidos=false;
             this.waiting=true;
             this.authService.login(newUsuario).subscribe({
               next: (value) => {if (value==null){
